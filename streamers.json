@@ -70,7 +70,12 @@
   {
    "login": "ohnepixel",
    "approved": true,
-   "cam": null,
+   "cam": [
+    0.0366,
+    0.7649,
+    0.2231,
+    0.2351
+   ],
    "auto": "2026-11-18T22:23:04Z"
   }
  ]
