@@ -80,6 +80,9 @@ def traits(meta, post_hour=None):
     tr = {'streamer': meta.get('login', '?').lower(),
           'len': len_bucket(meta.get('kept', meta.get('duration', 30))),
           'layout': meta.get('layout', '?')}
+    if meta.get('action') is not None:
+        a = meta['action']
+        tr['action'] = 'low' if a < 0.45 else 'mid' if a < 0.6 else 'high'
     for t in topics_of(meta.get('title', '') + ' ' + meta.get('transcript', '')):
         tr['topic:' + t] = 1
     if post_hour is not None:

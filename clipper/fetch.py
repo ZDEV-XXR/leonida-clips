@@ -13,6 +13,7 @@ PER_RUN = int(os.environ.get('PER_RUN', '3'))        # clips rendered per run
 QUEUE_MAX = int(os.environ.get('QUEUE_MAX', '12'))
 MIN_VIEWS = int(os.environ.get('MIN_VIEWS', '25'))
 LANGS = set(os.environ.get('CLIP_LANGS', 'en').split(','))   # page language(s); a Spanish page would set es
+MIN_ACTION = float(os.environ.get('MIN_ACTION', '0.35'))   # clips scoring below this (calm, silent, dead air) are dropped
 AUTO_MAX = int(os.environ.get('AUTO_MAX', '25'))      # cap on the streamer list when trend radar adds people
 BAD_TITLE = re.compile(r'spoil|ending|final mission|last mission|credits|finale|beat the game|leak', re.I)
 
@@ -104,12 +105,16 @@ def main():
         picked.append(c)
         moments.add(c.get('_moment'))
         per[c['broadcaster_id']] = per.get(c['broadcaster_id'], 0) + 1
-        if len(picked) >= min(PER_RUN, QUEUE_MAX - len(queued)):
+        if len(picked) >= 3 * min(PER_RUN, QUEUE_MAX - len(queued)):    # extra candidates: some get dropped as too calm
             break
-    print('%d candidate clips, rendering %d' % (len(clips), len(picked)))
+    want = min(PER_RUN, QUEUE_MAX - len(queued))
+    print('%d candidate clips, trying %d to queue %d' % (len(clips), len(picked), want))
+    made = 0
     for c in picked:
+        if made >= want:
+            break
         try:
-            make(c, users[c['broadcaster_id']], cfg, now)
+            made += 1 if make(c, users[c['broadcaster_id']], cfg, now) else 0
         except Exception as e:
             print('failed %s: %s' % (c['id'], e))
         seen['ids'].append(c['id'])
@@ -128,18 +133,23 @@ def make(c, user, cfg, now):
     layout = st.get('layout', 'auto')
     dst = 'queue/%s.mp4' % c['id']
     genes = learn.choose()
-    cam, transcript, used, kept = render.render(raw, dst, cam=st.get('cam'), layout=layout,
-                                                credit='twitch.tv/' + user['login'], genes=genes)
+    cam, transcript, used, kept, action = render.render(
+        raw, dst, cam=st.get('cam'), layout=layout, credit='twitch.tv/' + user['login'],
+        genes=dict(genes, _title=c['title'], _min_action=MIN_ACTION))
+    if used == 'rejected':
+        print('dropped %s (%s): action score %s %s' % (c['id'], user['login'], action[0], action[1]))
+        return False
     if cam and not st.get('cam'):
         st['cam'] = cam
     meta = {'id': c['id'], 'streamer': user['display_name'], 'login': user['login'], 'title': c['title'],
             'views': c['view_count'], 'created_at': c['created_at'], 'duration': c['duration'],
             'clip_url': c['url'], 'layout': used, 'transcript': transcript,
             'score': round(c.get('_rank', score(c, now)), 1), 'campaign': st.get('campaign'),
-            'genes': genes, 'kept': kept,
+            'genes': genes, 'kept': kept, 'action': action[0], 'action_parts': action[1],
             'queued_at': now.strftime('%Y-%m-%dT%H:%M:%SZ')}
     save('queue/%s.json' % c['id'], meta)
-    print('queued', c['id'], user['login'], c['view_count'], 'views', used)
+    print('queued', c['id'], user['login'], c['view_count'], 'views', used, 'action', action[0])
+    return True
 
 
 def trend_radar(tw, gid, cfg, hist):

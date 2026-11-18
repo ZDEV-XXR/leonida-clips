@@ -243,6 +243,9 @@ def render(src, dst, cam=None, layout='auto', credit='', genes=None):
                 cam = None
         layout = 'cam' if cam else 'full'
     words = transcribe(src)
+    action = action_score(src, ' '.join(w[2] for w in words), genes.get('_title', ''))
+    if genes.get('_min_action') is not None and action[0] < genes['_min_action']:
+        return None, ' '.join(w[2] for w in words), 'rejected', round(dur, 2), action
     tmp = tempfile.mkdtemp()
     ass = os.path.join(tmp, 'cap.ass')
     low = genes.get('cap_pos', 'low') == 'low'
@@ -269,9 +272,56 @@ def render(src, dst, cam=None, layout='auto', credit='', genes=None):
            '-af', 'loudnorm=I=-14:TP=-1.5:LRA=11',   # streamers' mic levels vary wildly; -14 LUFS matches Reels/Shorts
            '-c:a', 'aac', '-b:a', '160k', '-ar', '48000', '-movflags', '+faststart', dst]
     subprocess.run(cmd, check=True)
-    return (cam if layout == 'cam' else None), ' '.join(w[2] for w in words), layout, round(dur, 2)
+    return (cam if layout == 'cam' else None), ' '.join(w[2] for w in words), layout, round(dur, 2), action
 
 
 if __name__ == '__main__':
     src, dst = sys.argv[1], sys.argv[2]
     print(render(src, dst, layout=os.environ.get('LAYOUT', 'auto'), credit=os.environ.get('CREDIT', ''), genes=json.loads(os.environ.get('GENES', '{}'))))
+
+
+HYPE_WORDS = __import__('re').compile(
+    r"\b(no way|oh my god|omg|what+|wait|bro+|let'?s go+|holy|insane|crazy|yo+|wtf|dude|nah+|run+|go go|"
+    r"help|oh no|stop|why|dead|died|lmao|lol|bruh|ha(ha)+|f\*+|s\*+|b\*+)\b", __import__('re').I)
+
+
+def action_score(path, transcript, title=''):
+    """0..1 'is this high action or funny' score from the finished clip.
+    audio  : how spiky the loudness is (yelling, crashes, explosions)
+    motion : how much the picture changes frame to frame (chases, flying, fights)
+    talk   : hype words and how fast the streamer is talking (reactions)
+    Returns (score, parts) so the learner can see which part mattered."""
+    import cv2, numpy as np
+    lv = loudness(path)
+    if lv:
+        a = np.array(lv)
+        spread = np.percentile(a, 95) - np.percentile(a, 50)
+        spikes = (a - np.median(a) >= 10).mean()
+        audio = 0.6 * min(1, spread / 18) + 0.4 * min(1, spikes * 5)
+    else:
+        audio = 0.0
+    cap = cv2.VideoCapture(path)
+    fps = cap.get(cv2.CAP_PROP_FPS) or 30
+    step = max(int(fps / 4), 1)
+    prev, diffs, i = None, [], 0
+    while True:
+        ok = cap.grab()
+        if not ok:
+            break
+        if i % step == 0:
+            ok, f = cap.retrieve()
+            if ok:
+                g = cv2.cvtColor(cv2.resize(f, (90, 160)), cv2.COLOR_BGR2GRAY).astype(np.float32)
+                if prev is not None:
+                    diffs.append(float(np.abs(g - prev).mean()))
+                prev = g
+        i += 1
+    cap.release()
+    motion = min(1, (np.percentile(diffs, 75) if diffs else 0) / 22)
+    words = transcript.split()
+    dur = max(probe(path)[2], 1)
+    hits = len(HYPE_WORDS.findall(transcript)) + transcript.count('!')
+    talk = 0.6 * min(1, hits / 5) + 0.4 * min(1, len(words) / dur / 3)
+    bonus = 0.1 if __import__('re').search(r'insane|crazy|funny|lmao|lol|wtf|chase|crash|cops|police|rage|fail|exploded|wasted|no way|bro', title, __import__('re').I) else 0
+    score = round(min(1, 0.40 * audio + 0.25 * motion + 0.35 * talk + bonus), 3)
+    return score, {'audio': round(float(audio), 2), 'motion': round(float(motion), 2), 'talk': round(talk, 2), 'bonus': bonus}
