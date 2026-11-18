@@ -21,11 +21,38 @@ def probe(path):
     return s['width'], s['height'], float(j['format']['duration'])
 
 
+YUNET_URL = 'https://github.com/opencv/opencv_zoo/raw/main/models/face_detection_yunet/face_detection_yunet_2023mar.onnx'
+YUNET = os.path.expanduser('~/.cache/leonida/yunet.onnx')
+
+
+def face_detector():
+    """YuNet (accurate, handles angled faces and headsets) with the Haar cascade as a fallback."""
+    import cv2
+    try:
+        if not os.path.exists(YUNET) or os.path.getsize(YUNET) < 100_000:
+            import urllib.request
+            os.makedirs(os.path.dirname(YUNET), exist_ok=True)
+            urllib.request.urlretrieve(YUNET_URL, YUNET + '.part')
+            os.replace(YUNET + '.part', YUNET)
+        det = cv2.FaceDetectorYN.create(YUNET, '', (320, 320), 0.7, 0.3, 5000)
+
+        def run(frame):
+            det.setInputSize((frame.shape[1], frame.shape[0]))
+            _, faces = det.detect(frame)
+            return [] if faces is None else [tuple(int(v) for v in r[:4]) for r in faces]
+        return run
+    except Exception as e:
+        print('YuNet unavailable, using Haar:', e)
+        cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
+        return lambda f: cascade.detectMultiScale(cv2.cvtColor(f, cv2.COLOR_BGR2GRAY), 1.1, 6,
+                                                  minSize=(int(f.shape[1] * 0.035),) * 2)
+
+
 def find_cam(path, dur):
     """Look for one face that stays put in a corner/edge region across most sampled frames.
     Returns [x, y, w, h] as fractions of the frame, or None."""
     import cv2
-    cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
+    detect = face_detector()
     cap = cv2.VideoCapture(path)
     hits, n = [], 10
     for i in range(n):
@@ -34,9 +61,9 @@ def find_cam(path, dur):
         if not ok:
             continue
         fh, fw = frame.shape[:2]
-        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-        faces = cascade.detectMultiScale(gray, 1.1, 6, minSize=(int(fw * 0.035), int(fw * 0.035)))
-        for (x, y, w, h) in faces:
+        for (x, y, w, h) in detect(frame):
+            if w < fw * 0.03:
+                continue
             cx = (x + w / 2) / fw
             if 0.3 < cx < 0.7 or w / fw > 0.25:   # facecams sit near the sides; skip mid-screen game faces
                 continue
@@ -146,7 +173,8 @@ def render(src, dst, cam=None, layout='auto', credit=''):
     f += ",subtitles='%s'[v]" % ass
     cmd = ['ffmpeg', '-y', '-v', 'error', '-i', src, '-filter_complex', f, '-map', '[v]', '-map', '0:a?',
            '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', '-pix_fmt', 'yuv420p', '-r', '30',
-           '-c:a', 'aac', '-b:a', '160k', '-movflags', '+faststart', dst]
+           '-af', 'loudnorm=I=-14:TP=-1.5:LRA=11',   # streamers' mic levels vary wildly; -14 LUFS matches Reels/Shorts
+           '-c:a', 'aac', '-b:a', '160k', '-ar', '48000', '-movflags', '+faststart', dst]
     subprocess.run(cmd, check=True)
     return (cam if layout == 'cam' else None), ' '.join(w[2] for w in words), layout
 
