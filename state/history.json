@@ -21,6 +21,27 @@
    },
    "hook": "XQC STEALS HIS FIRST CAR",
    "duration": 54.3
+  },
+  {
+   "id": "ReliablePowerfulOilBatChest-ydNija0st6UB0byp",
+   "media_id": "18131641769480335",
+   "posted_at": "2026-11-18T22:34:17Z",
+   "genes": {
+    "max_len": 20,
+    "trim": "none",
+    "cap_size": 84,
+    "cap_pos": "mid",
+    "hook_style": "question",
+    "hook_case": "title"
+   },
+   "traits": {
+    "streamer": "lirik",
+    "len": "20-35",
+    "layout": "full",
+    "hour": "15"
+   },
+   "hook": "What is down there, Lirik?",
+   "duration": 20.0
   }
  ]
 }
