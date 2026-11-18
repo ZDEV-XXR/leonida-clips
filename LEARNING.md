@@ -1,24 +1,24 @@
 # What Leonida Replay has learned
 
-Posts: 2. Scored (20h+ old): 0. Exploration: 25%.
+Posts: 3. Scored (20h+ old): 0. Exploration: 25%.
 
 Lift = how far posts with this option beat their neighbours (log-views + retention). Positive is good.
 
 ## Trending right now (from the last fetch)
 
-Topics: funny 1.00, npc 0.37, money 0.26, police 0.22, map 0.12
+Topics: funny 1.00, police 0.23, npc 0.21, money 0.16, map 0.12
 
-Streamers: ohnepixel 1.00, alanzoka 0.22, rubius 0.22, zloyn 0.18, evelone2004 0.16, illojuan 0.15, xqc 0.13, theburntpeanut 0.11
+Streamers: ohnepixel 1.00, xqc 0.13, theburntpeanut 0.11, kaicenat 0.09, jasontheween 0.08, zoil 0.07, lacy 0.07, zackrawrr 0.07
 
 Hook ideas from trending Shorts titles:
 
-- The 6 BEST GTA 6 Niches for YouTube Shorts
-- Literally WHAT is GOING ON in GTA 6?? | xQc GTA VI
-- xQc Roleplays having a Real Job in GTA 6... | xQc GTA VI
-- PLAYING GTA 6 FOR THE FIRST TIME
-- xQc LOVES watching TV BRAINROT in NEW GTA 6! | xQc GTA VI
-- NickEh30 plays GTA 6!
+- Grand Theft Auto VI: Pre-Load Now
+- GTA 6 (Grand Theft Auto VI) - Official Trailer
 - Grand Theft Auto VI - Features Trailer | PS5 Games
-- THE GTA 6 TV IS CRAZY
-- How to Make REAL Money with GTA 6 (START NOW)
-- How to Start a GTA 6 YouTube Channel (Full Guide)
+- Grand Theft Auto VI: An Extended Look | Now Playing | Netflix
+- 🔴 LIVE! - GTA 6 EARLY ACCESS! FREE ROAM GAMEPLAY LIVE! (PS5 PRO)
+- GTA 6 - THE FINAL REVEAL!
+- 12 THINGS You NEED To Do On DAY 1 in GTA 6
+- GTA memes to watch before GTA 6 (Best moments)
+- GTA memes to watch before GTA 6
+- New GTA 6 Gameplay Looks Just Like Real Life

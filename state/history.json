@@ -42,6 +42,29 @@
    },
    "hook": "What is down there, Lirik?",
    "duration": 20.0
+  },
+  {
+   "id": "DifferentPreciousWaffleHotPokket-wMDh_pqLv3Ve6ZOc",
+   "media_id": "18125861894471613",
+   "posted_at": "2026-11-18T22:51:59Z",
+   "genes": {
+    "max_len": 45,
+    "trim": "smart",
+    "cap_size": 72,
+    "cap_pos": "low",
+    "hook_style": "streamer",
+    "hook_case": "upper"
+   },
+   "traits": {
+    "streamer": "xqc",
+    "len": "<20",
+    "layout": "cam",
+    "action": "mid",
+    "topic:police": 1,
+    "hour": "15"
+   },
+   "hook": "xQc escapes his first police chase",
+   "duration": 17.5
   }
  ]
 }
