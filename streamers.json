@@ -66,6 +66,17 @@
    "approved": true,
    "cam": null,
    "campaign": "Content Rewards - Lysium clips"
+  },
+  {
+   "login": "ohnepixel",
+   "approved": true,
+   "cam": [
+    0.0322,
+    0.7484,
+    0.2143,
+    0.2257
+   ],
+   "auto": "2026-11-18T22:23:04Z"
   }
  ]
 }

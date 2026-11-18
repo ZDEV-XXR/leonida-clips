@@ -1,0 +1,24 @@
+{
+ "id": "WiseBusyStapleNononoCat--XYNEyYmRlr4KoEY",
+ "streamer": "ohnePixel",
+ "login": "ohnepixel",
+ "title": "Ohnepixel agrees with Hasan.",
+ "views": 10362,
+ "created_at": "2026-11-18T17:07:17Z",
+ "duration": 16.4,
+ "clip_url": "https://www.twitch.tv/ohnepixel/clip/WiseBusyStapleNononoCat--XYNEyYmRlr4KoEY",
+ "layout": "cam",
+ "transcript": "Do you ready come get what I'm having? They're not gonna shoot if I'm close to civilians They get too risky No, no, no, no, no, no, no Shy -shy -shy -shy -shy, I couldn't have again, I couldn't, that's the bat",
+ "score": 1439.2,
+ "campaign": null,
+ "genes": {
+  "max_len": 20,
+  "trim": "none",
+  "cap_size": 96,
+  "cap_pos": "low",
+  "hook_style": "question",
+  "hook_case": "title"
+ },
+ "kept": 16.41,
+ "queued_at": "2026-11-18T22:23:07Z"
+}
