@@ -2,7 +2,16 @@ name: fetch clips
 on:
   schedule:
     - cron: '17 */2 * * *'   # every 2 hours
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      only:
+        description: 'Comma-separated Twitch logins to fetch (blank = everyone)'
+        required: false
+        default: ''
+      per_run:
+        description: 'Clips to render this run'
+        required: false
+        default: '3'
 permissions:
   contents: write
 concurrency:
@@ -31,6 +40,8 @@ jobs:
         env:
           TWITCH_CLIENT_ID: j7tp31gbxy1gt8qrit98dekl4v90j6   # public app id (leonidareplay-clipper); only the secret is private
           TWITCH_CLIENT_SECRET: ${{ secrets.TWITCH_CLIENT_SECRET }}
+          ONLY: ${{ github.event.inputs.only }}
+          PER_RUN: ${{ github.event.inputs.per_run || '3' }}
         run: python clipper/fetch.py
       - name: Commit
         run: |

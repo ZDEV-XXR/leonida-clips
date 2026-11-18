@@ -77,6 +77,11 @@
     0.2351
    ],
    "auto": "2026-11-18T22:23:04Z"
+  },
+  {
+   "login": "flightreacts",
+   "approved": true,
+   "cam": null
   }
  ]
 }

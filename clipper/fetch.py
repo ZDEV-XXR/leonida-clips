@@ -74,6 +74,10 @@ def main():
         ok = [s for s in cfg['streamers'] if s.get('approved')]
     except Exception as e:
         print('trend radar failed:', e)
+    only = {x.strip().lower() for x in os.environ.get('ONLY', '').split(',') if x.strip()}
+    if only:    # manual run limited to named streamers
+        ok = [s for s in ok if s['login'].lower() in only]
+        print('only:', ', '.join(s['login'] for s in ok))
     users = {}
     for i in range(0, len(ok), 100):
         for u in tw.get('users', {'login': [s['login'] for s in ok[i:i + 100]]}):
