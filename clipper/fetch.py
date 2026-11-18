@@ -12,6 +12,7 @@ GAME = os.environ.get('GAME_NAME', 'Grand Theft Auto VI')
 PER_RUN = int(os.environ.get('PER_RUN', '3'))        # clips rendered per run
 QUEUE_MAX = int(os.environ.get('QUEUE_MAX', '12'))
 MIN_VIEWS = int(os.environ.get('MIN_VIEWS', '25'))
+LANGS = set(os.environ.get('CLIP_LANGS', 'en').split(','))   # page language(s); a Spanish page would set es
 AUTO_MAX = int(os.environ.get('AUTO_MAX', '25'))      # cap on the streamer list when trend radar adds people
 BAD_TITLE = re.compile(r'spoil|ending|final mission|last mission|credits|finale|beat the game|leak', re.I)
 
@@ -81,7 +82,7 @@ def main():
     clips = []
     for uid in users:
         for c in tw.get('clips', {'broadcaster_id': uid, 'started_at': since, 'first': 30}):
-            if c['game_id'] != gid or c['id'] in seen['ids'] or c['id'] in queued:
+            if c['game_id'] != gid or c['id'] in seen['ids'] or c['id'] in queued or c.get('language', 'en')[:2] not in LANGS:
                 continue
             if c['view_count'] < MIN_VIEWS or not (10 <= c['duration'] <= 60) or BAD_TITLE.search(c['title']):
                 continue
@@ -148,14 +149,20 @@ def trend_radar(tw, gid, cfg, hist):
     now = dt.datetime.now(dt.timezone.utc)
     since = (now - dt.timedelta(hours=24)).strftime('%Y-%m-%dT%H:%M:%SZ')
     clips = tw.get('clips', {'game_id': gid, 'started_at': since, 'first': 100})
-    topic_w, streamer_w, logins = {}, {}, {}
+    topic_w, streamer_w, logins, lang = {}, {}, {}, {}
     for c in clips:
+        lang[c['broadcaster_id']] = (c.get('language') or 'en')[:2]
+        if lang[c['broadcaster_id']] not in LANGS:
+            continue
         v = score(c, now)
         for t in learn.topics_of(c['title']):
             topic_w[t] = topic_w.get(t, 0) + v
         streamer_w[c['broadcaster_id']] = streamer_w.get(c['broadcaster_id'], 0) + v
     live = tw.get('streams', {'game_id': gid, 'first': 30})
     for st in live:
+        lang[st['user_id']] = (st.get('language') or 'en')[:2]
+        if lang[st['user_id']] not in LANGS:
+            continue
         streamer_w[st['user_id']] = streamer_w.get(st['user_id'], 0) + st['viewer_count'] / 50
         logins[st['user_id']] = st['user_login']
     ids = [i for i in streamer_w if i not in logins]
