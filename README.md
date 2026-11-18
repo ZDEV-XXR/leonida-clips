@@ -16,4 +16,4 @@ Automated GTA VI clip channel. Twitch viewers make the clips; this repo picks th
 - `state/seen.json`, `state/posted.json`, `state/skipped.json` - memory.
 
 ## Secrets
-`TWITCH_CLIENT_ID`, `TWITCH_CLIENT_SECRET` (Settings > Secrets and variables > Actions).
+`TWITCH_CLIENT_SECRET` (the client id is public and lives in the workflow) (Settings > Secrets and variables > Actions).
