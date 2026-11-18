@@ -139,14 +139,14 @@ def ts(t):
     return '%d:%02d:%05.2f' % (t // 3600, (t % 3600) // 60, t % 60)
 
 
-def captions_ass(words, y, path):
+def captions_ass(words, y, path, size=84):
     """2-3 word chunks, current chunk only, yellow highlight on the word being spoken."""
     head = ("[Script Info]\nScriptType: v4.00+\nPlayResX: %d\nPlayResY: %d\nWrapStyle: 2\n\n"
             "[V4+ Styles]\nFormat: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, "
             "Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, "
             "Alignment, MarginL, MarginR, MarginV, Encoding\n"
-            "Style: Cap,%s,84,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,7,2,5,40,40,0,1\n\n"
-            "[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n") % (W, H, FONT)
+            "Style: Cap,%s,%d,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,7,2,5,40,40,0,1\n\n"
+            "[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n") % (W, H, FONT, size)
     lines, chunk = [], []
     for w in words:
         chunk.append(w)
@@ -171,9 +171,60 @@ def clean(t):
     return t.replace('{', '').replace('}', '').replace('\\', '')
 
 
-def render(src, dst, cam=None, layout='auto', credit=''):
-    """Returns the cam box used (or None) so the caller can save it for the streamer."""
+def loudness(path):
+    """RMS level (dB) per 0.25 s of the clip's audio, as a list. Empty if there is no audio."""
+    import numpy as np
+    raw = subprocess.run(['ffmpeg', '-v', 'error', '-i', path, '-ac', '1', '-ar', '8000', '-f', 's16le', '-'],
+                         capture_output=True).stdout
+    x = np.frombuffer(raw, dtype=np.int16).astype(np.float32) / 32768
+    n = len(x) // 2000
+    if n == 0:
+        return []
+    r = np.sqrt((x[:n * 2000].reshape(n, 2000) ** 2).mean(1) + 1e-9)
+    return list(20 * np.log10(r))
+
+
+def best_window(levels, dur, max_len):
+    """(start, length) in seconds. Picks the stretch with the most energy (mean + peak), starts just
+    before the first spike in it, and lets it run on past a peak at the end so the payoff isn't cut."""
+    step = 0.25
+    if not levels:
+        return 0.0, min(dur, max_len)
+    import numpy as np
+    lv = np.array(levels)
+    base = np.median(lv)
+    ex = np.clip(lv - base, 0, None)
+    win = int(min(max_len, dur) / step)
+    if len(lv) <= win:
+        start = 0
+    else:
+        sc = [ex[i:i + win].mean() + 0.5 * ex[i:i + win].max() for i in range(len(lv) - win + 1)]
+        start = int(np.argmax(sc))
+    # lead-in: skip dead air at the head, but keep 0.75 s before the first spike
+    spikes = np.where(ex[start:start + win] >= max(6.0, 0.6 * np.percentile(ex, 90)))[0]
+    if len(spikes) and spikes[0] * step > 1.5:
+        start += max(int(spikes[0] - 3), 0)
+    end = min(start + win, len(lv))
+    # run-on: if the last 1.5 s is loud, extend up to 3 s (within the clip)
+    tail = ex[max(end - 6, 0):end]
+    if len(tail) and tail.max() > max(6.0, np.percentile(ex, 85)):
+        end = min(end + 12, len(lv))
+    return round(start * step, 2), round((end - start) * step, 2)
+
+
+def render(src, dst, cam=None, layout='auto', credit='', genes=None):
+    """Returns (cam box used or None, transcript, layout, seconds kept)."""
+    genes = genes or {}
     sw, sh, dur = probe(src)
+    max_len = float(genes.get('max_len', 60))
+    if genes.get('trim', 'smart') == 'smart' or dur > max_len:
+        st, ln = best_window(loudness(src), dur, max_len) if genes.get('trim', 'smart') == 'smart' else (0.0, max_len)
+        if st > 0.1 or ln < dur - 0.3:
+            cut = os.path.join(tempfile.mkdtemp(), 'cut.mp4')
+            subprocess.run(['ffmpeg', '-y', '-v', 'error', '-ss', str(st), '-i', src, '-t', str(ln), '-c:v', 'libx264',
+                            '-preset', 'ultrafast', '-crf', '16', '-c:a', 'aac', '-b:a', '192k', cut], check=True)
+            src = cut
+            sw, sh, dur = probe(src)
     if layout == 'auto':
         if cam and not cam_has_face(src, dur, cam):
             print('saved facecam box has no face in this clip, re-detecting')
@@ -183,8 +234,9 @@ def render(src, dst, cam=None, layout='auto', credit=''):
     words = transcribe(src)
     tmp = tempfile.mkdtemp()
     ass = os.path.join(tmp, 'cap.ass')
-    cap_y = 1480 if layout == 'cam' else 1500
-    captions_ass(words, cap_y, ass)
+    low = genes.get('cap_pos', 'low') == 'low'
+    cap_y = (1480 if low else TOP_H + 140) if layout == 'cam' else (1500 if low else 1180)
+    captions_ass(words, cap_y, ass, int(genes.get('cap_size', 84)))
     base = '[0:v]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,setsar=1,split=2[a][b];'
     if layout == 'cam':
         x, y, bw, bh = cam
@@ -206,9 +258,9 @@ def render(src, dst, cam=None, layout='auto', credit=''):
            '-af', 'loudnorm=I=-14:TP=-1.5:LRA=11',   # streamers' mic levels vary wildly; -14 LUFS matches Reels/Shorts
            '-c:a', 'aac', '-b:a', '160k', '-ar', '48000', '-movflags', '+faststart', dst]
     subprocess.run(cmd, check=True)
-    return (cam if layout == 'cam' else None), ' '.join(w[2] for w in words), layout
+    return (cam if layout == 'cam' else None), ' '.join(w[2] for w in words), layout, round(dur, 2)
 
 
 if __name__ == '__main__':
     src, dst = sys.argv[1], sys.argv[2]
-    print(render(src, dst, layout=os.environ.get('LAYOUT', 'auto'), credit=os.environ.get('CREDIT', '')))
+    print(render(src, dst, layout=os.environ.get('LAYOUT', 'auto'), credit=os.environ.get('CREDIT', ''), genes=json.loads(os.environ.get('GENES', '{}'))))

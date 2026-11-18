@@ -6,6 +6,7 @@
   python3 finish.py posted ID MEDIA_ID   record a successful post
 """
 import argparse, datetime as dt, json, os, subprocess, sys, tempfile
+import learn
 ROOT = os.path.dirname(os.path.abspath(__file__))
 os.chdir(ROOT)
 RAW = 'https://raw.githubusercontent.com/dibarra1524-ui/leonida-clips/main/'
@@ -36,6 +37,10 @@ def cmd_next(a):
     if not items:
         print('QUEUE EMPTY')
         return
+    tr = learn.load().get('trend', {})
+    if tr.get('titles'):
+        print(json.dumps({'trending_shorts_titles': tr['titles'][:10],
+                          'hot_topics': sorted(tr.get('topics', {}), key=lambda k: -tr['topics'][k])[:5]}))
     for m in items[:a.n]:
         d = os.path.join(tempfile.gettempdir(), 'review', m['id'])
         os.makedirs(d, exist_ok=True)
@@ -46,7 +51,10 @@ def cmd_next(a):
             subprocess.run(['ffmpeg', '-y', '-v', 'error', '-ss', str(t), '-i', 'queue/%s.mp4' % m['id'],
                             '-frames:v', '1', '-vf', 'scale=540:-2', p])
             frames.append(p)
-        out = {k: m[k] for k in ('id', 'streamer', 'login', 'title', 'views', 'duration', 'layout', 'campaign', 'transcript')}
+        out = {k: m.get(k) for k in ('id', 'streamer', 'login', 'title', 'views', 'duration', 'kept', 'layout', 'campaign', 'transcript')}
+        g = m.get('genes', {})
+        out['hook_style'] = g.get('hook_style', 'streamer')
+        out['hook_rule'] = learn.HOOK_STYLES.get(out['hook_style'], '')
         out['frames'] = frames
         print(json.dumps(out))
 
@@ -62,8 +70,9 @@ def cmd_skip(a):
     print('skipped', a.id)
 
 
-def hook_ass(text, y, path):
-    words, lines, cur = text.upper().split(), [], ''
+def hook_ass(text, y, path, case='upper'):
+    text = text.upper() if case == 'upper' else ' '.join(w if w.isupper() and len(w) > 1 else w.capitalize() for w in text.split())
+    words, lines, cur = text.split(), [], ''
     for w in words:
         if len(cur) + len(w) + 1 > 20 and cur:
             lines.append(cur)
@@ -88,7 +97,7 @@ def cmd_make(a):
         sys.exit('not in queue: ' + a.id)
     os.makedirs('out', exist_ok=True)
     ass = os.path.join(tempfile.mkdtemp(), 'hook.ass')
-    hook_ass(a.hook, 640 if m['layout'] == 'cam' else 440, ass)
+    hook_ass(a.hook, 640 if m['layout'] == 'cam' else 440, ass, m.get('genes', {}).get('hook_case', 'upper'))
     dst = 'out/%s.mp4' % a.id
     subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', 'queue/%s.mp4' % a.id, '-vf', "subtitles='%s'" % ass,
                     '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', '-pix_fmt', 'yuv420p',
@@ -107,6 +116,8 @@ def cmd_posted(a):
                    'hook': m.get('hook'), 'caption': m.get('caption'), 'campaign': m.get('campaign'),
                    'clip_url': m.get('clip_url'), 'url': m.get('url')})
     save('state/posted.json', posted)
+    hour = dt.datetime.now(dt.timezone(dt.timedelta(hours=-7))).hour      # Tucson time
+    learn.record(m, a.media_id, now(), hour)
     print('recorded', a.id, a.media_id)
 
 

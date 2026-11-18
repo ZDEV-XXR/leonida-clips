@@ -3,7 +3,8 @@ Pulls the fastest-rising GTA VI Twitch clips from approved streamers, renders th
 into queue/<clip_id>.mp4 + .json, and prunes old files. Needs TWITCH_CLIENT_ID / TWITCH_CLIENT_SECRET."""
 import datetime as dt, json, os, re, subprocess, sys, tempfile, time, urllib.parse, urllib.request
 sys.path.insert(0, os.path.dirname(__file__))
-import render
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import render, learn
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
@@ -11,6 +12,7 @@ GAME = os.environ.get('GAME_NAME', 'Grand Theft Auto VI')
 PER_RUN = int(os.environ.get('PER_RUN', '3'))        # clips rendered per run
 QUEUE_MAX = int(os.environ.get('QUEUE_MAX', '12'))
 MIN_VIEWS = int(os.environ.get('MIN_VIEWS', '25'))
+AUTO_MAX = int(os.environ.get('AUTO_MAX', '25'))      # cap on the streamer list when trend radar adds people
 BAD_TITLE = re.compile(r'spoil|ending|final mission|last mission|credits|finale|beat the game|leak', re.I)
 
 
@@ -63,6 +65,13 @@ def main():
     if not game:
         sys.exit('game not found on Twitch: %s' % GAME)
     gid = game[0]['id']
+    hist = learn.load()
+    try:
+        trend_radar(tw, gid, cfg, hist)
+        learn.save_trend(hist['trend'])
+        ok = [s for s in cfg['streamers'] if s.get('approved')]
+    except Exception as e:
+        print('trend radar failed:', e)
     users = {}
     for i in range(0, len(ok), 100):
         for u in tw.get('users', {'login': [s['login'] for s in ok[i:i + 100]]}):
@@ -82,7 +91,10 @@ def main():
                     continue
                 c['_moment'] = m
             clips.append(c)
-    clips.sort(key=lambda c: score(c, now), reverse=True)
+    for c in clips:
+        c['_rank'] = learn.rank({'login': users[c['broadcaster_id']]['login'], 'title': c['title'],
+                                 'duration': c['duration']}, score(c, now), hist)
+    clips.sort(key=lambda c: c['_rank'], reverse=True)
     # one moment per batch, max 2 per streamer per run so the feed stays varied
     picked, moments, per = [], set(), {}
     for c in clips:
@@ -114,17 +126,71 @@ def make(c, user, cfg, now):
     st = next(s for s in cfg['streamers'] if s['login'].lower() == user['login'].lower())
     layout = st.get('layout', 'auto')
     dst = 'queue/%s.mp4' % c['id']
-    cam, transcript, used = render.render(raw, dst, cam=st.get('cam'), layout=layout,
-                                          credit='twitch.tv/' + user['login'])
+    genes = learn.choose()
+    cam, transcript, used, kept = render.render(raw, dst, cam=st.get('cam'), layout=layout,
+                                                credit='twitch.tv/' + user['login'], genes=genes)
     if cam and not st.get('cam'):
         st['cam'] = cam
     meta = {'id': c['id'], 'streamer': user['display_name'], 'login': user['login'], 'title': c['title'],
             'views': c['view_count'], 'created_at': c['created_at'], 'duration': c['duration'],
             'clip_url': c['url'], 'layout': used, 'transcript': transcript,
-            'score': round(score(c, now), 1), 'campaign': st.get('campaign'),
+            'score': round(c.get('_rank', score(c, now)), 1), 'campaign': st.get('campaign'),
+            'genes': genes, 'kept': kept,
             'queued_at': now.strftime('%Y-%m-%dT%H:%M:%SZ')}
     save('queue/%s.json' % c['id'], meta)
     print('queued', c['id'], user['login'], c['view_count'], 'views', used)
+
+
+def trend_radar(tw, gid, cfg, hist):
+    """What is blowing up right now, across ALL of GTA VI on Twitch (not just our list):
+    hot topics in clip titles, streamers whose clips are exploding or who are live with big crowds,
+    and hook wording from the top GTA 6 Shorts on YouTube. Adds breakout streamers to the list."""
+    now = dt.datetime.now(dt.timezone.utc)
+    since = (now - dt.timedelta(hours=24)).strftime('%Y-%m-%dT%H:%M:%SZ')
+    clips = tw.get('clips', {'game_id': gid, 'started_at': since, 'first': 100})
+    topic_w, streamer_w, logins = {}, {}, {}
+    for c in clips:
+        v = score(c, now)
+        for t in learn.topics_of(c['title']):
+            topic_w[t] = topic_w.get(t, 0) + v
+        streamer_w[c['broadcaster_id']] = streamer_w.get(c['broadcaster_id'], 0) + v
+    live = tw.get('streams', {'game_id': gid, 'first': 30})
+    for st in live:
+        streamer_w[st['user_id']] = streamer_w.get(st['user_id'], 0) + st['viewer_count'] / 50
+        logins[st['user_id']] = st['user_login']
+    ids = [i for i in streamer_w if i not in logins]
+    for i in range(0, len(ids), 100):
+        for u in tw.get('users', {'id': ids[i:i + 100]}):
+            logins[u['id']] = u['login']
+    norm = lambda d: {k: round(v / max(d.values()), 3) for k, v in d.items()} if d else {}
+    sw = norm({logins.get(k, k).lower(): v for k, v in streamer_w.items()})
+    tr = {'at': now.strftime('%Y-%m-%dT%H:%M:%SZ'), 'topics': norm(topic_w),
+          'streamers': dict(sorted(sw.items(), key=lambda x: -x[1])[:30]),
+          'titles': hist.get('trend', {}).get('titles', []), 'added': hist.get('trend', {}).get('added', [])}
+    # breakout streamers join the list (unless blocked), up to AUTO_MAX in total
+    have = {s['login'].lower() for s in cfg['streamers']}
+    blocked = {b.lower() for b in cfg.get('blocked', [])}
+    for login, w in sorted(sw.items(), key=lambda x: -x[1]):
+        if len(cfg['streamers']) >= AUTO_MAX or w < 0.25:
+            break
+        if login not in have and login not in blocked:
+            cfg['streamers'].append({'login': login, 'approved': True, 'cam': None, 'auto': tr['at']})
+            tr['added'] = (tr['added'] + [login])[-50:]
+            print('trend radar added streamer', login, w)
+    # hook wording: top GTA 6 Shorts on YouTube right now (best effort)
+    try:
+        out = subprocess.run(['yt-dlp', '-J', '--flat-playlist', 'ytsearch40:gta 6 shorts'],
+                             capture_output=True, text=True, timeout=120).stdout
+        ents = [e for e in json.loads(out).get('entries', []) if e.get('title')]
+        ents.sort(key=lambda e: -(e.get('view_count') or 0))
+        tr['titles'] = [e['title'][:90] for e in ents[:15]]
+        for e in ents[:15]:
+            for t in learn.topics_of(e['title']):
+                tr['topics'][t] = round(min(1.0, tr['topics'].get(t, 0) + 0.1), 3)
+    except Exception as e:
+        print('youtube trend check failed:', e)
+    hist['trend'] = tr
+    print('trend topics', sorted(tr['topics'].items(), key=lambda x: -x[1])[:5])
 
 
 def prune(posted):

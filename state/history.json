@@ -1,0 +1,26 @@
+{
+ "posts": [
+  {
+   "id": "WealthyNimbleHamsterDansGame-yrU7UShZomelh1Ke",
+   "media_id": "18203145487376250",
+   "posted_at": "2026-11-18T22:05:00Z",
+   "genes": {
+    "max_len": 60,
+    "trim": "none",
+    "cap_size": 84,
+    "cap_pos": "low",
+    "hook_style": "streamer",
+    "hook_case": "upper"
+   },
+   "traits": {
+    "streamer": "xqc",
+    "len": "50+",
+    "layout": "cam",
+    "topic:car": 1,
+    "hour": "15"
+   },
+   "hook": "XQC STEALS HIS FIRST CAR",
+   "duration": 54.3
+  }
+ ]
+}
