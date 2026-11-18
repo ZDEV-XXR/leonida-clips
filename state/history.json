@@ -20,7 +20,19 @@
     "hour": "15"
    },
    "hook": "XQC STEALS HIS FIRST CAR",
-   "duration": 54.3
+   "duration": 54.3,
+   "metrics": {
+    "views": 1297,
+    "reach": 1048,
+    "likes": 10,
+    "comments": 0,
+    "shares": 2,
+    "saves": 0,
+    "avg_watch": 19.744,
+    "skip_rate": 0.276,
+    "age_h": 1.6
+   },
+   "score": 3.275
   },
   {
    "id": "ReliablePowerfulOilBatChest-ydNija0st6UB0byp",
@@ -41,7 +53,19 @@
     "hour": "15"
    },
    "hook": "What is down there, Lirik?",
-   "duration": 20.0
+   "duration": 20.0,
+   "metrics": {
+    "views": 280,
+    "reach": 184,
+    "likes": 3,
+    "comments": 0,
+    "shares": 1,
+    "saves": 0,
+    "avg_watch": 9.221,
+    "skip_rate": 0.236,
+    "age_h": 1.1
+   },
+   "score": 2.73
   },
   {
    "id": "DifferentPreciousWaffleHotPokket-wMDh_pqLv3Ve6ZOc",
@@ -64,7 +88,19 @@
     "hour": "15"
    },
    "hook": "xQc escapes his first police chase",
-   "duration": 17.5
+   "duration": 17.5,
+   "metrics": {
+    "views": 163,
+    "reach": 75,
+    "likes": 1,
+    "comments": 0,
+    "shares": 0,
+    "saves": 0,
+    "avg_watch": 8.536,
+    "skip_rate": 0.202,
+    "age_h": 0.8
+   },
+   "score": 2.527
   }
  ]
 }
