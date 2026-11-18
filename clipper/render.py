@@ -90,6 +90,33 @@ def find_cam(path, dur):
     return [round(x, 4), round(y, 4), round(bw, 4), round(bh, 4)]
 
 
+def cam_has_face(path, dur, cam, n=6):
+    """True if a face shows up inside the saved facecam box in at least half the sampled frames."""
+    import cv2
+    detect = face_detector()
+    cap = cv2.VideoCapture(path)
+    hits = 0
+    for i in range(n):
+        cap.set(cv2.CAP_PROP_POS_MSEC, (dur * (i + 0.5) / n) * 1000)
+        ok, frame = cap.read()
+        if not ok:
+            continue
+        fh, fw = frame.shape[:2]
+        x, y, w, h = int(cam[0] * fw), int(cam[1] * fh), int(cam[2] * fw), int(cam[3] * fh)
+        crop = frame[y:y + h, x:x + w]
+        if crop.size and len(detect(crop)) > 0:
+            hits += 1
+    cap.release()
+    return hits >= n / 2
+
+
+BAD = __import__('re').compile(r"\b(fuck\w*|shit\w*|bitch\w*|pussy|dick\w*|cunt\w*|motherf\w*|asshole\w*)", __import__('re').I)
+
+
+def censor(word):
+    return BAD.sub(lambda m: m.group(0)[0] + '*' * (len(m.group(0)) - 1), word)
+
+
 def transcribe(path):
     """Word timestamps. Returns [(start, end, word)]. Empty list if whisper is unavailable."""
     try:
@@ -134,7 +161,7 @@ def captions_ass(words, y, path):
         end_chunk = min(end_chunk, ch[-1][1] + 0.8)
         for j, (s, e, _) in enumerate(ch):
             e2 = ch[j + 1][0] if j + 1 < len(ch) else end_chunk
-            txt = ' '.join(('{\\c&H00E5FF&}%s{\\c&HFFFFFF&}' if k == j else '%s') % clean(c[2]).upper()
+            txt = ' '.join(('{\\c&H00E5FF&}%s{\\c&HFFFFFF&}' if k == j else '%s') % censor(clean(c[2])).upper()
                            for k, c in enumerate(ch))
             ev.append('Dialogue: 0,%s,%s,Cap,,0,0,0,,{\\pos(%d,%d)}%s' % (ts(s), ts(e2), W // 2, y, txt))
     open(path, 'w').write(head + '\n'.join(ev) + '\n')
@@ -148,6 +175,9 @@ def render(src, dst, cam=None, layout='auto', credit=''):
     """Returns the cam box used (or None) so the caller can save it for the streamer."""
     sw, sh, dur = probe(src)
     if layout == 'auto':
+        if cam and not cam_has_face(src, dur, cam):
+            print('saved facecam box has no face in this clip, re-detecting')
+            cam = None
         cam = cam or find_cam(src, dur)
         layout = 'cam' if cam else 'full'
     words = transcribe(src)
@@ -168,8 +198,8 @@ def render(src, dst, cam=None, layout='auto', credit=''):
              '[b]crop=1500:1080:210:0,scale=%d:%d[fg];' % (W, int(W * 1080 / 1500) // 2 * 2) +
              '[bg][fg]overlay=0:(H-h)/2')
     if credit:
-        f += ",drawtext=font='%s':text='%s':fontsize=34:fontcolor=white@0.85:borderw=3:bordercolor=black@0.8:x=(w-tw)/2:y=h-120" % (
-            FONT, credit.replace("'", '').replace(':', ''))
+        f += ",drawtext=font='%s':text='%s':fontsize=34:fontcolor=white@0.85:borderw=3:bordercolor=black@0.8:x=36:y=%d" % (
+            FONT, credit.replace("'", '').replace(':', ''), (TOP_H + 24) if layout == 'cam' else 1340)
     f += ",subtitles='%s'[v]" % ass
     cmd = ['ffmpeg', '-y', '-v', 'error', '-i', src, '-filter_complex', f, '-map', '[v]', '-map', '0:a?',
            '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', '-pix_fmt', 'yuv420p', '-r', '30',
