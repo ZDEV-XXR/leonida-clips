@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#140a33"/>
+      <stop offset="0.55" stop-color="#5b1a6e"/>
+      <stop offset="1" stop-color="#ff4f8b"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffe066"/>
+      <stop offset="1" stop-color="#ff3d7f"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a0f4a"/>
+      <stop offset="1" stop-color="#0c0620"/>
+    </linearGradient>
+    <linearGradient id="pink" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff9cc6"/>
+      <stop offset="1" stop-color="#ff3f8e"/>
+    </linearGradient>
+    <radialGradient id="redglow" cx="0" cy="0.15" r="0.6">
+      <stop offset="0" stop-color="#ff2a2a" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#ff2a2a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="blueglow" cx="1" cy="0.15" r="0.6">
+      <stop offset="0" stop-color="#2a6bff" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#2a6bff" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="sunclip"><rect x="0" y="0" width="1080" height="700"/></clipPath>
+  </defs>
+
+  <!-- sky, police-light glow, sun -->
+  <rect width="1080" height="1080" fill="url(#sky)"/>
+  <rect width="1080" height="1080" fill="url(#redglow)"/>
+  <rect width="1080" height="1080" fill="url(#blueglow)"/>
+  <g clip-path="url(#sunclip)">
+    <circle cx="540" cy="640" r="300" fill="url(#sun)"/>
+    <g fill="#5b1a6e">
+      <rect x="200" y="560" width="680" height="10"/>
+      <rect x="200" y="595" width="680" height="14"/>
+      <rect x="200" y="632" width="680" height="18"/>
+      <rect x="200" y="672" width="680" height="24"/>
+    </g>
+  </g>
+
+  <!-- skyline -->
+  <g fill="#1a0b36">
+    <rect x="120" y="520" width="60" height="180"/>
+    <rect x="185" y="470" width="45" height="230"/>
+    <rect x="235" y="545" width="70" height="155"/>
+    <rect x="770" y="500" width="55" height="200"/>
+    <rect x="830" y="440" width="48" height="260"/>
+    <rect x="882" y="530" width="75" height="170"/>
+  </g>
+  <g fill="#ffd36b" opacity="0.8">
+    <rect x="195" y="490" width="8" height="10"/><rect x="212" y="520" width="8" height="10"/>
+    <rect x="195" y="560" width="8" height="10"/><rect x="845" y="460" width="8" height="10"/>
+    <rect x="860" y="500" width="8" height="10"/><rect x="845" y="560" width="8" height="10"/>
+  </g>
+
+  <!-- palms -->
+  <g fill="#0e0626">
+    <path d="M140 760 C150 640 165 560 190 470 L200 472 C178 565 166 645 160 760 Z"/>
+    <path d="M195 470 C150 440 100 445 60 470 C105 455 150 460 190 478 Z"/>
+    <path d="M195 470 C170 420 130 400 90 400 C135 415 165 440 188 476 Z"/>
+    <path d="M195 470 C230 425 280 415 320 430 C275 432 235 450 200 478 Z"/>
+    <path d="M195 470 C245 470 285 495 300 530 C270 505 235 490 196 480 Z"/>
+    <path d="M195 470 C190 420 205 385 235 365 C215 395 205 430 200 476 Z"/>
+    <path d="M940 760 C930 650 915 580 892 500 L882 502 C902 585 918 655 922 760 Z"/>
+    <path d="M887 500 C930 470 980 472 1020 495 C975 482 930 488 890 508 Z"/>
+    <path d="M887 500 C905 450 945 430 985 430 C945 446 915 470 893 506 Z"/>
+    <path d="M887 500 C850 455 800 448 762 465 C805 465 845 480 882 508 Z"/>
+    <path d="M887 500 C840 502 800 525 785 560 C815 535 850 520 886 510 Z"/>
+  </g>
+
+  <!-- sea + reflections -->
+  <rect x="0" y="700" width="1080" height="380" fill="url(#sea)"/>
+  <g fill="#ff6aa0" opacity="0.55">
+    <rect x="380" y="720" width="320" height="6" rx="3"/>
+    <rect x="420" y="748" width="240" height="6" rx="3"/>
+    <rect x="460" y="776" width="160" height="5" rx="3"/>
+  </g>
+
+  <!-- the mascot: a flamingo in aviators filming with a camcorder -->
+  <g transform="translate(548 565) scale(0.9)">
+    <!-- legs -->
+    <g stroke="#ff4f8e" stroke-width="12" stroke-linecap="round" fill="none">
+      <path d="M-20 120 L-30 230 L-10 330"/>
+      <path d="M25 120 L40 330"/>
+      <path d="M-10 330 L-45 335 M-10 330 L20 340"/>
+      <path d="M40 330 L5 338 M40 330 L72 340"/>
+    </g>
+    <!-- body -->
+    <path d="M-120 40 C-130 -40 -40 -80 50 -60 C140 -40 175 40 140 100 C110 150 -10 160 -80 120 C-120 100 -118 70 -120 40 Z" fill="url(#pink)"/>
+    <!-- tail feathers -->
+    <path d="M-115 50 L-185 25 L-150 70 L-195 85 L-120 95 Z" fill="#ff3f8e"/>
+    <!-- wing -->
+    <path d="M-60 0 C-20 -35 70 -30 95 15 C70 60 0 80 -55 55 C-75 40 -75 15 -60 0 Z" fill="#ff7fb3"/>
+    <!-- neck -->
+    <path d="M95 -30 C150 -90 90 -150 70 -210 C55 -260 95 -310 140 -300" fill="none" stroke="url(#pink)" stroke-width="44" stroke-linecap="round"/>
+    <!-- head -->
+    <circle cx="150" cy="-305" r="52" fill="#ff8fbe"/>
+    <!-- beak -->
+    <path d="M190 -300 C235 -305 262 -285 268 -250 C250 -268 228 -275 196 -270 Z" fill="#fff1e0"/>
+    <path d="M240 -284 C258 -280 268 -265 268 -250 C258 -262 248 -268 236 -270 Z" fill="#1a0b36"/>
+    <!-- aviators -->
+    <path d="M108 -328 L205 -328" stroke="#1a0b36" stroke-width="8"/>
+    <path d="M118 -328 C118 -300 160 -295 162 -322 Z" fill="#1a0b36"/>
+    <path d="M168 -328 C168 -300 206 -298 208 -324 Z" fill="#1a0b36"/>
+    <path d="M126 -322 L140 -322" stroke="#36f0d8" stroke-width="5" stroke-linecap="round"/>
+    <path d="M176 -322 L188 -322" stroke="#36f0d8" stroke-width="5" stroke-linecap="round"/>
+    <!-- camcorder held by the wing -->
+    <g transform="translate(-205 -165) rotate(-8)">
+      <rect x="0" y="0" width="150" height="92" rx="16" fill="#1a0b36"/>
+      <rect x="150" y="18" width="46" height="56" rx="8" fill="#2b1650"/>
+      <circle cx="200" cy="46" r="26" fill="#36f0d8"/>
+      <circle cx="200" cy="46" r="13" fill="#1a0b36"/>
+      <rect x="20" y="-22" width="70" height="24" rx="6" fill="#2b1650"/>
+      <circle cx="26" cy="22" r="11" fill="#ff2a2a"/>
+      <text x="44" y="30" font-family="Anton" font-size="24" fill="#ffffff">REC</text>
+    </g>
+    <path d="M-60 15 C-85 -10 -110 -40 -118 -70" fill="none" stroke="#ff7fb3" stroke-width="30" stroke-linecap="round"/>
+  </g>
+
+  <!-- wordmark plate -->
+  <g>
+    <rect x="300" y="905" width="480" height="96" rx="48" fill="#0c0620" stroke="#36f0d8" stroke-width="6"/>
+    <text x="540" y="975" text-anchor="middle" font-family="Anton" font-size="66" letter-spacing="3" fill="#ffffff">REPLAY</text>
+  </g>
+</svg>
