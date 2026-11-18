@@ -15,7 +15,7 @@ MIN_VIEWS = int(os.environ.get('MIN_VIEWS', '25'))
 LANGS = set(os.environ.get('CLIP_LANGS', 'en').split(','))   # page language(s); a Spanish page would set es
 MIN_ACTION = float(os.environ.get('MIN_ACTION', '0.35'))   # clips scoring below this (calm, silent, dead air) are dropped
 AUTO_MAX = int(os.environ.get('AUTO_MAX', '25'))      # cap on the streamer list when trend radar adds people
-BAD_TITLE = re.compile(r'spoil|ending|final mission|last mission|credits|finale|beat the game|leak', re.I)
+BAD_TITLE = re.compile(r'spoil|ending|final mission|last mission|credits|finale|beat the game|leak|strip|horny|lap ?dance|private dance|nsfw|naked|nude|thirst|rizz|hooker|prostitut|sexy|boob|twerk', re.I)
 
 
 def load(p, default):
