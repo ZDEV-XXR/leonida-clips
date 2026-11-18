@@ -104,10 +104,17 @@ def cam_has_face(path, dur, cam, n=6):
         fh, fw = frame.shape[:2]
         x, y, w, h = int(cam[0] * fw), int(cam[1] * fh), int(cam[2] * fw), int(cam[3] * fh)
         crop = frame[y:y + h, x:x + w]
-        if crop.size and len(detect(crop)) > 0:
+        if crop.size and any(face_centered(f, w, h) for f in detect(crop)):
             hits += 1
     cap.release()
     return hits >= n / 2
+
+
+def face_centered(f, bw, bh):
+    """Face box (x, y, w, h) inside a crop of size bw x bh: centre in the middle 60% and not touching an edge."""
+    x, y, w, h = f[:4]
+    cx, cy = (x + w / 2) / bw, (y + h / 2) / bh
+    return 0.2 < cx < 0.8 and 0.2 < cy < 0.8 and x > 2 and y > 2 and x + w < bw - 2 and y + h < bh - 2
 
 
 BAD = __import__('re').compile(r"\b(fuck\w*|shit\w*|bitch\w*|pussy|dick\w*|cunt\w*|motherf\w*|asshole\w*)", __import__('re').I)
@@ -229,7 +236,11 @@ def render(src, dst, cam=None, layout='auto', credit='', genes=None):
         if cam and not cam_has_face(src, dur, cam):
             print('saved facecam box has no face in this clip, re-detecting')
             cam = None
-        cam = cam or find_cam(src, dur)
+        if not cam:
+            cam = find_cam(src, dur)
+            if cam and not cam_has_face(src, dur, cam):
+                print('detected facecam box does not frame the face cleanly, using full layout')
+                cam = None
         layout = 'cam' if cam else 'full'
     words = transcribe(src)
     tmp = tempfile.mkdtemp()
@@ -251,7 +262,7 @@ def render(src, dst, cam=None, layout='auto', credit='', genes=None):
              '[bg][fg]overlay=0:(H-h)/2')
     if credit:
         f += ",drawtext=font='%s':text='%s':fontsize=34:fontcolor=white@0.85:borderw=3:bordercolor=black@0.8:x=36:y=%d" % (
-            FONT, credit.replace("'", '').replace(':', ''), (TOP_H + 24) if layout == 'cam' else 1340)
+            FONT, credit.replace("'", '').replace(':', ''), (TOP_H + 100) if layout == 'cam' else 1340)
     f += ",subtitles='%s'[v]" % ass
     cmd = ['ffmpeg', '-y', '-v', 'error', '-i', src, '-filter_complex', f, '-map', '[v]', '-map', '0:a?',
            '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', '-pix_fmt', 'yuv420p', '-r', '30',

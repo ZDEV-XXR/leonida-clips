@@ -44,7 +44,7 @@ def cmd_next(a):
     for m in items[:a.n]:
         d = os.path.join(tempfile.gettempdir(), 'review', m['id'])
         os.makedirs(d, exist_ok=True)
-        dur = m['duration']
+        dur = m.get('kept') or m['duration']
         frames = []
         for i, t in enumerate([0.5, 2, 4, 6.5, dur / 2, max(dur - 1.5, 0)]):
             p = os.path.join(d, 'f%d_%.1fs.jpg' % (i, t))
