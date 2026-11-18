@@ -1,16 +1,71 @@
 {
  "_note": "Only streamers with approved=true are clipped. cam = facecam box as fractions of the frame [x, y, w, h]; null = auto-detect (saved after the first good detection). Set layout to 'full' to never use a facecam split.",
  "streamers": [
-  {"login": "xqc", "approved": true, "cam": null},
-  {"login": "kaicenat", "approved": true, "cam": null},
-  {"login": "jynxzi", "approved": true, "cam": null},
-  {"login": "summit1g", "approved": true, "cam": null},
-  {"login": "hasanabi", "approved": true, "cam": null},
-  {"login": "caseoh_", "approved": true, "cam": null},
-  {"login": "lirik", "approved": true, "cam": null},
-  {"login": "sodapoppin", "approved": true, "cam": null},
-  {"login": "tarik", "approved": true, "cam": null},
-  {"login": "zackrawrr", "approved": true, "cam": null},
-  {"login": "lysium", "approved": true, "cam": null, "campaign": "Content Rewards - Lysium clips"}
+  {
+   "login": "xqc",
+   "approved": true,
+   "cam": [
+    0.0581,
+    0.0504,
+    0.1417,
+    0.1492
+   ]
+  },
+  {
+   "login": "kaicenat",
+   "approved": true,
+   "cam": [
+    0,
+    0.7401,
+    0.1948,
+    0.2052
+   ]
+  },
+  {
+   "login": "jynxzi",
+   "approved": true,
+   "cam": null
+  },
+  {
+   "login": "summit1g",
+   "approved": true,
+   "cam": null
+  },
+  {
+   "login": "hasanabi",
+   "approved": true,
+   "cam": null
+  },
+  {
+   "login": "caseoh_",
+   "approved": true,
+   "cam": null
+  },
+  {
+   "login": "lirik",
+   "approved": true,
+   "cam": null
+  },
+  {
+   "login": "sodapoppin",
+   "approved": true,
+   "cam": null
+  },
+  {
+   "login": "tarik",
+   "approved": true,
+   "cam": null
+  },
+  {
+   "login": "zackrawrr",
+   "approved": true,
+   "cam": null
+  },
+  {
+   "login": "lysium",
+   "approved": true,
+   "cam": null,
+   "campaign": "Content Rewards - Lysium clips"
+  }
  ]
 }
