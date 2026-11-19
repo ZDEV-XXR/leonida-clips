@@ -1,0 +1,31 @@
+{
+ "id": "BlindingGleamingDonkeyOpieOP-LMiLWd2l1xgmvbEM",
+ "streamer": "ohnePixel",
+ "login": "ohnepixel",
+ "title": "Dad of the year",
+ "views": 2628,
+ "created_at": "2026-11-19T12:07:14Z",
+ "duration": 11.9,
+ "clip_url": "https://www.twitch.tv/ohnepixel/clip/BlindingGleamingDonkeyOpieOP-LMiLWd2l1xgmvbEM",
+ "layout": "cam",
+ "transcript": "Oh my god, bro, and I have to pay into this goddamn bank account for my son and Lucia is like, let's do yoga yo",
+ "score": 148.1,
+ "campaign": null,
+ "genes": {
+  "max_len": 20,
+  "trim": "none",
+  "cap_size": 96,
+  "cap_pos": "mid",
+  "hook_style": "reaction",
+  "hook_case": "title"
+ },
+ "kept": 11.97,
+ "action": 0.354,
+ "action_parts": {
+  "audio": 0.22,
+  "motion": 0.17,
+  "talk": 0.64,
+  "bonus": 0
+ },
+ "queued_at": "2026-11-19T22:23:41Z"
+}
