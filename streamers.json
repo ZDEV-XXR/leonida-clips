@@ -15,7 +15,12 @@
   {
    "login": "theburntpeanut",
    "approved": true,
-   "cam": null
+   "cam": [
+    0.1822,
+    0.7302,
+    0.1257,
+    0.1325
+   ]
   },
   {
    "login": "kaicenat",
@@ -60,7 +65,12 @@
   {
    "login": "stableronaldo",
    "approved": true,
-   "cam": null
+   "cam": [
+    0.0367,
+    0.5016,
+    0.2125,
+    0.2239
+   ]
   },
   {
    "login": "ishowspeed",

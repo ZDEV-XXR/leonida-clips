@@ -1,0 +1,31 @@
+{
+ "id": "TubularBashfulHeronShadyLulu-XAm39nSjTyF0Gwcp",
+ "streamer": "TheBurntPeanut",
+ "login": "theburntpeanut",
+ "title": "oh well",
+ "views": 1897,
+ "created_at": "2026-11-18T23:49:40Z",
+ "duration": 29.3,
+ "clip_url": "https://www.twitch.tv/theburntpeanut/clip/TubularBashfulHeronShadyLulu-XAm39nSjTyF0Gwcp",
+ "layout": "cam",
+ "transcript": "And now we take it back at least it's actually like six hundred seven hundred dollars. Holy crap. This is looped This is looped and this is nice And he's right over a cat son drive by Let's see Yeah, got this car for you Oh, it's a dog. Oh shit. Maybe that really was a Hassan drive by",
+ "score": 256.5,
+ "campaign": null,
+ "genes": {
+  "max_len": 60,
+  "trim": "none",
+  "cap_size": 96,
+  "cap_pos": "mid",
+  "hook_style": "stakes",
+  "hook_case": "title"
+ },
+ "kept": 29.35,
+ "action": 0.458,
+ "action_parts": {
+  "audio": 0.18,
+  "motion": 1.0,
+  "talk": 0.39,
+  "bonus": 0
+ },
+ "queued_at": "2026-11-19T03:23:07Z"
+}
