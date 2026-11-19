@@ -57,8 +57,9 @@ def kick_clips(slug, since_dt):
     for k in data:
         if (k.get('category') or {}).get('slug') != 'grand-theft-auto-vi' or k.get('is_mature'):
             continue
-        created = dt.datetime.fromisoformat(k['created_at'].replace('Z', '+00:00')[:26] + '+00:00') if '.' in k['created_at'] else \
-            dt.datetime.fromisoformat(k['created_at'].replace('Z', '+00:00'))
+        ts = k['created_at'].rstrip('Z').split('+')[0]
+        base, _, frac = ts.partition('.')
+        created = dt.datetime.fromisoformat(base).replace(tzinfo=dt.timezone.utc)
         if created < since_dt:
             continue
         title = k.get('title') or ''
