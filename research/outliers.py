@@ -32,15 +32,21 @@ def save(p, o):
 
 
 def ytj(url, extra=()):
-    out = subprocess.run(['yt-dlp', '-J', '--flat-playlist', '--no-warnings', *extra, url],
-                         capture_output=True, text=True, timeout=300).stdout
-    return json.loads(out) if out.strip() else {}
+    try:
+        out = subprocess.run(['yt-dlp', '-J', '--flat-playlist', '--no-warnings', *extra, url],
+                             capture_output=True, text=True, timeout=300).stdout
+        j = json.loads(out) if out.strip() else {}
+        return j if isinstance(j, dict) else {}
+    except Exception as e:
+        print('yt-dlp failed for', url, str(e)[:120])
+        return {}
 
 
 def discover():
     cands = {}
     for q in QUERIES:
         for e in ytj('ytsearch50:' + q, ['--extractor-args', 'youtube:lang=en']).get('entries') or []:
+            e = e or {}
             cid, name = e.get('channel_id'), e.get('channel') or e.get('uploader')
             if not cid or not name:
                 continue
@@ -56,7 +62,7 @@ def discover():
         if c['id'] in have or NOT_CREATORS.search(c['name']):
             continue
         j = ytj(c['url'] + '/videos', ['--playlist-end', '15'])
-        ents = j.get('entries') or []
+        ents = [e for e in (j.get('entries') or []) if e]
         subs = j.get('channel_follower_count')
         titles = ' '.join(e.get('title', '') for e in ents).lower()
         gta = sum(1 for e in ents if re.search(r'gta|grand theft|leonida|vice city', e.get('title', ''), re.I))
@@ -93,7 +99,7 @@ def scan():
     rows = []
     for c in chans:
         for tab in ('videos', 'shorts'):
-            ents = (ytj(c['url'] + '/' + tab, ['--playlist-end', str(RECENT)]).get('entries') or [])
+            ents = [e for e in (ytj(c['url'] + '/' + tab, ['--playlist-end', str(RECENT)]).get('entries') or []) if e]
             ents = [e for e in ents if e.get('view_count') is not None]
             if len(ents) < 6:
                 continue
