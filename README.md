@@ -17,3 +17,20 @@ Automated GTA VI clip channel. Twitch viewers make the clips; this repo picks th
 
 ## Secrets
 `TWITCH_CLIENT_SECRET` (the client id is public and lives in the workflow) (Settings > Secrets and variables > Actions).
+
+## Daily long-form episode (YouTube)
+1. **Outlier research** (`.github/workflows/research.yml`, Mondays): `research/outliers.py scan` pulls the last 30 uploads of every
+   approved channel in `research/channels.json`, keeps the ones that beat the channel's median views by 3x+ (`outliers.csv`),
+   saves their thumbnails to `research/thumbs/` and writes `research/CHANGES.md`. `discover` finds candidate channels
+   (`research/candidates.json`); only channels you approve are studied.
+2. **Build** (`.github/workflows/episode.yml`, 6:07 am Tucson): `episode/build.py` takes the day's top GTA VI Twitch clips by
+   views per hour (whole game + approved streamers, no spoilers/cutscenes/exploits, max 3 per streamer), opens on the best one,
+   cuts to the winning compilation length, labels every clip + handle, writes chapters and credits, makes 3 thumbnails
+   (`episode/thumbs.py`). Video goes to the `ep-<date>` release.
+3. **Review** (scheduled Claude run, see `EPISODE_RUN.md`): labels, titles, thumbnail, then the gauntlet - a fresh agent says
+   yes or no with faults. Verdicts go to `RULES.md`.
+4. **Upload** (`.github/workflows/upload.yml`): runs when `approved.json` is pushed, posts to YouTube with the thumbnail,
+   logs the link in `STATUS.md`.
+
+Secrets for the upload: `YT_CLIENT_ID`, `YT_CLIENT_SECRET`, `YT_REFRESH_TOKEN` (Google Cloud OAuth client with YouTube Data API v3,
+refresh token from a one-time sign-in to the Leonida Replay channel).

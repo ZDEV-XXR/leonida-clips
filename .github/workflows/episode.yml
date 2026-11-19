@@ -1,0 +1,76 @@
+name: daily episode
+on:
+  schedule:
+    - cron: '7 13 * * *'    # 6:07 am Tucson
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Episode date YYYY-MM-DD (blank = today, Tucson)'
+        required: false
+        default: ''
+      relabel:
+        description: 'Rebuild the same clips with episode/labels/<date>.json'
+        required: false
+        default: 'false'
+  push:
+    branches: [main]
+    paths: ['episode/requests/**']
+permissions:
+  contents: write
+concurrency:
+  group: episode
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-dejavu-core
+          pip install -q -r requirements.txt
+          mkdir -p ~/.cache/leonida
+          curl -sL -o ~/.cache/leonida/Anton-Regular.ttf https://github.com/google/fonts/raw/main/ofl/anton/Anton-Regular.ttf || true
+      - name: Work out what to build
+        id: what
+        run: |
+          DATE="${{ github.event.inputs.date }}"; RELABEL="${{ github.event.inputs.relabel }}"
+          if [ "${{ github.event_name }}" = "push" ]; then
+            REQ=$(git diff --name-only HEAD~1 HEAD -- episode/requests | tail -1)
+            DATE=$(python -c "import json;print(json.load(open('$REQ')).get('date',''))")
+            RELABEL=$(python -c "import json;print(str(json.load(open('$REQ')).get('relabel',False)).lower())")
+          fi
+          [ -z "$DATE" ] && DATE=$(TZ=America/Phoenix date +%F)
+          echo "date=$DATE" >> $GITHUB_OUTPUT
+          echo "relabel=$RELABEL" >> $GITHUB_OUTPUT
+          echo "building $DATE relabel=$RELABEL"
+      - name: Build episode
+        env:
+          TWITCH_CLIENT_ID: j7tp31gbxy1gt8qrit98dekl4v90j6
+          TWITCH_CLIENT_SECRET: ${{ secrets.TWITCH_CLIENT_SECRET }}
+        run: |
+          ARGS="--date ${{ steps.what.outputs.date }}"
+          [ "${{ steps.what.outputs.relabel }}" = "true" ] && ARGS="$ARGS --relabel"
+          python episode/build.py $ARGS
+      - name: Store video as a release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG=ep-${{ steps.what.outputs.date }}
+          gh release view $TAG >/dev/null 2>&1 || gh release create $TAG --title "Episode ${{ steps.what.outputs.date }}" --notes "Daily episode build" --prerelease
+          gh release upload $TAG out/episode.mp4 --clobber
+      - name: Commit
+        run: |
+          git config user.name "leonida-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A episode state/episodes.json
+          git diff --cached --quiet && exit 0
+          git commit -qm "Episode ${{ steps.what.outputs.date }}"
+          for i in 1 2 3; do git pull -q --rebase origin main && git push -q origin main && break; sleep 5; done

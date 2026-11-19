@@ -1,0 +1,57 @@
+name: upload episode
+on:
+  push:
+    branches: [main]
+    paths: ['episode/*/approved.json']
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Episode date YYYY-MM-DD'
+        required: true
+permissions:
+  contents: write
+concurrency:
+  group: upload
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Find approved episodes not yet uploaded
+        id: find
+        run: |
+          DATES=$(python - <<'PY'
+          import glob, json
+          for p in sorted(glob.glob('episode/*/approved.json')):
+              a = json.load(open(p))
+              if a.get('verdict') == 'yes' and not a.get('youtube_id'):
+                  print(p.split('/')[1])
+          PY
+          )
+          [ -n "${{ github.event.inputs.date }}" ] && DATES="${{ github.event.inputs.date }}"
+          echo "dates=$(echo $DATES)" >> $GITHUB_OUTPUT
+          echo "to upload: $DATES"
+      - name: Upload
+        if: steps.find.outputs.dates != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: |
+          if [ -z "$YT_REFRESH_TOKEN" ]; then echo "YouTube not connected yet (YT_* secrets missing)"; exit 1; fi
+          for D in ${{ steps.find.outputs.dates }}; do
+            rm -f out/episode.mp4; mkdir -p out
+            gh release download ep-$D -p episode.mp4 -D out
+            python episode/upload.py --date $D --video out/episode.mp4
+          done
+      - name: Commit
+        if: always()
+        run: |
+          git config user.name "leonida-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A episode state/episodes.json STATUS.md
+          git diff --cached --quiet && exit 0
+          git commit -qm "Uploaded episode"
+          for i in 1 2 3; do git pull -q --rebase origin main && git push -q origin main && break; sleep 5; done
