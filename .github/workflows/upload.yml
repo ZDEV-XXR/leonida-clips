@@ -26,7 +26,7 @@ jobs:
           cutoff = (dt.date.today() - dt.timedelta(days=2)).isoformat()   # never dump a backlog of stale episodes
           for p in sorted(glob.glob('episode/*/approved.json')):
               a = json.load(open(p))
-              if a.get('verdict') == 'yes' and not a.get('youtube_id') and p.split('/')[1] >= cutoff:
+              if a.get('verdict') == 'yes' and (not a.get('youtube_id') or a.get('thumbnail_status') != 'set') and p.split('/')[1] >= cutoff:
                   print(p.split('/')[1])
           PY
           )
@@ -44,7 +44,7 @@ jobs:
           if [ -z "$YT_REFRESH_TOKEN" ]; then echo "YouTube not connected yet (YT_* secrets missing)"; exit 1; fi
           for D in ${{ steps.find.outputs.dates }}; do
             rm -f out/episode.mp4; mkdir -p out
-            gh release download ep-$D -p episode.mp4 -D out
+            grep -q youtube_id episode/$D/approved.json || gh release download ep-$D -p episode.mp4 -D out
             python episode/upload.py --date $D --video out/episode.mp4
           done
       - name: Commit

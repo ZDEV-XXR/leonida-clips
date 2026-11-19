@@ -34,9 +34,16 @@ def main():
     plan, ok = load(d + '/plan.json', None), load(d + '/approved.json', None)
     if not plan or not ok or ok.get('verdict') != 'yes':
         sys.exit('not approved: ' + d)
-    if ok.get('youtube_id'):
-        sys.exit('already uploaded: ' + ok['youtube_id'])
     tok = token()
+    if ok.get('youtube_id'):      # already up: only retry a thumbnail that failed
+        if ok.get('thumbnail_status') == 'set':
+            sys.exit('already uploaded: ' + ok['youtube_id'])
+        req('https://www.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=' + ok['youtube_id'], tok,
+            open(ok['thumbnail'], 'rb').read(), {'Content-Type': 'image/jpeg'})
+        ok['thumbnail_status'] = 'set'
+        json.dump(ok, open(d + '/approved.json', 'w'), indent=1)
+        print('thumbnail set on', ok['youtube_id'])
+        return
     try:
         ch = json.load(req('https://www.googleapis.com/youtube/v3/channels?part=snippet&mine=true', tok))
         print('channel:', [(c['id'], c['snippet']['title']) for c in ch.get('items', [])] or 'NONE - this Google account has no YouTube channel')
