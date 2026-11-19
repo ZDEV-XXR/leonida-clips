@@ -7,7 +7,13 @@ Your job: labels, title, thumbnail, then **the gauntlet rule** - nothing posts u
 1. `git pull`. Today = Tucson date. If `episode/<date>/plan.json` is missing, or `approved.json` already exists, stop and say why in STATUS.md.
 2. **Labels.** Look at every frame and clip title. Write `episode/labels/<date>.json` = `{clip_id: "label"}`:
    one line, max 6 words, says what happens ("Kai crashes the police chopper"), no story spoilers, no slurs.
-   Add `"_drop": [ids]` for clips that are cutscenes, endings, exploits/glitch tutorials, dead air, or a bad crop.
+   Add `"_drop": [ids]` for clips that are cutscenes, endings, exploits/glitch tutorials, dead air, a bad crop,
+   or ANY sexual content: strip clubs, lap dances, nude or topless NPCs, even in the background (titles like "Wtf"
+   hide these, so judge the frame, not the title; YouTube age-restricts and stops recommending those videos).
+   Also drop clips whose title or audio is mostly a slur being shouted.
+   Set `"_first": id` to the clip that should open the episode: the most instantly gripping moment (chaos,
+   a crash, a huge reaction), never a loading screen, a black frame or a slow start.
+   The rebuild also remakes the 3 thumbnails without the dropped clips.
    Then commit `episode/requests/<date>-rN.json` = `{"date": "<date>", "relabel": true}` and push; that rebuilds
    the same clips with the new labels. Poll `git pull` every 2 min (max 40 min) until `plan.json` `built_at` changes.
 3. **Title + thumbnail.** Read `research/THUMBNAILS.md`, `research/outliers.csv` (format=long) and `RULES.md`.

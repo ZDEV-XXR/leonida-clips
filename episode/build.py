@@ -21,7 +21,7 @@ TZ = dt.timezone(dt.timedelta(hours=-7))      # Tucson
 FONT = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
 MIN_VIEWS = int(os.environ.get('EP_MIN_VIEWS', '150'))
 PER_STREAMER = int(os.environ.get('EP_PER_STREAMER', '3'))
-SKIP_WORDS = re.compile(r'cutscene|cinematic|glitch|exploit|money glitch|dupe|infinite money|mod menu|cheat', re.I)
+SKIP_WORDS = re.compile(r'strip|club|dance|thong|cutscene|cinematic|glitch|exploit|money glitch|dupe|infinite money|mod menu|cheat', re.I)
 
 
 def load(p, d):
@@ -132,6 +132,8 @@ def main():
     labels = load('episode/labels/%s.json' % a.date, {})
     drop = set(labels.get('_drop', []))          # clips the review run threw out
     clips = [c for c in clips if c['id'] not in drop]
+    if labels.get('_first'):                     # the review run can pick a stronger opener
+        clips.sort(key=lambda c: c['id'] != labels['_first'])
     tmp = tempfile.mkdtemp()
     segs, t, chapters, raws = [], 0.0, [], {}
     for i, c in enumerate(clips):

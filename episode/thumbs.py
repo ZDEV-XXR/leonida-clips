@@ -44,6 +44,8 @@ def best_frame(raw):
         ok, f = cap.read()
         if not ok:
             continue
+        fh, fw = f.shape[:2]
+        f = f[int(fh * 0.12):int(fh * 0.88), int(fw * 0.12):int(fw * 0.88)]   # 1.32x punch-in, overlays cut off
         small = cv2.resize(f, (480, 270))
         g = cv2.cvtColor(small, cv2.COLOR_BGR2GRAY)
         hsv = cv2.cvtColor(small, cv2.COLOR_BGR2HSV)
@@ -54,8 +56,8 @@ def best_frame(raw):
         if prev is not None:
             diff = cv2.GaussianBlur(cv2.absdiff(g, prev), (31, 31), 0)
             # ignore the edges where facecams and overlays live
-            diff[:, :70] = diff[:, -70:] = 0
-            diff[:40] = diff[-40:] = 0
+            diff[:, :110] = diff[:, -110:] = 0          # aim the arrow at the middle of the action
+            diff[:50] = diff[-50:] = 0
             y, x = np.unravel_index(diff.argmax(), diff.shape)
             spot = (x / 480, y / 270)
         if s > best:
