@@ -5,7 +5,7 @@ Runs in GitHub Actions only after the review run wrote episode/<date>/approved.j
 Secrets: YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN (one-time sign-in, see README).
   python episode/upload.py --date YYYY-MM-DD --video out/episode.mp4
 """
-import argparse, datetime as dt, json, os, sys, urllib.parse, urllib.request
+import argparse, datetime as dt, json, os, sys, urllib.error, urllib.parse, urllib.request
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
 
@@ -37,14 +37,22 @@ def main():
     if ok.get('youtube_id'):
         sys.exit('already uploaded: ' + ok['youtube_id'])
     tok = token()
+    try:
+        ch = json.load(req('https://www.googleapis.com/youtube/v3/channels?part=snippet&mine=true', tok))
+        print('channel:', [(c['id'], c['snippet']['title']) for c in ch.get('items', [])] or 'NONE - this Google account has no YouTube channel')
+    except urllib.error.HTTPError as e:
+        print('channel check failed:', e.code, e.read().decode()[:600])
     meta = {'snippet': {'title': ok['title'][:100], 'description': open(d + '/description.txt').read()[:4900],
                         'tags': ['gta 6', 'gta vi', 'gta 6 clips', 'gta 6 funny moments', 'gta 6 best moments'],
                         'categoryId': '20', 'defaultLanguage': 'en'},
             'status': {'privacyStatus': ok.get('privacy') or os.environ.get('YT_PRIVACY', 'public'), 'selfDeclaredMadeForKids': False}}
     size = os.path.getsize(a.video)
-    r = req('https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status', tok,
+    try:
+        r = req('https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status', tok,
             json.dumps(meta).encode(), {'Content-Type': 'application/json; charset=UTF-8',
                                         'X-Upload-Content-Type': 'video/mp4', 'X-Upload-Content-Length': str(size)})
+    except urllib.error.HTTPError as e:
+        sys.exit('upload refused: %s %s' % (e.code, e.read().decode()[:800]))
     loc = r.headers['Location']
     with open(a.video, 'rb') as f:
         vid = json.load(req(loc, tok, f.read(), {'Content-Type': 'video/mp4'}, 'PUT'))['id']

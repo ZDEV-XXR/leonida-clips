@@ -6,5 +6,6 @@
  "test": true,
  "faults_fixed": [],
  "rounds": 0,
- "note": "private test upload requested by David, not a gauntlet pass"
+ "note": "private test upload requested by David, not a gauntlet pass",
+ "attempt": 2
 }
