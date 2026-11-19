@@ -51,7 +51,7 @@ def cmd_next(a):
             subprocess.run(['ffmpeg', '-y', '-v', 'error', '-ss', str(t), '-i', 'queue/%s.mp4' % m['id'],
                             '-frames:v', '1', '-vf', 'scale=540:-2', p])
             frames.append(p)
-        out = {k: m.get(k) for k in ('id', 'streamer', 'login', 'title', 'views', 'duration', 'kept', 'layout', 'campaign', 'action', 'transcript')}
+        out = {k: m.get(k) for k in ('id', 'streamer', 'login', 'platform', 'credit', 'title', 'views', 'duration', 'kept', 'layout', 'campaign', 'action', 'transcript')}
         g = m.get('genes', {})
         out['hook_style'] = g.get('hook_style', 'streamer')
         out['hook_rule'] = learn.HOOK_STYLES.get(out['hook_style'], '')

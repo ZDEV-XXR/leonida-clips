@@ -47,6 +47,33 @@ class Twitch:
                 raise
 
 
+def kick_clips(slug, since_dt):
+    """GTA VI clips from a Kick channel (public v2 endpoint), shaped like Twitch clips."""
+    req = urllib.request.Request('https://kick.com/api/v2/channels/%s/clips?sort=view&time=day' % slug,
+                                 headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+                                          'Chrome/131 Safari/537.36', 'Accept': 'application/json'})
+    data = json.load(urllib.request.urlopen(req, timeout=30)).get('clips') or []
+    out = []
+    for k in data:
+        if (k.get('category') or {}).get('slug') != 'grand-theft-auto-vi' or k.get('is_mature'):
+            continue
+        created = dt.datetime.fromisoformat(k['created_at'].replace('Z', '+00:00')[:26] + '+00:00') if '.' in k['created_at'] else \
+            dt.datetime.fromisoformat(k['created_at'].replace('Z', '+00:00'))
+        if created < since_dt:
+            continue
+        title = k.get('title') or ''
+        if not re.search(r'[aeiou].*\s', title, re.I):       # Kick clip titles are often keyboard mash
+            title = 'GTA 6 moment'
+        out.append({'id': 'kick_' + k['id'].replace('clip_', ''), 'url': k.get('video_url') or k['clip_url'],
+                    'title': title, 'view_count': k.get('views') or k.get('view_count') or 0,
+                    'created_at': created.strftime('%Y-%m-%dT%H:%M:%SZ'), 'duration': k.get('duration') or 0,
+                    'broadcaster_id': 'kick:' + slug, 'game_id': 'kick-gta6', 'language': 'en',
+                    'video_id': 'kick' + str(k.get('livestream_id')),
+                    'vod_offset': int(created.timestamp()) % 100000,
+                    '_kick_channel': (k.get('channel') or {}).get('username') or slug})
+    return out
+
+
 def score(c, now):
     age = (now - dt.datetime.fromisoformat(c['created_at'].replace('Z', '+00:00'))).total_seconds() / 3600
     return c['view_count'] / (age + 2) ** 1.2
@@ -80,7 +107,7 @@ def main():
         print('only:', ', '.join(s['login'] for s in ok))
     users = {}
     for i in range(0, len(ok), 100):
-        for u in tw.get('users', {'login': [s['login'] for s in ok[i:i + 100]]}):
+        for u in tw.get('users', {'login': [s['login'] for s in ok[i:i + 100] if not s.get('kick_only')]}):
             users[u['id']] = u
     now = dt.datetime.now(dt.timezone.utc)
     since = (now - dt.timedelta(hours=36)).strftime('%Y-%m-%dT%H:%M:%SZ')
@@ -96,6 +123,22 @@ def main():
                 if m in seen['moments']:
                     continue
                 c['_moment'] = m
+            clips.append(c)
+    since_dt = now - dt.timedelta(hours=36)
+    for st in [s for s in ok if s.get('kick')]:
+        slug = st['kick']
+        try:
+            got = kick_clips(slug, since_dt)
+        except Exception as e:
+            print('kick failed for', slug, e)
+            continue
+        users['kick:' + slug] = {'id': 'kick:' + slug, 'login': st['login'], 'display_name': got[0]['_kick_channel'] if got else slug,
+                                 'credit': 'kick.com/' + slug}
+        for c in got:
+            if c['id'] in seen['ids'] or c['id'] in queued or c['view_count'] < MIN_VIEWS * 4 or \
+                    not (10 <= c['duration'] <= 60) or BAD_TITLE.search(c['title']):
+                continue
+            c['game_id'] = gid
             clips.append(c)
     for c in clips:
         c['_rank'] = learn.rank({'login': users[c['broadcaster_id']]['login'], 'title': c['title'],
@@ -138,7 +181,7 @@ def make(c, user, cfg, now):
     dst = 'queue/%s.mp4' % c['id']
     genes = learn.choose()
     cam, transcript, used, kept, action = render.render(
-        raw, dst, cam=st.get('cam'), layout=layout, credit='twitch.tv/' + user['login'],
+        raw, dst, cam=st.get('cam'), layout=layout, credit=user.get('credit') or 'twitch.tv/' + user['login'],
         genes=dict(genes, _title=c['title'], _min_action=MIN_ACTION))
     if used == 'rejected':
         print('dropped %s (%s): action score %s %s' % (c['id'], user['login'], action[0], action[1]))
@@ -147,7 +190,8 @@ def make(c, user, cfg, now):
         st['cam'] = cam
     meta = {'id': c['id'], 'streamer': user['display_name'], 'login': user['login'], 'title': c['title'],
             'views': c['view_count'], 'created_at': c['created_at'], 'duration': c['duration'],
-            'clip_url': c['url'], 'layout': used, 'transcript': transcript,
+            'clip_url': c['url'], 'platform': 'kick' if c['id'].startswith('kick_') else 'twitch',
+            'credit': user.get('credit') or 'twitch.tv/' + user['login'], 'layout': used, 'transcript': transcript,
             'score': round(c.get('_rank', score(c, now)), 1), 'campaign': st.get('campaign'),
             'genes': genes, 'kept': kept, 'action': action[0], 'action_parts': action[1],
             'queued_at': now.strftime('%Y-%m-%dT%H:%M:%SZ')}

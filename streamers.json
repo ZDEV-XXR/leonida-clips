@@ -131,7 +131,8 @@
     0.0504,
     0.1417,
     0.1492
-   ]
+   ],
+   "kick": "xqc"
   },
   {
    "login": "zackrawrr",
@@ -203,6 +204,14 @@
   {
    "login": "flightreacts",
    "approved": false,
+   "cam": null
+  },
+  {
+   "login": "adinross",
+   "kick": "adinross",
+   "kick_only": true,
+   "approved": true,
+   "pin": true,
    "cam": null
   }
  ],

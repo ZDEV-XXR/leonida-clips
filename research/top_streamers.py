@@ -49,7 +49,7 @@ def main():
         if k not in have:
             cfg['streamers'].append({'login': k, 'approved': True, 'cam': None})
     for s in cfg['streamers']:
-        s['approved'] = s['login'].lower() in top or bool(s.get('campaign'))   # paid campaigns always stay on
+        s['approved'] = s['login'].lower() in top or bool(s.get('campaign')) or bool(s.get('pin'))   # paid campaigns and pinned (e.g. Kick) streamers stay on
     cfg['top_n'] = N      # trend radar stops auto-adding people while a top-N list is in charge
     cfg['streamers'].sort(key=lambda s: (not s['approved'], -score.get(s['login'].lower(), 0)))
     fetch.save('streamers.json', cfg)
