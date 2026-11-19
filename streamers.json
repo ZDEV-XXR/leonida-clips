@@ -2,6 +2,21 @@
  "_note": "Only streamers with approved=true are clipped. cam = facecam box as fractions of the frame [x, y, w, h]; null = auto-detect (saved after the first good detection). Set layout to 'full' to never use a facecam split.",
  "streamers": [
   {
+   "login": "lacy",
+   "approved": true,
+   "cam": null,
+   "campaign": {
+    "id": "reach-lacy-gta",
+    "name": "$12,500 LACY GTA VI Marathon Pool (Reach)",
+    "mention": "LACY",
+    "hashtag": "#LACY",
+    "rules": "Lacy must be the main focus; caption/overlay must say LACY; caption must have #LACY; no logos; never negative about Lacy; English audience; submit link within 30 min of posting",
+    "submit_at": "https://contentrewards.com/c/campaigns/a5c63fad-cd53-4b81-9305-4a2d1696872a?group=1",
+    "min_total_views": 750000,
+    "ends": "when the marathon ends"
+   }
+  },
+  {
    "login": "ohnepixel",
    "approved": true,
    "cam": [
