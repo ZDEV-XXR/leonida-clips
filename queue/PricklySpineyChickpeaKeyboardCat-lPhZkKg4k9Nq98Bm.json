@@ -1,0 +1,31 @@
+{
+ "id": "PricklySpineyChickpeaKeyboardCat-lPhZkKg4k9Nq98Bm",
+ "streamer": "ohnePixel",
+ "login": "ohnepixel",
+ "title": "ohnePixel on GTA VI difficulty: \"You can be 10 years old and you won't fail any mission\"",
+ "views": 4120,
+ "created_at": "2026-11-19T17:49:31Z",
+ "duration": 21.4,
+ "clip_url": "https://www.twitch.tv/ohnepixel/clip/PricklySpineyChickpeaKeyboardCat-lPhZkKg4k9Nq98Bm",
+ "layout": "full",
+ "transcript": "Well, I feel like it's a little bit too easy, don't we? Like it does feel like? What the? Like I took no damage there. What are we saying? Like you can be 10 years old bro, you won't fail any mission, okay? At least so far, this so far. Like your aim can be complete over.",
+ "score": 947.2,
+ "campaign": null,
+ "genes": {
+  "max_len": 30,
+  "trim": "none",
+  "cap_size": 96,
+  "cap_pos": "low",
+  "hook_style": "stakes",
+  "hook_case": "title"
+ },
+ "kept": 21.42,
+ "action": 0.668,
+ "action_parts": {
+  "audio": 0.18,
+  "motion": 0.98,
+  "talk": 0.71,
+  "bonus": 0.1
+ },
+ "queued_at": "2026-11-19T20:48:09Z"
+}
