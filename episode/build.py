@@ -39,6 +39,7 @@ def target_len():
 
 def clean_label(title):
     t = re.sub(r'https?://\S+|[@#]\S+|\b(xd|lol|lmao|kekw|omegalul|pog\w*)\b', '', title, flags=re.I)
+    t = ''.join(ch for ch in t if ch.isascii() or ch.isalpha())
     t = re.sub(r'\s+', ' ', t).strip(' -|:!.')
     return (t[:1].upper() + t[1:] if t[:1].islower() and not t[1:2].isupper() else t)[:48] or 'GTA 6'
 
@@ -85,23 +86,62 @@ def pick(date):
         per[b] = per.get(b, 0) + 1
         moments.add(m)
         total += c['duration']
-        if total >= target_len():
+        if total >= target_len() * 1.8:
             break
     if len(picked) < 6:
         sys.exit('only %d usable clips today, not enough for an episode' % len(picked))
-    # best first, second best last, rest by views per hour
-    order = [picked[0]] + picked[2:] + [picked[1]]
     return [{'id': c['id'], 'url': c['url'], 'title': c['title'], 'streamer': c['broadcaster_name'],
              'login': c['broadcaster_name'].lower(), 'views': c['view_count'], 'vph': round(c['_vph'], 1),
-             'duration': c['duration'], 'created_at': c['created_at']} for c in order]
+             'duration': c['duration'], 'created_at': c['created_at']} for c in picked]
 
 
-def segment(c, label, dst, tmp):
+def download(c, tmp):
     raw = os.path.join(tmp, c['id'] + '.mp4')
     if not os.path.exists(raw):
         subprocess.run(['yt-dlp', '-q', '-f', 'best[height<=1080]/best', '-o', raw, c['url']], check=True, timeout=300)
+    return raw
+
+
+_NUDE = None
+EXPOSED = {'BUTTOCKS_EXPOSED', 'FEMALE_BREAST_EXPOSED', 'FEMALE_GENITALIA_EXPOSED', 'MALE_GENITALIA_EXPOSED', 'ANUS_EXPOSED'}
+
+
+def screen(raw):
+    """First-pass content filter (NudeNet on 8 frames). Catches nudity and strip-club scenes; the review run
+    still checks every frame, this only keeps the obvious ones out of the cut and the thumbnails."""
+    global _NUDE
+    try:
+        if _NUDE is None:
+            from nudenet import NudeDetector
+            _NUDE = NudeDetector()
+    except Exception as e:
+        print('nudenet unavailable:', e)
+        return None
+    import cv2
+    cap = cv2.VideoCapture(raw)
+    n = int(cap.get(cv2.CAP_PROP_FRAME_COUNT)) or 300
+    strip = 0
+    for i in range(8):
+        cap.set(cv2.CAP_PROP_POS_FRAMES, int(n * (0.06 + 0.88 * i / 7)))
+        ok, f = cap.read()
+        if not ok:
+            continue
+        p = raw + '.screen.jpg'
+        cv2.imwrite(p, f)
+        hits = {d['class'] for d in _NUDE.detect(p) if d['score'] >= 0.45}
+        if hits & EXPOSED:
+            cap.release()
+            return 'nudity (%s)' % ', '.join(sorted(hits & EXPOSED))
+        if 'FEMALE_BREAST_COVERED' in hits and 'BELLY_EXPOSED' in hits:
+            strip += 1
+    cap.release()
+    return 'strip club / lingerie' if strip >= 2 else None
+
+
+def segment(c, label, dst, tmp):
+    raw = download(c, tmp)
     lf, hf = os.path.join(tmp, c['id'] + '.label'), os.path.join(tmp, c['id'] + '.handle')
-    open(lf, 'w').write(label.upper())
+    open(lf, 'w').write(''.join(ch for ch in label.upper() if ch.isascii() or ch.isalpha()))
     open(hf, 'w').write('twitch.tv/' + c['login'])
     vf = ("scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2,fps=30,format=yuv420p,"
           "drawtext=fontfile=%s:textfile=%s:fontsize=56:fontcolor=white:box=1:boxcolor=black@0.7:boxborderw=20:"
@@ -135,6 +175,26 @@ def main():
     if labels.get('_first'):                     # the review run can pick a stronger opener
         clips.sort(key=lambda c: c['id'] != labels['_first'])
     tmp = tempfile.mkdtemp()
+    if not (a.relabel and plan):
+        kept, total, screened = [], 0, []
+        for c in clips:
+            if total >= target_len():
+                break
+            try:
+                why = screen(download(c, tmp))
+            except Exception as e:
+                why = 'download failed: %s' % str(e)[:120]
+            if why:
+                screened.append({'id': c['id'], 'streamer': c['streamer'], 'title': c['title'], 'why': why})
+                print('screened out', c['id'], c['streamer'], why)
+                continue
+            kept.append(c)
+            total += c['duration']
+        if len(kept) < 6:
+            sys.exit('only %d clean clips today, not enough for an episode' % len(kept))
+        clips = [kept[0]] + kept[2:] + [kept[1]]      # best first, second best last
+    else:
+        screened = plan.get('screened_out', [])
     segs, t, chapters, raws = [], 0.0, [], {}
     for i, c in enumerate(clips):
         c['label'] = labels.get(c['id']) or (c.get('label') if a.relabel else None) or clean_label(c['title'])
@@ -169,7 +229,7 @@ def main():
     thumb_files = thumbs.make(clips, raws, d)
     ep_no = len(load('state/episodes.json', {}).get('episodes', [])) + (0 if a.relabel else 1)
     plan = {'date': a.date, 'episode': ep_no, 'length_s': round(t), 'target_s': target_len(), 'clips': clips,
-            'thumbnails': thumb_files, 'default_title': 'GTA 6 Best Clips of the Day #%d' % ep_no,
+            'thumbnails': thumb_files, 'screened_out': screened, 'default_title': 'GTA 6 Best Clips of the Day #%d' % ep_no,
             'release': 'ep-' + a.date, 'built_at': fetch.dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')}
     save(d + '/plan.json', plan)
     st = load('state/episodes.json', {'clip_ids': [], 'episodes': []})
