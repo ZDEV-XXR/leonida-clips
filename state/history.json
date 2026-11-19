@@ -101,6 +101,31 @@
     "age_h": 0.8
    },
    "score": 2.527
+  },
+  {
+   "id": "ThankfulSoftKoupreyOMGScoots-8rWxvM1hXbQ2r_nz",
+   "media_id": "18171376951465536",
+   "posted_at": "2026-11-19T00:49:10Z",
+   "genes": {
+    "max_len": 30,
+    "trim": "smart",
+    "cap_size": 72,
+    "cap_pos": "mid",
+    "hook_style": "question",
+    "hook_case": "title"
+   },
+   "traits": {
+    "streamer": "ohnepixel",
+    "len": "20-35",
+    "layout": "cam",
+    "action": "high",
+    "topic:car": 1,
+    "topic:npc": 1,
+    "topic:police": 1,
+    "hour": "15"
+   },
+   "hook": "Did he really steal grandma's scooter?",
+   "duration": 22.5
   }
  ]
 }
