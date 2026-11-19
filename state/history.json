@@ -22,17 +22,17 @@
    "hook": "XQC STEALS HIS FIRST CAR",
    "duration": 54.3,
    "metrics": {
-    "views": 1305,
-    "reach": 1054,
+    "views": 1308,
+    "reach": 1057,
     "likes": 10,
     "comments": 0,
     "shares": 3,
     "saves": 0,
-    "avg_watch": 19.69,
-    "skip_rate": 0.279,
-    "age_h": 10.6
+    "avg_watch": 19.728,
+    "skip_rate": 0.278,
+    "age_h": 19.6
    },
-   "score": 3.278
+   "score": 3.28
   },
   {
    "id": "ReliablePowerfulOilBatChest-ydNija0st6UB0byp",
@@ -55,15 +55,15 @@
    "hook": "What is down there, Lirik?",
    "duration": 20.0,
    "metrics": {
-    "views": 1874,
-    "reach": 1330,
+    "views": 1885,
+    "reach": 1339,
     "likes": 44,
     "comments": 0,
     "shares": 12,
     "saves": 0,
-    "avg_watch": 11.283,
-    "skip_rate": 0.266,
-    "age_h": 10.1
+    "avg_watch": 11.244,
+    "skip_rate": 0.269,
+    "age_h": 19.1
    },
    "score": 3.62
   },
@@ -98,7 +98,7 @@
     "saves": 0,
     "avg_watch": 9.125,
     "skip_rate": 0.272,
-    "age_h": 9.8
+    "age_h": 18.8
    },
    "score": 2.536
   },
@@ -135,7 +135,7 @@
     "saves": 0,
     "avg_watch": 10.854,
     "skip_rate": 0.222,
-    "age_h": 7.8
+    "age_h": 16.8
    },
    "score": 2.686
   },
@@ -162,17 +162,17 @@
    "hook": "Wait for the cows",
    "duration": 33.75,
    "metrics": {
-    "views": 1391,
-    "reach": 1105,
+    "views": 1400,
+    "reach": 1114,
     "likes": 28,
     "comments": 0,
     "shares": 6,
     "saves": 0,
-    "avg_watch": 15.825,
-    "skip_rate": 0.19,
-    "age_h": 5.9
+    "avg_watch": 15.846,
+    "skip_rate": 0.191,
+    "age_h": 14.9
    },
-   "score": 3.443
+   "score": 3.445
   },
   {
    "id": "BeautifulModernTermiteYouWHY-nEB5VffTKnvTR2UD",
@@ -194,7 +194,19 @@
     "hour": "06"
    },
    "hook": "He called it perfectly",
-   "duration": 21.84
+   "duration": 21.84,
+   "metrics": {
+    "views": 189,
+    "reach": 146,
+    "likes": 3,
+    "comments": 0,
+    "shares": 0,
+    "saves": 0,
+    "avg_watch": 13.846,
+    "skip_rate": 0.171,
+    "age_h": 2.3
+   },
+   "score": 2.721
   }
  ]
 }
