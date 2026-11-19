@@ -1,0 +1,31 @@
+{
+ "id": "SpikyAlertCookieDuDudu-o9wrV5cBrwlNKB_5",
+ "streamer": "KaiCenat",
+ "login": "kaicenat",
+ "title": "kai plays gta 6 first",
+ "views": 4574,
+ "created_at": "2026-11-18T10:06:29Z",
+ "duration": 60,
+ "clip_url": "https://www.twitch.tv/kaicenat/clip/SpikyAlertCookieDuDudu-o9wrV5cBrwlNKB_5",
+ "layout": "cam",
+ "transcript": "What were you so I've been thinking and I don't think we should tell them about you know are wrong. I just yet I'm sorry. I'm focused right now check with a bullet to our heads. I mean seriously. What reason do we have to trust this guy? All right, I'm sorry. I'm sorry play just say hi nice to meet you. Here's your car Where's our payment? Please let us know about any further criminal opportunities Okay, see you there. Yep",
+ "score": 163.3,
+ "campaign": null,
+ "genes": {
+  "max_len": 30,
+  "trim": "smart",
+  "cap_size": 72,
+  "cap_pos": "mid",
+  "hook_style": "reaction",
+  "hook_case": "title"
+ },
+ "kept": 30.0,
+ "action": 0.6,
+ "action_parts": {
+  "audio": 0.35,
+  "motion": 1.0,
+  "talk": 0.6,
+  "bonus": 0
+ },
+ "queued_at": "2026-11-19T00:41:52Z"
+}

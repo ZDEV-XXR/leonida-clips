@@ -1,0 +1,31 @@
+{
+ "id": "GracefulNimblePeppermintGrammarKing-gwZm5tSIlpdLgCg-",
+ "streamer": "ohnePixel",
+ "login": "ohnepixel",
+ "title": "bang",
+ "views": 4215,
+ "created_at": "2026-11-18T17:05:01Z",
+ "duration": 14,
+ "clip_url": "https://www.twitch.tv/ohnepixel/clip/GracefulNimblePeppermintGrammarKing-gwZm5tSIlpdLgCg-",
+ "layout": "cam",
+ "transcript": "One star one America's number one pawn side. Oh hell no. Well, fuck it. Please. Please. Oh my god What the fuck is this?",
+ "score": 418.2,
+ "campaign": null,
+ "genes": {
+  "max_len": 60,
+  "trim": "smart",
+  "cap_size": 72,
+  "cap_pos": "mid",
+  "hook_style": "reaction",
+  "hook_case": "title"
+ },
+ "kept": 11.75,
+ "action": 0.517,
+ "action_parts": {
+  "audio": 0.22,
+  "motion": 1.0,
+  "talk": 0.51,
+  "bonus": 0
+ },
+ "queued_at": "2026-11-19T00:41:52Z"
+}

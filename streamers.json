@@ -44,7 +44,12 @@
   {
    "login": "caseoh_",
    "approved": true,
-   "cam": null
+   "cam": [
+    0.043,
+    0.2149,
+    0.1629,
+    0.1716
+   ]
   },
   {
    "login": "lirik",
