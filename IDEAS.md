@@ -25,3 +25,12 @@ learner can measure it against what is already there. Add new ideas at the botto
 - [ ] Track which hook words appear in the top Shorts each day and feed the 5 most common to the hook writer
 - [ ] Watch TikTok GTA 6 trending sounds and note them in LEARNING.md for manual use
 - [ ] Spot repeated moments across many streamers (same mission / same NPC) and make "every streamer reacts" compilations of 3 credited 8-second reactions
+
+## Parked by David (Nov 19) - do later
+- [ ] TikTok for Ringbreak + music sound campaigns ($0.50-2/1K) on the physics loops
+- [ ] Facebook Reels via Repurpose
+- [ ] Earnings per campaign per clip -> post more of what pays
+- [ ] 8-10 posts/day once clip supply holds
+- [ ] Burned-in subtitles on every clip
+- [ ] Daily health check (failed uploads, empty queue, expired logins)
+- [ ] Weekly: drop weakest campaigns, give slots to best
