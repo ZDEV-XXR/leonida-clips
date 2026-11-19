@@ -173,6 +173,28 @@
     "age_h": 5.9
    },
    "score": 3.443
+  },
+  {
+   "id": "BeautifulModernTermiteYouWHY-nEB5VffTKnvTR2UD",
+   "media_id": "18133995890486121",
+   "posted_at": "2026-11-19T15:18:47Z",
+   "genes": {
+    "max_len": 60,
+    "trim": "smart",
+    "cap_size": 96,
+    "cap_pos": "mid",
+    "hook_style": "reaction",
+    "hook_case": "upper"
+   },
+   "traits": {
+    "streamer": "caseoh_",
+    "len": "20-35",
+    "layout": "cam",
+    "action": "high",
+    "hour": "06"
+   },
+   "hook": "He called it perfectly",
+   "duration": 21.84
   }
  ]
 }
