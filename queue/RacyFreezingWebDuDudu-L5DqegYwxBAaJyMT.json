@@ -1,0 +1,31 @@
+{
+ "id": "RacyFreezingWebDuDudu-L5DqegYwxBAaJyMT",
+ "streamer": "Jynxzi",
+ "login": "jynxzi",
+ "title": "\ud83d\ude02\ud83d\ude02",
+ "views": 205,
+ "created_at": "2026-11-18T20:46:10Z",
+ "duration": 30,
+ "clip_url": "https://www.twitch.tv/jynxzi/clip/RacyFreezingWebDuDudu-L5DqegYwxBAaJyMT",
+ "layout": "cam",
+ "transcript": "I guess we'll find out. No! It's so crazy, but you can learn from a little scrolling on Snapmatic. Oh my god. You can just... Bad team watch out! Everything about a person. Find out your clothes on! You want to know? Like, what kind of music they listen to? Or who they used to date? Or where they work out?",
+ "score": 27.7,
+ "campaign": null,
+ "genes": {
+  "max_len": 30,
+  "trim": "smart",
+  "cap_size": 72,
+  "cap_pos": "mid",
+  "hook_style": "stakes",
+  "hook_case": "title"
+ },
+ "kept": 28.5,
+ "action": 0.735,
+ "action_parts": {
+  "audio": 0.84,
+  "motion": 0.36,
+  "talk": 0.89,
+  "bonus": 0
+ },
+ "queued_at": "2026-11-19T00:08:13Z"
+}
