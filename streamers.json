@@ -18,7 +18,57 @@
     "rules": "Lacy must be the main focus; caption/overlay must say LACY; caption must have #LACY; no logos; never negative about Lacy; English audience; submit link within 30 min of posting",
     "submit_at": "https://contentrewards.com/c/campaigns/a5c63fad-cd53-4b81-9305-4a2d1696872a?group=1",
     "min_total_views": 750000,
-    "ends": "when the marathon ends"
+    "ends": "when the marathon ends",
+    "cta": "Watch LACY live: twitch.tv/lacy",
+    "pay": "pool $12.5K split by views, needs 750K total views"
+   }
+  },
+  {
+   "login": "diegoloveless",
+   "approved": true,
+   "cam": null,
+   "campaign": {
+    "id": "cliplaunch-diego-gta6",
+    "name": "DiegoLoveless GTA 6 Clipping (ClipLaunch) $1/1K",
+    "mention": "DiegoLoveless",
+    "hashtag": "#DiegoLoveless",
+    "rules": "Must show the streamer playing GTA 6 as the main focus; accurate caption, no clickbait; push viewers to the streamer's Twitch; no reuploads of other clippers' edits; never post near-identical clips more than 5 times; no botting",
+    "submit_at": "https://contentrewards.com/c/campaigns/5d37d3dd-adf3-401f-9c62-24bb54d5087a",
+    "pay": "cpm $1.00/1K, max $300/clip; clear CTA to his Twitch required",
+    "cta": "Follow DiegoLoveless live: twitch.tv/diegoloveless",
+    "ends": "when budget runs out"
+   }
+  },
+  {
+   "login": "bobby_vanriper",
+   "approved": true,
+   "cam": null,
+   "campaign": {
+    "id": "clippingnation-bobby-gta6",
+    "name": "BOBBY VAN RIPER GTA VI Clipping (Clipping Nation) $1.50/1K",
+    "mention": "Bobby VanRiper",
+    "hashtag": "#BobbyVanRiper",
+    "rules": "Must show the streamer playing GTA 6 as the main focus; accurate caption, no clickbait; push viewers to the streamer's Twitch; no reuploads of other clippers' edits; never post near-identical clips more than 5 times; no botting",
+    "submit_at": "https://contentrewards.com/c/campaigns/f583b069-ced7-49e5-9ed3-2d3a13d6df0c",
+    "pay": "cpm $1.50/1K, max $150/clip; David must join discord.gg/DQyAcKa3nU for payouts",
+    "cta": "Follow Bobby VanRiper live: twitch.tv/bobby_vanriper",
+    "ends": "when budget runs out"
+   }
+  },
+  {
+   "login": "darealboeshi",
+   "approved": true,
+   "cam": null,
+   "campaign": {
+    "id": "cliplaunch-boeshi-gta6",
+    "name": "Boeshi GTA 6 Clipping (ClipLaunch) $1/1K",
+    "mention": "Boeshi",
+    "hashtag": "#Boeshi",
+    "rules": "Must show the streamer playing GTA 6 as the main focus; accurate caption, no clickbait; push viewers to the streamer's Twitch; no reuploads of other clippers' edits; never post near-identical clips more than 5 times; no botting",
+    "submit_at": "https://contentrewards.com/c/campaigns/5c01ecdb-a148-4489-ba26-5aadbbb5bf69",
+    "pay": "cpm $1.00/1K, max $300/clip",
+    "cta": "Follow Boeshi live: twitch.tv/darealboeshi",
+    "ends": "when budget runs out"
    }
   },
   {
