@@ -1,0 +1,33 @@
+{
+ "id": "kick_01M7RP0WZYS0W8VVWWZ4CR5M7B",
+ "streamer": "AdinRoss",
+ "login": "adinross",
+ "title": "GTA 6 moment",
+ "views": 24117,
+ "created_at": "2026-11-19T01:17:24Z",
+ "duration": 29,
+ "clip_url": "https://clips.kick.com/clips/93/clip_01M7RP0WZYS0W8VVWWZ4CR5M7B/playlist.m3u8",
+ "platform": "kick",
+ "credit": "kick.com/adinross",
+ "layout": "full",
+ "transcript": "House and how it I didn't fix the really paint the wall bro. What's These non -native creatures have migrated from more liberal climates. Where's the brain to our ecosystem the state is requesting that all visitors comply with our anti -furry law by stomping beating or shooting any",
+ "score": 528.0,
+ "campaign": null,
+ "genes": {
+  "max_len": 20,
+  "trim": "none",
+  "cap_size": 96,
+  "cap_pos": "mid",
+  "hook_style": "stakes",
+  "hook_case": "upper"
+ },
+ "kept": 20.0,
+ "action": 0.568,
+ "action_parts": {
+  "audio": 0.3,
+  "motion": 1.0,
+  "talk": 0.57,
+  "bonus": 0
+ },
+ "queued_at": "2026-11-19T22:55:42Z"
+}
