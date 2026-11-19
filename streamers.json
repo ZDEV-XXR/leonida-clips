@@ -186,7 +186,8 @@
    "login": "lysium",
    "approved": false,
    "cam": null,
-   "campaign": "Content Rewards - Lysium clips"
+   "campaign": null,
+   "note": "Lysium campaign needs an application with a sample video; not joined"
   },
   {
    "login": "flightreacts",
