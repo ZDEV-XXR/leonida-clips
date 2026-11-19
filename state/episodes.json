@@ -1,4 +1,30 @@
 {
- "clip_ids": [],
- "episodes": []
+ "clip_ids": [
+  "PerfectCrypticChinchillaKappaClaus-nCPM8sJuQmLth2l4",
+  "WiseBusyStapleNononoCat--XYNEyYmRlr4KoEY",
+  "InventiveStylishSwanTBCheesePull-bpUxg33iLnxUyEOG",
+  "UnusualMoistSharkBIRB-Wlz2wmgaTOQAniKu",
+  "WealthyNimbleHamsterDansGame-yrU7UShZomelh1Ke",
+  "TrustworthyCarefulJalapenoKAPOW--CPhZdDJiBW-X0-C",
+  "SlickStylishBeaverStrawBeary-ljpqadoCXEhYwJx5",
+  "ThankfulSoftKoupreyOMGScoots-8rWxvM1hXbQ2r_nz",
+  "SavageEphemeralSwanPMSTwin-CdV0_Uj1h7SAGkLW",
+  "CallousInspiringRuffSuperVinlin-ZORXxsZrAvTCjx7k",
+  "SwissBenevolentRhinocerosRedCoat-_qn39IFUSFPG0nep",
+  "TriangularFaithfulMushroomTriHard-w7G2t3F9rpXJJxa8",
+  "TubularAwkwardFrogPanicBasket-16J-tuUOS6Kxw8bS",
+  "ModernBigWolfResidentSleeper-zUnNje_xisYIyfTG",
+  "RelievedRichRhinocerosPeteZaroll-qOXHVQ3XVK3asCkK",
+  "PeppyWittyJaguarItsBoshyTime-Y7W5ETNtNFcXOjYn",
+  "SpikyAlertCookieDuDudu-o9wrV5cBrwlNKB_5",
+  "ReliablePowerfulOilBatChest-ydNija0st6UB0byp"
+ ],
+ "episodes": [
+  {
+   "date": "2026-11-18",
+   "status": "built",
+   "length_s": 649,
+   "clips": 18
+  }
+ ]
 }

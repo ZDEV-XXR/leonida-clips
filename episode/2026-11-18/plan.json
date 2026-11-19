@@ -1,0 +1,324 @@
+{
+ "date": "2026-11-18",
+ "episode": 1,
+ "length_s": 649,
+ "target_s": 600,
+ "clips": [
+  {
+   "id": "PerfectCrypticChinchillaKappaClaus-nCPM8sJuQmLth2l4",
+   "url": "https://www.twitch.tv/jasontheween/clip/PerfectCrypticChinchillaKappaClaus-nCPM8sJuQmLth2l4",
+   "title": "Reset",
+   "streamer": "jasontheween",
+   "login": "jasontheween",
+   "views": 24634,
+   "vph": 2399.1,
+   "duration": 60,
+   "created_at": "2026-11-18T21:22:05Z",
+   "label": "Reset",
+   "start": 0.0
+  },
+  {
+   "id": "WiseBusyStapleNononoCat--XYNEyYmRlr4KoEY",
+   "url": "https://www.twitch.tv/ohnepixel/clip/WiseBusyStapleNononoCat--XYNEyYmRlr4KoEY",
+   "title": "Ohnepixel agrees with Hasan.",
+   "streamer": "ohnePixel",
+   "login": "ohnepixel",
+   "views": 17161,
+   "vph": 944.0,
+   "duration": 16.4,
+   "created_at": "2026-11-18T17:07:17Z",
+   "label": "Ohnepixel agrees with Hasan",
+   "start": 60.1
+  },
+  {
+   "id": "InventiveStylishSwanTBCheesePull-bpUxg33iLnxUyEOG",
+   "url": "https://www.twitch.tv/dinah/clip/InventiveStylishSwanTBCheesePull-bpUxg33iLnxUyEOG",
+   "title": "LMAO",
+   "streamer": "Dinah",
+   "login": "dinah",
+   "views": 3739,
+   "vph": 925.7,
+   "duration": 25.5,
+   "created_at": "2026-11-19T01:07:56Z",
+   "label": "GTA 6",
+   "start": 76.6
+  },
+  {
+   "id": "UnusualMoistSharkBIRB-Wlz2wmgaTOQAniKu",
+   "url": "https://www.twitch.tv/clix/clip/UnusualMoistSharkBIRB-Wlz2wmgaTOQAniKu",
+   "title": "Wtf",
+   "streamer": "Clix",
+   "login": "clix",
+   "views": 23044,
+   "vph": 824.8,
+   "duration": 30,
+   "created_at": "2026-11-18T12:17:40Z",
+   "label": "Wtf",
+   "start": 102.1
+  },
+  {
+   "id": "WealthyNimbleHamsterDansGame-yrU7UShZomelh1Ke",
+   "url": "https://www.twitch.tv/xqc/clip/WealthyNimbleHamsterDansGame-yrU7UShZomelh1Ke",
+   "title": "xQc commits Grand Theft Auto for the first time in GTA 6",
+   "streamer": "xQc",
+   "login": "xqc",
+   "views": 20181,
+   "vph": 673.4,
+   "duration": 54.3,
+   "created_at": "2026-11-18T11:19:40Z",
+   "label": "xQc commits Grand Theft Auto for the first time ",
+   "start": 132.2
+  },
+  {
+   "id": "TrustworthyCarefulJalapenoKAPOW--CPhZdDJiBW-X0-C",
+   "url": "https://www.twitch.tv/xqc/clip/TrustworthyCarefulJalapenoKAPOW--CPhZdDJiBW-X0-C",
+   "title": "XQC gets called a f****** P**** right after he said so to an NPC in GTA 6",
+   "streamer": "xQc",
+   "login": "xqc",
+   "views": 15063,
+   "vph": 545.7,
+   "duration": 17.6,
+   "created_at": "2026-11-18T12:27:14Z",
+   "label": "XQC gets called a f****** P**** right after he s",
+   "start": 186.6
+  },
+  {
+   "id": "SlickStylishBeaverStrawBeary-ljpqadoCXEhYwJx5",
+   "url": "https://www.twitch.tv/lacy/clip/SlickStylishBeaverStrawBeary-ljpqadoCXEhYwJx5",
+   "title": "LUCIA",
+   "streamer": "Lacy",
+   "login": "lacy",
+   "views": 14924,
+   "vph": 488.2,
+   "duration": 12.2,
+   "created_at": "2026-11-18T11:02:45Z",
+   "label": "LUCIA",
+   "start": 204.2
+  },
+  {
+   "id": "ThankfulSoftKoupreyOMGScoots-8rWxvM1hXbQ2r_nz",
+   "url": "https://www.twitch.tv/ohnepixel/clip/ThankfulSoftKoupreyOMGScoots-8rWxvM1hXbQ2r_nz",
+   "title": "ohnePixel gets into a high-speed chase",
+   "streamer": "ohnePixel",
+   "login": "ohnepixel",
+   "views": 5452,
+   "vph": 378.2,
+   "duration": 24,
+   "created_at": "2026-11-18T19:05:29Z",
+   "label": "OhnePixel gets into a high-speed chase",
+   "start": 216.5
+  },
+  {
+   "id": "SavageEphemeralSwanPMSTwin-CdV0_Uj1h7SAGkLW",
+   "url": "https://www.twitch.tv/king_wolfe_/clip/SavageEphemeralSwanPMSTwin-CdV0_Uj1h7SAGkLW",
+   "title": "Forced Taught Empathy\u2026",
+   "streamer": "king_wolfe_",
+   "login": "king_wolfe_",
+   "views": 6123,
+   "vph": 298.7,
+   "duration": 30,
+   "created_at": "2026-11-18T15:56:36Z",
+   "label": "Forced Taught Empathy",
+   "start": 240.5
+  },
+  {
+   "id": "CallousInspiringRuffSuperVinlin-ZORXxsZrAvTCjx7k",
+   "url": "https://www.twitch.tv/brycexd/clip/CallousInspiringRuffSuperVinlin-ZORXxsZrAvTCjx7k",
+   "title": "audacity auda ticker",
+   "streamer": "BrycexD",
+   "login": "brycexd",
+   "views": 6232,
+   "vph": 292.3,
+   "duration": 30,
+   "created_at": "2026-11-18T15:31:50Z",
+   "label": "Audacity auda ticker",
+   "start": 270.6
+  },
+  {
+   "id": "SwissBenevolentRhinocerosRedCoat-_qn39IFUSFPG0nep",
+   "url": "https://www.twitch.tv/caseoh_/clip/SwissBenevolentRhinocerosRedCoat-_qn39IFUSFPG0nep",
+   "title": "W PLAN \ud83e\udd23\ud83e\udd23\ud83e\udd23\ud83d\udc4d",
+   "streamer": "caseoh_",
+   "login": "caseoh_",
+   "views": 2221,
+   "vph": 247.3,
+   "duration": 48,
+   "created_at": "2026-11-18T22:06:11Z",
+   "label": "W PLAN",
+   "start": 300.7
+  },
+  {
+   "id": "TriangularFaithfulMushroomTriHard-w7G2t3F9rpXJJxa8",
+   "url": "https://www.twitch.tv/xqc/clip/TriangularFaithfulMushroomTriHard-w7G2t3F9rpXJJxa8",
+   "title": "xqc listening to gta VI radio",
+   "streamer": "xQc",
+   "login": "xqc",
+   "views": 5458,
+   "vph": 228.7,
+   "duration": 37.5,
+   "created_at": "2026-11-18T14:16:10Z",
+   "label": "Xqc listening to gta VI radio",
+   "start": 348.7
+  },
+  {
+   "id": "TubularAwkwardFrogPanicBasket-16J-tuUOS6Kxw8bS",
+   "url": "https://www.twitch.tv/kaicenat/clip/TubularAwkwardFrogPanicBasket-16J-tuUOS6Kxw8bS",
+   "title": "wtf is gta bro",
+   "streamer": "KaiCenat",
+   "login": "kaicenat",
+   "views": 4984,
+   "vph": 179.1,
+   "duration": 30,
+   "created_at": "2026-11-18T12:21:02Z",
+   "label": "Wtf is gta bro",
+   "start": 386.3
+  },
+  {
+   "id": "ModernBigWolfResidentSleeper-zUnNje_xisYIyfTG",
+   "url": "https://www.twitch.tv/quin69/clip/ModernBigWolfResidentSleeper-zUnNje_xisYIyfTG",
+   "title": "father of 4 btw",
+   "streamer": "Quin69",
+   "login": "quin69",
+   "views": 3804,
+   "vph": 178.5,
+   "duration": 22.1,
+   "created_at": "2026-11-18T15:32:10Z",
+   "label": "Father of 4 btw",
+   "start": 416.4
+  },
+  {
+   "id": "RelievedRichRhinocerosPeteZaroll-qOXHVQ3XVK3asCkK",
+   "url": "https://www.twitch.tv/lacy/clip/RelievedRichRhinocerosPeteZaroll-qOXHVQ3XVK3asCkK",
+   "title": "THE RELEASE OF GTA VI",
+   "streamer": "Lacy",
+   "login": "lacy",
+   "views": 5239,
+   "vph": 171.0,
+   "duration": 30,
+   "created_at": "2026-11-18T11:00:42Z",
+   "label": "THE RELEASE OF GTA VI",
+   "start": 438.6
+  },
+  {
+   "id": "PeppyWittyJaguarItsBoshyTime-Y7W5ETNtNFcXOjYn",
+   "url": "https://www.twitch.tv/ishowspeed/clip/PeppyWittyJaguarItsBoshyTime-Y7W5ETNtNFcXOjYn",
+   "title": "here",
+   "streamer": "IShowSpeed",
+   "login": "ishowspeed",
+   "views": 4228,
+   "vph": 166.6,
+   "duration": 60,
+   "created_at": "2026-11-18T13:31:37Z",
+   "label": "Here",
+   "start": 468.7
+  },
+  {
+   "id": "SpikyAlertCookieDuDudu-o9wrV5cBrwlNKB_5",
+   "url": "https://www.twitch.tv/kaicenat/clip/SpikyAlertCookieDuDudu-o9wrV5cBrwlNKB_5",
+   "title": "kai plays gta 6 first",
+   "streamer": "KaiCenat",
+   "login": "kaicenat",
+   "views": 5084,
+   "vph": 156.1,
+   "duration": 60,
+   "created_at": "2026-11-18T10:06:29Z",
+   "label": "Kai plays gta 6 first",
+   "start": 528.8
+  },
+  {
+   "id": "ReliablePowerfulOilBatChest-ydNija0st6UB0byp",
+   "url": "https://www.twitch.tv/lirik/clip/ReliablePowerfulOilBatChest-ydNija0st6UB0byp",
+   "title": "Lirik finds An Easter egg",
+   "streamer": "LIRIK",
+   "login": "lirik",
+   "views": 12613,
+   "vph": 1092.7,
+   "duration": 60,
+   "created_at": "2026-11-18T20:39:17Z",
+   "label": "Lirik finds An Easter egg",
+   "start": 588.9
+  }
+ ],
+ "thumbnails": [
+  {
+   "file": "episode/2026-11-18/thumb_A.jpg",
+   "base": "episode/2026-11-18/base_A.jpg",
+   "spot": [
+    0.235,
+    0.744
+   ],
+   "mark": "arrow",
+   "text": "BEST CLIPS",
+   "from_clip": "PerfectCrypticChinchillaKappaClaus-nCPM8sJuQmLth2l4"
+  },
+  {
+   "file": "episode/2026-11-18/thumb_B.jpg",
+   "base": "episode/2026-11-18/base_B.jpg",
+   "spot": [
+    0.34,
+    0.415
+   ],
+   "mark": "arrow",
+   "text": "WATCH THIS",
+   "from_clip": "ReliablePowerfulOilBatChest-ydNija0st6UB0byp"
+  },
+  {
+   "file": "episode/2026-11-18/thumb_C.jpg",
+   "base": "episode/2026-11-18/base_C.jpg",
+   "spot": [
+    0.4,
+    0.63
+   ],
+   "mark": "circle",
+   "text": "NO WAY",
+   "from_clip": "WiseBusyStapleNononoCat--XYNEyYmRlr4KoEY"
+  }
+ ],
+ "screened_out": [
+  {
+   "id": "DifferentSullenReubenItsBoshyTime-K1Eo8-_fjY3ZqQan",
+   "streamer": "Zoil",
+   "title": "wtf",
+   "why": "nudity (BUTTOCKS_EXPOSED)"
+  },
+  {
+   "id": "EsteemedAlertBoarTTours-qTa7AtR3giDjQF5-",
+   "streamer": "ohnePixel",
+   "title": "neuron activation",
+   "why": "nudity (BUTTOCKS_EXPOSED)"
+  },
+  {
+   "id": "CuteBlindingSandwichKevinTurtle-StfZX5EDlf9jn5_j",
+   "streamer": "TheBurntPeanut",
+   "title": "worth it.. (banned)",
+   "why": "nudity (FEMALE_BREAST_EXPOSED)"
+  },
+  {
+   "id": "CredulousKawaiiTriangleFUNgineer-Zys54vtw1G4OmIkN",
+   "streamer": "Lacy",
+   "title": "wtf",
+   "why": "nudity (BUTTOCKS_EXPOSED)"
+  },
+  {
+   "id": "SillyTangibleStrawberryVoteNay-gI1V8xjNV_DdVAuK",
+   "streamer": "Zoil",
+   "title": "banned",
+   "why": "nudity (FEMALE_BREAST_EXPOSED)"
+  },
+  {
+   "id": "CrazyAbnegateLapwingPipeHype-fzo4DD3_M-TisQLE",
+   "streamer": "IShowSpeed",
+   "title": "first robbery speed",
+   "why": "nudity (BUTTOCKS_EXPOSED)"
+  },
+  {
+   "id": "CreativeHeadstrongAniseFunRun-_f88pOqgLQhawQRA",
+   "streamer": "IShowSpeed",
+   "title": "HAHAHAHH",
+   "why": "nudity (BUTTOCKS_EXPOSED)"
+  }
+ ],
+ "default_title": "GTA 6 Best Clips of the Day #1",
+ "release": "ep-2026-11-18",
+ "built_at": "2026-11-19T02:27:50Z"
+}
