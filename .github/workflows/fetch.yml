@@ -2,6 +2,9 @@ name: fetch clips
 on:
   schedule:
     - cron: '17 */2 * * *'   # every 2 hours
+  push:                     # the posting run pushes this when the queue is low (GitHub's cron skips a lot)
+    branches: [main]
+    paths: ['state/fetch-request']
   workflow_dispatch:
     inputs:
       only:
