@@ -4,7 +4,12 @@
   {
    "login": "lacy",
    "approved": true,
-   "cam": null,
+   "cam": [
+    0.0797,
+    0.091,
+    0.1186,
+    0.125
+   ],
    "campaign": {
     "id": "reach-lacy-gta",
     "name": "$12,500 LACY GTA VI Marathon Pool (Reach)",
