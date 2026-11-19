@@ -4,7 +4,10 @@ The 6:07 am `daily episode` workflow has already built today's cut: `episode/<da
 (one per clip, label visible), `thumb_A/B/C.jpg`, `description.txt`, video in the `ep-<date>` GitHub release.
 Your job: labels, title, thumbnail, then **the gauntlet rule** - nothing posts until a fresh agent says yes.
 
-1. `git pull`. Today = Tucson date. If `episode/<date>/plan.json` is missing, or `approved.json` already exists, stop and say why in STATUS.md.
+1. `git pull`. Today = Tucson date. If `approved.json` already exists, stop. If `episode/<date>/plan.json` is missing
+   (GitHub's cron sometimes skips the 6:07 build), commit `episode/requests/<date>-auto.json` =
+   `{"date": "<date>", "relabel": false}` and push; that starts the build. Poll `git pull` every 2 min (max 45 min)
+   until plan.json appears. If it still has not appeared, say so in STATUS.md and stop.
 2. **Labels.** Look at every frame and clip title. Write `episode/labels/<date>.json` = `{clip_id: "label"}`:
    one line, max 6 words, says what happens ("Kai crashes the police chopper"), no story spoilers, no slurs.
    Add `"_drop": [ids]` for clips that are cutscenes, endings, exploits/glitch tutorials, dead air, a bad crop,

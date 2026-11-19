@@ -40,7 +40,7 @@ def main():
     meta = {'snippet': {'title': ok['title'][:100], 'description': open(d + '/description.txt').read()[:4900],
                         'tags': ['gta 6', 'gta vi', 'gta 6 clips', 'gta 6 funny moments', 'gta 6 best moments'],
                         'categoryId': '20', 'defaultLanguage': 'en'},
-            'status': {'privacyStatus': os.environ.get('YT_PRIVACY', 'public'), 'selfDeclaredMadeForKids': False}}
+            'status': {'privacyStatus': ok.get('privacy') or os.environ.get('YT_PRIVACY', 'public'), 'selfDeclaredMadeForKids': False}}
     size = os.path.getsize(a.video)
     r = req('https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status', tok,
             json.dumps(meta).encode(), {'Content-Type': 'application/json; charset=UTF-8',
