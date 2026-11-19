@@ -126,6 +126,29 @@
    },
    "hook": "Did he really steal grandma's scooter?",
    "duration": 22.5
+  },
+  {
+   "id": "DelightfulLachrymoseMelonVoteYea-JeFCNhZHEyTfoOMJ",
+   "media_id": "18140401366654989",
+   "posted_at": "2026-11-19T02:42:38Z",
+   "genes": {
+    "max_len": 45,
+    "trim": "smart",
+    "cap_size": 72,
+    "cap_pos": "mid",
+    "hook_style": "stakes",
+    "hook_case": "title"
+   },
+   "traits": {
+    "streamer": "xqc",
+    "len": "20-35",
+    "layout": "cam",
+    "action": "low",
+    "topic:police": 1,
+    "hour": "18"
+   },
+   "hook": "Wait for the cows",
+   "duration": 33.75
   }
  ]
 }
