@@ -207,6 +207,28 @@
     "age_h": 8.1
    },
    "score": 2.721
+  },
+  {
+   "id": "RelievedRichRhinocerosPeteZaroll-qOXHVQ3XVK3asCkK",
+   "media_id": "18094457951229983",
+   "posted_at": "2026-11-19T23:25:31Z",
+   "genes": {
+    "max_len": 30,
+    "trim": "none",
+    "cap_size": 96,
+    "cap_pos": "mid",
+    "hook_style": "stakes",
+    "hook_case": "upper"
+   },
+   "traits": {
+    "streamer": "lacy",
+    "len": "20-35",
+    "layout": "cam",
+    "action": "mid",
+    "hour": "15"
+   },
+   "hook": "LACY counts down GTA 6 launch",
+   "duration": 30.02
   }
  ]
 }
