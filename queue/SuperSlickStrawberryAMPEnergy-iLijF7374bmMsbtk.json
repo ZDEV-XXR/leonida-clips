@@ -1,0 +1,31 @@
+{
+ "id": "SuperSlickStrawberryAMPEnergy-iLijF7374bmMsbtk",
+ "streamer": "xQc",
+ "login": "xqc",
+ "title": "xQc compares GTA 6 with modded framegen ON, vs framegen OFF.",
+ "views": 6200,
+ "created_at": "2026-11-19T06:11:11Z",
+ "duration": 60,
+ "clip_url": "https://www.twitch.tv/xqc/clip/SuperSlickStrawberryAMPEnergy-iLijF7374bmMsbtk",
+ "layout": "cam",
+ "transcript": "This is with frame gen on with my own github thing with the guest recorder, but not then. Not then. No. This is, it's without the frame gen. This is the native, this is the game as you buy it right now. You have a PS5 Pro, the maximum performance you can get with all the things maxed out. This is the game that it is, but now, if you buy it right now, you know what I mean? Like it. You think about it, you're in a car, you look at the ground, like, look at this. Like, look at this. That's what you're looking for, like, a collective on the ground. Look at this. Buddy.",
+ "score": 477.4,
+ "campaign": null,
+ "genes": {
+  "max_len": 60,
+  "trim": "smart",
+  "cap_size": 96,
+  "cap_pos": "low",
+  "hook_style": "stakes",
+  "hook_case": "title"
+ },
+ "kept": 60.01,
+ "action": 0.678,
+ "action_parts": {
+  "audio": 0.63,
+  "motion": 1.0,
+  "talk": 0.5,
+  "bonus": 0
+ },
+ "queued_at": "2026-11-19T12:59:29Z"
+}

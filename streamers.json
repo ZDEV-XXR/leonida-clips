@@ -75,7 +75,12 @@
   {
    "login": "ishowspeed",
    "approved": true,
-   "cam": null
+   "cam": [
+    0.0466,
+    0.4773,
+    0.124,
+    0.1306
+   ]
   },
   {
    "login": "jynxzi",
