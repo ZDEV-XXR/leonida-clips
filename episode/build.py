@@ -20,7 +20,7 @@ import fetch, thumbs   # noqa: E402  (fetch gives the Twitch client and spoiler 
 TZ = dt.timezone(dt.timedelta(hours=-7))      # Tucson
 FONT = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
 MIN_VIEWS = int(os.environ.get('EP_MIN_VIEWS', '150'))
-PER_STREAMER = int(os.environ.get('EP_PER_STREAMER', '3'))
+PER_STREAMER = int(os.environ.get('EP_PER_STREAMER', '5'))
 SKIP_WORDS = re.compile(r'strip|club|dance|thong|cutscene|cinematic|glitch|exploit|money glitch|dupe|infinite money|mod menu|cheat', re.I)
 
 
@@ -54,22 +54,19 @@ def pick(date):
     now = dt.datetime.now(dt.timezone.utc)
     since = (now - dt.timedelta(hours=26)).strftime('%Y-%m-%dT%H:%M:%SZ')
     clips = {}
-    # the whole game's top clips today, plus deeper pulls for our approved streamers
-    for c in tw.get('clips', {'game_id': gid, 'started_at': since, 'first': 100}):
-        clips[c['id']] = c
     users = {}
     logins = sorted(ok)
     for i in range(0, len(logins), 100):
         for u in tw.get('users', {'login': logins[i:i + 100]}):
             users[u['id']] = u
     for uid in users:
-        for c in tw.get('clips', {'broadcaster_id': uid, 'started_at': since, 'first': 20}):
+        for c in tw.get('clips', {'broadcaster_id': uid, 'started_at': since, 'first': 40}):
             if c['game_id'] == gid:
                 clips[c['id']] = c
     good = []
     for c in clips.values():
         login = c['broadcaster_name'].lower()
-        if (c['id'] in used or login in blocked or (c.get('language') or 'en')[:2] not in fetch.LANGS
+        if (c['id'] in used or login in blocked or login not in ok or (c.get('language') or 'en')[:2] not in fetch.LANGS
                 or c['view_count'] < MIN_VIEWS or not (8 <= c['duration'] <= 60)
                 or fetch.BAD_TITLE.search(c['title']) or SKIP_WORDS.search(c['title'])):
             continue

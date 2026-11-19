@@ -25,9 +25,16 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install -q -U yt-dlp
+      - name: Top streamers
+        env:
+          TWITCH_CLIENT_ID: j7tp31gbxy1gt8qrit98dekl4v90j6
+          TWITCH_CLIENT_SECRET: ${{ secrets.TWITCH_CLIENT_SECRET }}
+        run: python research/top_streamers.py
       - name: Run
         run: |
           MODE="${{ github.event.inputs.mode }}"
+          [ -z "$MODE" ] && [ -f research/run ] && [ "${{ github.event_name }}" = "push" ] && MODE=$(head -1 research/run)
+          [ "$MODE" = "top20" ] && { AUTO_APPROVE_TOP=1 python research/outliers.py discover; MODE=scan; }
           if [ -z "$MODE" ]; then
             MODE=$(python -c "import json;print('scan' if any(c.get('approved') for c in json.load(open('research/channels.json'))['channels']) else 'discover')")
           fi
@@ -37,7 +44,7 @@ jobs:
         run: |
           git config user.name "leonida-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add -A research
+          git add -A research streamers.json
           git diff --cached --quiet && exit 0
           git commit -qm "Outlier research $(date -u +%F)"
           for i in 1 2 3; do git pull -q --rebase origin main && git push -q origin main && break; sleep 5; done

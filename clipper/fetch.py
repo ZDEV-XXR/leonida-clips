@@ -192,7 +192,7 @@ def trend_radar(tw, gid, cfg, hist):
     have = {s['login'].lower() for s in cfg['streamers']}
     blocked = {b.lower() for b in cfg.get('blocked', [])}
     for login, w in sorted(sw.items(), key=lambda x: -x[1]):
-        if len(cfg['streamers']) >= AUTO_MAX or w < 0.25:
+        if cfg.get('top_n') or len(cfg['streamers']) >= AUTO_MAX or w < 0.25:
             break
         if login not in have and login not in blocked:
             cfg['streamers'].append({'login': login, 'approved': True, 'cam': None, 'auto': tr['at']})
