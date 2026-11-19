@@ -118,6 +118,13 @@ def cmd_posted(a):
     save('state/posted.json', posted)
     hour = dt.datetime.now(dt.timezone(dt.timedelta(hours=-7))).hour      # Tucson time
     learn.record(m, a.media_id, now(), hour)
+    # queue the same video as a YouTube Short (the push runs .github/workflows/shorts.yml)
+    os.makedirs('shorts', exist_ok=True)
+    hook = (m.get('hook') or 'GTA 6').strip()
+    save('shorts/%s.json' % a.id, {'id': a.id, 'file': m.get('file') or 'out/%s.mp4' % a.id, 'streamer': m.get('login'),
+                                   'title': (hook + ' #gta6 #shorts')[:100],
+                                   'description': (m.get('caption') or '') + ('\n\nClip: ' + m['clip_url'] if m.get('clip_url') else ''),
+                                   'created': now()[:10]})
     print('recorded', a.id, a.media_id)
 
 
