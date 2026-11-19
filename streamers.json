@@ -24,7 +24,12 @@
   {
    "login": "jynxzi",
    "approved": true,
-   "cam": null
+   "cam": [
+    0,
+    0.5842,
+    0.3205,
+    0.3377
+   ]
   },
   {
    "login": "summit1g",
