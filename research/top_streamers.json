@@ -1,65 +1,65 @@
 {
- "at": "2026-11-19T02:35:40Z",
+ "at": "2026-11-19T02:40:20Z",
  "top": [
   {
    "login": "ohnepixel",
    "score": 0.6,
-   "clip_views_7d": 399332,
+   "clip_views_7d": 402302,
    "live_viewers_now": 0
   },
   {
    "login": "theburntpeanut",
-   "score": 0.438,
-   "clip_views_7d": 25211,
-   "live_viewers_now": 94912
+   "score": 0.437,
+   "clip_views_7d": 25124,
+   "live_viewers_now": 94870
   },
   {
    "login": "kaicenat",
-   "score": 0.431,
-   "clip_views_7d": 71063,
-   "live_viewers_now": 76857
+   "score": 0.433,
+   "clip_views_7d": 71403,
+   "live_viewers_now": 77388
   },
   {
    "login": "caseoh_",
-   "score": 0.323,
-   "clip_views_7d": 2677,
-   "live_viewers_now": 75774
+   "score": 0.325,
+   "clip_views_7d": 2703,
+   "live_viewers_now": 76222
   },
   {
    "login": "xqc",
    "score": 0.289,
-   "clip_views_7d": 63743,
-   "live_viewers_now": 45914
+   "clip_views_7d": 64067,
+   "live_viewers_now": 45829
   },
   {
    "login": "zackrawrr",
    "score": 0.279,
-   "clip_views_7d": 637,
-   "live_viewers_now": 66037
+   "clip_views_7d": 642,
+   "live_viewers_now": 65885
   },
   {
    "login": "hasanabi",
-   "score": 0.164,
+   "score": 0.162,
    "clip_views_7d": 0,
-   "live_viewers_now": 38872
+   "live_viewers_now": 38434
   },
   {
    "login": "stableronaldo",
-   "score": 0.133,
-   "clip_views_7d": 7891,
-   "live_viewers_now": 28666
+   "score": 0.157,
+   "clip_views_7d": 8332,
+   "live_viewers_now": 34309
   },
   {
    "login": "ishowspeed",
-   "score": 0.129,
-   "clip_views_7d": 32260,
-   "live_viewers_now": 19106
+   "score": 0.123,
+   "clip_views_7d": 32842,
+   "live_viewers_now": 17460
   },
   {
    "login": "jynxzi",
-   "score": 0.118,
-   "clip_views_7d": 2483,
-   "live_viewers_now": 27135
+   "score": 0.114,
+   "clip_views_7d": 2510,
+   "live_viewers_now": 26097
   }
  ]
 }
