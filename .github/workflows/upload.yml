@@ -22,10 +22,11 @@ jobs:
         id: find
         run: |
           DATES=$(python - <<'PY'
-          import glob, json
+          import datetime as dt, glob, json
+          cutoff = (dt.date.today() - dt.timedelta(days=2)).isoformat()   # never dump a backlog of stale episodes
           for p in sorted(glob.glob('episode/*/approved.json')):
               a = json.load(open(p))
-              if a.get('verdict') == 'yes' and not a.get('youtube_id'):
+              if a.get('verdict') == 'yes' and not a.get('youtube_id') and p.split('/')[1] >= cutoff:
                   print(p.split('/')[1])
           PY
           )
