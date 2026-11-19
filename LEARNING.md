@@ -97,9 +97,9 @@ Lift = how far posts with this option beat their neighbours (log-views + retenti
 
 ## Trending right now (from the last fetch)
 
-Topics: funny 1.00, money 0.20, car 0.15, weapon 0.10, map 0.06, npc 0.04, police 0.01, rage 0.01
+Topics: funny 1.00, car 0.18, weapon 0.10, money 0.10, map 0.06, npc 0.04, police 0.01, rage 0.01
 
-Streamers: xqc 1.00, caseoh_ 0.79, theburntpeanut 0.54, dinah 0.50, ohnepixel 0.47, zackrawrr 0.43, ishowspeed 0.37, hasanabi 0.28
+Streamers: xqc 1.00, caseoh_ 0.77, theburntpeanut 0.52, dinah 0.49, ohnepixel 0.47, ishowspeed 0.43, zackrawrr 0.42, hasanabi 0.26
 
 Hook ideas from trending Shorts titles:
 
@@ -109,7 +109,7 @@ Hook ideas from trending Shorts titles:
 - GTA 6 - Before You Buy
 - GTA 6 PS5 Pro Gameplay - 15 Minutes of The First Mission
 - 12 THINGS You NEED To Do On DAY 1 in GTA 6
-- GTA 6 Review
+- GTA 6 Review - Game of the Generation
 - GTA 6 - The First Early Reviews...
 - New GTA 6 Gameplay Looks Just Like Real Life
 - STEALING A FIGHTER JET FROM GTA 6 MILITARY BASE 😱
