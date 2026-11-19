@@ -2,14 +2,20 @@
  "_note": "Only streamers with approved=true are clipped. cam = facecam box as fractions of the frame [x, y, w, h]; null = auto-detect (saved after the first good detection). Set layout to 'full' to never use a facecam split.",
  "streamers": [
   {
-   "login": "xqc",
+   "login": "ohnepixel",
    "approved": true,
    "cam": [
-    0.0581,
-    0.0504,
-    0.1417,
-    0.1492
-   ]
+    0.0366,
+    0.7649,
+    0.2231,
+    0.2351
+   ],
+   "auto": "2026-11-18T22:23:04Z"
+  },
+  {
+   "login": "theburntpeanut",
+   "approved": true,
+   "cam": null
   },
   {
    "login": "kaicenat",
@@ -20,6 +26,46 @@
     0.1948,
     0.2052
    ]
+  },
+  {
+   "login": "caseoh_",
+   "approved": true,
+   "cam": [
+    0.043,
+    0.2149,
+    0.1629,
+    0.1716
+   ]
+  },
+  {
+   "login": "xqc",
+   "approved": true,
+   "cam": [
+    0.0581,
+    0.0504,
+    0.1417,
+    0.1492
+   ]
+  },
+  {
+   "login": "zackrawrr",
+   "approved": true,
+   "cam": null
+  },
+  {
+   "login": "hasanabi",
+   "approved": true,
+   "cam": null
+  },
+  {
+   "login": "stableronaldo",
+   "approved": true,
+   "cam": null
+  },
+  {
+   "login": "ishowspeed",
+   "approved": true,
+   "cam": null
   },
   {
    "login": "jynxzi",
@@ -33,65 +79,35 @@
   },
   {
    "login": "summit1g",
-   "approved": true,
+   "approved": false,
    "cam": null
-  },
-  {
-   "login": "hasanabi",
-   "approved": true,
-   "cam": null
-  },
-  {
-   "login": "caseoh_",
-   "approved": true,
-   "cam": [
-    0.043,
-    0.2149,
-    0.1629,
-    0.1716
-   ]
   },
   {
    "login": "lirik",
-   "approved": true,
+   "approved": false,
    "cam": null
   },
   {
    "login": "sodapoppin",
-   "approved": true,
+   "approved": false,
    "cam": null
   },
   {
    "login": "tarik",
-   "approved": true,
-   "cam": null
-  },
-  {
-   "login": "zackrawrr",
-   "approved": true,
+   "approved": false,
    "cam": null
   },
   {
    "login": "lysium",
-   "approved": true,
+   "approved": false,
    "cam": null,
    "campaign": "Content Rewards - Lysium clips"
   },
   {
-   "login": "ohnepixel",
-   "approved": true,
-   "cam": [
-    0.0366,
-    0.7649,
-    0.2231,
-    0.2351
-   ],
-   "auto": "2026-11-18T22:23:04Z"
-  },
-  {
    "login": "flightreacts",
-   "approved": true,
+   "approved": false,
    "cam": null
   }
- ]
+ ],
+ "top_n": 10
 }

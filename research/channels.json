@@ -1,1 +1,145 @@
-{"_note": "Set approved=true on channels to study. The research workflow fills research/candidates.json for review.", "channels": []}
+{
+ "_note": "Set approved=true on channels to study. The research workflow fills research/candidates.json for review.",
+ "channels": [
+  {
+   "id": "UCVAYy7_zddIx6USjXscV9Vg",
+   "name": "Caylus  ",
+   "url": "https://www.youtube.com/channel/UCVAYy7_zddIx6USjXscV9Vg",
+   "subs": 21700000,
+   "approved": true
+  },
+  {
+   "id": "UCvCfpQXRXdJdL07pzTIA6Cw",
+   "name": "Kai Cenat Live",
+   "url": "https://www.youtube.com/channel/UCvCfpQXRXdJdL07pzTIA6Cw",
+   "subs": 16800000,
+   "approved": true
+  },
+  {
+   "id": "UCJAbkIY17zAmCTNQHH0bQoQ",
+   "name": "Gameplayrj",
+   "url": "https://www.youtube.com/channel/UCJAbkIY17zAmCTNQHH0bQoQ",
+   "subs": 8680000,
+   "approved": true
+  },
+  {
+   "id": "UC36MGPfPwOWafAXauiV4LdA",
+   "name": "TmarTn2",
+   "url": "https://www.youtube.com/channel/UC36MGPfPwOWafAXauiV4LdA",
+   "subs": 5700000,
+   "approved": true
+  },
+  {
+   "id": "UCmp5y07YIV6i2jPX4x82hVQ",
+   "name": "Hollow",
+   "url": "https://www.youtube.com/channel/UCmp5y07YIV6i2jPX4x82hVQ",
+   "subs": 5230000,
+   "approved": true
+  },
+  {
+   "id": "UCbItyvYa6cqvqtwlU2E9-wA",
+   "name": "SteveTheGamer55",
+   "url": "https://www.youtube.com/channel/UCbItyvYa6cqvqtwlU2E9-wA",
+   "subs": 4660000,
+   "approved": true
+  },
+  {
+   "id": "UCC-uu-OqgYEx52KYQ-nJLRw",
+   "name": "Prestige Clips",
+   "url": "https://www.youtube.com/channel/UCC-uu-OqgYEx52KYQ-nJLRw",
+   "subs": 4640000,
+   "approved": true
+  },
+  {
+   "id": "UCG67Fgo8Sxm4G4TMIFjXhjQ",
+   "name": "ProGamingStudio \u30c4",
+   "url": "https://www.youtube.com/channel/UCG67Fgo8Sxm4G4TMIFjXhjQ",
+   "subs": 4230000,
+   "approved": true
+  },
+  {
+   "id": "UCuWcjpKbIDAbZfHoru1toFg",
+   "name": "GTA Series Videos",
+   "url": "https://www.youtube.com/channel/UCuWcjpKbIDAbZfHoru1toFg",
+   "subs": 4150000,
+   "approved": true
+  },
+  {
+   "id": "UCOrd4AWNd6lOgv0UWv84H2g",
+   "name": "King Crane",
+   "url": "https://www.youtube.com/channel/UCOrd4AWNd6lOgv0UWv84H2g",
+   "subs": 3940000,
+   "approved": true
+  },
+  {
+   "id": "UCv5gQgP_uGbJxImWVoUC_Ng",
+   "name": "Onespot Gaming",
+   "url": "https://www.youtube.com/channel/UCv5gQgP_uGbJxImWVoUC_Ng",
+   "subs": 3570000,
+   "approved": true
+  },
+  {
+   "id": "UCntCTaM2Jz1sLN3iRwabpMA",
+   "name": "Elanip",
+   "url": "https://www.youtube.com/channel/UCntCTaM2Jz1sLN3iRwabpMA",
+   "subs": 3080000,
+   "approved": true
+  },
+  {
+   "id": "UCk9xNdmgY8im4RDCops9YYw",
+   "name": "Treyten",
+   "url": "https://www.youtube.com/channel/UCk9xNdmgY8im4RDCops9YYw",
+   "subs": 3040000,
+   "approved": true
+  },
+  {
+   "id": "UC7eAfUjR9gdIjoaoQaS0W-A",
+   "name": "Shirrako",
+   "url": "https://www.youtube.com/channel/UC7eAfUjR9gdIjoaoQaS0W-A",
+   "subs": 2610000,
+   "approved": true
+  },
+  {
+   "id": "UCiK8I2p78pO9covHcrC5HSQ",
+   "name": "Sanflix",
+   "url": "https://www.youtube.com/channel/UCiK8I2p78pO9covHcrC5HSQ",
+   "subs": 2580000,
+   "approved": true
+  },
+  {
+   "id": "UCC540wcJL0DeQlC8lgUP-XQ",
+   "name": "FuriousFade",
+   "url": "https://www.youtube.com/channel/UCC540wcJL0DeQlC8lgUP-XQ",
+   "subs": 2580000,
+   "approved": true
+  },
+  {
+   "id": "UC72PuhDwKtZ5MikpGNhPAtA",
+   "name": "TGG",
+   "url": "https://www.youtube.com/channel/UC72PuhDwKtZ5MikpGNhPAtA",
+   "subs": 2370000,
+   "approved": true
+  },
+  {
+   "id": "UCns4T9U8VSIRovKa1a_r7rA",
+   "name": "GameRiot",
+   "url": "https://www.youtube.com/channel/UCns4T9U8VSIRovKa1a_r7rA",
+   "subs": 1980000,
+   "approved": true
+  },
+  {
+   "id": "UCcTAkp1FiUjkf-_CqT7dP0g",
+   "name": "JoblessGarrett",
+   "url": "https://www.youtube.com/channel/UCcTAkp1FiUjkf-_CqT7dP0g",
+   "subs": 1750000,
+   "approved": true
+  },
+  {
+   "id": "UCyLEtejdFtvHmfKBTDEVvzg",
+   "name": "AFGuidesHD",
+   "url": "https://www.youtube.com/channel/UCyLEtejdFtvHmfKBTDEVvzg",
+   "subs": 1690000,
+   "approved": true
+  }
+ ]
+}
