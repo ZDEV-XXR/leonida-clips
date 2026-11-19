@@ -106,7 +106,7 @@ def scan():
             med = statistics.median(e['view_count'] for e in ents) or 1
             for e in ents:
                 v = e['view_count']
-                if v >= med * RATIO and v >= MIN_VIEWS:
+                if v >= med * RATIO and v >= MIN_VIEWS and re.search(r'gta|grand theft|leonida|vice city', e.get('title', ''), re.I):
                     thumb = 'https://i.ytimg.com/vi/%s/hqdefault.jpg' % e['id']
                     rows.append({'video_id': e['id'], 'channel': c['name'], 'format': 'long' if tab == 'videos' else 'short',
                                  'title': e.get('title', ''), 'views': v, 'channel_median': int(med),

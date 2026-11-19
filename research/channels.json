@@ -9,13 +9,6 @@
    "approved": true
   },
   {
-   "id": "UCvCfpQXRXdJdL07pzTIA6Cw",
-   "name": "Kai Cenat Live",
-   "url": "https://www.youtube.com/channel/UCvCfpQXRXdJdL07pzTIA6Cw",
-   "subs": 16800000,
-   "approved": true
-  },
-  {
    "id": "UCJAbkIY17zAmCTNQHH0bQoQ",
    "name": "Gameplayrj",
    "url": "https://www.youtube.com/channel/UCJAbkIY17zAmCTNQHH0bQoQ",
@@ -140,6 +133,19 @@
    "url": "https://www.youtube.com/channel/UCyLEtejdFtvHmfKBTDEVvzg",
    "subs": 1690000,
    "approved": true
+  },
+  {
+   "id": "UCfBkzAvx7_fEiJ2rfChydYQ",
+   "name": "Sirloin",
+   "url": "https://www.youtube.com/channel/UCfBkzAvx7_fEiJ2rfChydYQ",
+   "subs": 1590000,
+   "approved": true
+  }
+ ],
+ "excluded": [
+  {
+   "name": "Kai Cenat Live",
+   "why": "streamer channel, not GTA content"
   }
  ]
 }
