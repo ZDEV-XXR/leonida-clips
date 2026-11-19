@@ -1,0 +1,33 @@
+{
+ "id": "BashfulDreamyDragonflyGingerPower-KVNXb4B9B7tJHtVt",
+ "streamer": "stableronaldo",
+ "login": "stableronaldo",
+ "title": "StableRonaldo flashed\ud83d\udd1e\ud83d\udd1e",
+ "views": 4611,
+ "created_at": "2026-11-18T20:50:15Z",
+ "duration": 20.2,
+ "clip_url": "https://www.twitch.tv/stableronaldo/clip/BashfulDreamyDragonflyGingerPower-KVNXb4B9B7tJHtVt",
+ "platform": "twitch",
+ "credit": "twitch.tv/stableronaldo",
+ "layout": "cam",
+ "transcript": "That's good. Oh my. Oh my. Okay. Okay. Like I gotta get off the side. I gotta get off the side. I gotta get off. I gotta get off. I gotta get off. Yeah. I'm gonna get. I'm gonna get in trouble. This time I'm just gonna go all the way. Oh no. Oh my God. That's just like, he's baffled at it.",
+ "score": 87.8,
+ "campaign": null,
+ "genes": {
+  "max_len": 20,
+  "trim": "smart",
+  "cap_size": 96,
+  "cap_pos": "mid",
+  "hook_style": "reaction",
+  "hook_case": "upper"
+ },
+ "kept": 20.25,
+ "action": 0.47,
+ "action_parts": {
+  "audio": 0.31,
+  "motion": 0.49,
+  "talk": 0.64,
+  "bonus": 0
+ },
+ "queued_at": "2026-11-19T23:18:09Z"
+}
