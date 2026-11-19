@@ -22,9 +22,11 @@
  "episodes": [
   {
    "date": "2026-11-18",
-   "status": "built",
+   "status": "posted",
    "length_s": 649,
-   "clips": 18
+   "clips": 18,
+   "youtube_id": "L7cnJf-Ge0k",
+   "title": "GTA 6 Best Clips of the Day #1 (test)"
   }
  ]
 }
