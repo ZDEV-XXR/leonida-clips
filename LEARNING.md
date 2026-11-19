@@ -6,19 +6,19 @@ Lift = how far posts with this option beat their neighbours (log-views + retenti
 
 ## Trending right now (from the last fetch)
 
-Topics: funny 1.00, police 0.34, npc 0.21, money 0.17, map 0.12
+Topics: funny 1.00, police 0.15, npc 0.14, map 0.07, money 0.05
 
-Streamers: ohnepixel 1.00, xqc 0.12, theburntpeanut 0.11, jasontheween 0.10, kaicenat 0.08, caseoh_ 0.07, zoil 0.07, lacy 0.07
+Streamers: ohnepixel 1.00, caseoh_ 0.18, jasontheween 0.12, xqc 0.12, theburntpeanut 0.12, kaicenat 0.09, lacy 0.09, zoil 0.07
 
 Hook ideas from trending Shorts titles:
 
+- Grand Theft Auto VI Trailer 1
+- Grand Theft Auto VI Launch Trailer
 - Grand Theft Auto VI: Pre-Load Now
-- CARRYMINATI PLAYS GTA VI | NO PROMOTIONS
-- ⁴ᴷ⁶⁰ GTA 6 PS5 Graphics!? Heist & Police Chase Action Gameplay! Ray Tracing Graphics / GTA
+- Grand Theft Auto VI – Launch-Trailer
 - GTA 6 (Grand Theft Auto VI) - Official Trailer
 - Grand Theft Auto VI - Features Trailer | PS5 Games
-- Grand Theft Auto VI: An Extended Look | Now Playing | Netflix
 - 🔴 LIVE! - GTA 6 EARLY ACCESS! FREE ROAM GAMEPLAY LIVE! (PS5 PRO)
-- 🔴 GTA 6 LIVE GAMEPLAY - WORLD PREMIERE PART 1 - PS5 PRO - 60 FPS
+- Grand Theft Auto VI Launch Trailer
+- 🔴 GTA 6 LIVE GAMEPLAY 60 FPS - WORLD PREMIERE PART 1 - PS5 PRO 
 - GTA 6 - THE FINAL REVEAL!
-- 12 THINGS You NEED To Do On DAY 1 in GTA 6

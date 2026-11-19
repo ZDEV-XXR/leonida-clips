@@ -22,17 +22,17 @@
    "hook": "XQC STEALS HIS FIRST CAR",
    "duration": 54.3,
    "metrics": {
-    "views": 1297,
-    "reach": 1048,
+    "views": 1305,
+    "reach": 1054,
     "likes": 10,
     "comments": 0,
-    "shares": 2,
+    "shares": 3,
     "saves": 0,
-    "avg_watch": 19.744,
-    "skip_rate": 0.276,
-    "age_h": 4.6
+    "avg_watch": 19.69,
+    "skip_rate": 0.279,
+    "age_h": 7.6
    },
-   "score": 3.275
+   "score": 3.278
   },
   {
    "id": "ReliablePowerfulOilBatChest-ydNija0st6UB0byp",
@@ -55,17 +55,17 @@
    "hook": "What is down there, Lirik?",
    "duration": 20.0,
    "metrics": {
-    "views": 280,
-    "reach": 184,
-    "likes": 3,
+    "views": 1874,
+    "reach": 1330,
+    "likes": 44,
     "comments": 0,
-    "shares": 1,
+    "shares": 12,
     "saves": 0,
-    "avg_watch": 9.221,
-    "skip_rate": 0.236,
-    "age_h": 4.1
+    "avg_watch": 11.283,
+    "skip_rate": 0.266,
+    "age_h": 7.1
    },
-   "score": 2.73
+   "score": 3.62
   },
   {
    "id": "DifferentPreciousWaffleHotPokket-wMDh_pqLv3Ve6ZOc",
@@ -90,17 +90,17 @@
    "hook": "xQc escapes his first police chase",
    "duration": 17.5,
    "metrics": {
-    "views": 163,
-    "reach": 75,
+    "views": 170,
+    "reach": 125,
     "likes": 1,
     "comments": 0,
     "shares": 0,
     "saves": 0,
-    "avg_watch": 8.536,
-    "skip_rate": 0.202,
-    "age_h": 3.8
+    "avg_watch": 9.125,
+    "skip_rate": 0.272,
+    "age_h": 6.8
    },
-   "score": 2.527
+   "score": 2.536
   },
   {
    "id": "ThankfulSoftKoupreyOMGScoots-8rWxvM1hXbQ2r_nz",
@@ -125,7 +125,19 @@
     "hour": "15"
    },
    "hook": "Did he really steal grandma's scooter?",
-   "duration": 22.5
+   "duration": 22.5,
+   "metrics": {
+    "views": 208,
+    "reach": 166,
+    "likes": 6,
+    "comments": 0,
+    "shares": 4,
+    "saves": 0,
+    "avg_watch": 10.854,
+    "skip_rate": 0.222,
+    "age_h": 4.8
+   },
+   "score": 2.686
   },
   {
    "id": "DelightfulLachrymoseMelonVoteYea-JeFCNhZHEyTfoOMJ",
@@ -148,7 +160,19 @@
     "hour": "18"
    },
    "hook": "Wait for the cows",
-   "duration": 33.75
+   "duration": 33.75,
+   "metrics": {
+    "views": 1391,
+    "reach": 1105,
+    "likes": 28,
+    "comments": 0,
+    "shares": 6,
+    "saves": 0,
+    "avg_watch": 15.825,
+    "skip_rate": 0.19,
+    "age_h": 2.9
+   },
+   "score": 3.443
   }
  ]
 }
