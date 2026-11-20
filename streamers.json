@@ -267,6 +267,71 @@
     "cta": "Watch YourRAGE live: twitch.tv/yourragegaming",
     "ends": "when the pool ends"
    }
+  },
+    {
+   "login": "shroud",
+   "approved": true,
+   "cam": null
+  },
+  {
+   "login": "timthetatman",
+   "approved": true,
+   "cam": null
+  },
+  {
+   "login": "ludwig",
+   "approved": true,
+   "cam": null
+  },
+  {
+   "login": "mizkif",
+   "approved": true,
+   "cam": null
+  },
+  {
+   "login": "asmongold",
+   "approved": true,
+   "cam": null
+  },
+  {
+   "login": "esfandtv",
+   "approved": true,
+   "cam": null
+  },
+  {
+   "login": "nmplol",
+   "approved": true,
+   "cam": null
+  },
+  {
+   "login": "pokimane",
+   "approved": true,
+   "cam": null
+  },
+  {
+   "login": "penguinz0",
+   "approved": true,
+   "cam": null
+  },
+  {
+   "login": "plaqueboymax",
+   "approved": true,
+   "cam": null
+  },
+  {
+   "login": "dukedennis",
+   "approved": true,
+   "cam": null
+  },
+  {
+   "login": "agent00",
+   "approved": true,
+   "cam": null
+  },
+  {
+   "login": "tfue",
+   "approved": true,
+   "cam": null
   }
  ],
  "top_n": 10
