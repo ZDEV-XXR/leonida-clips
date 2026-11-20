@@ -30,7 +30,7 @@
     "saves": 0,
     "avg_watch": 19.728,
     "skip_rate": 0.278,
-    "age_h": 31.6
+    "age_h": 34.6
    },
    "score": 3.28
   },
@@ -63,7 +63,7 @@
     "saves": 0,
     "avg_watch": 11.254,
     "skip_rate": 0.269,
-    "age_h": 31.1
+    "age_h": 34.1
    },
    "score": 3.621
   },
@@ -98,7 +98,7 @@
     "saves": 0,
     "avg_watch": 9.125,
     "skip_rate": 0.272,
-    "age_h": 30.8
+    "age_h": 33.8
    },
    "score": 2.536
   },
@@ -135,7 +135,7 @@
     "saves": 0,
     "avg_watch": 10.854,
     "skip_rate": 0.222,
-    "age_h": 28.8
+    "age_h": 31.9
    },
    "score": 2.686
   },
@@ -162,17 +162,17 @@
    "hook": "Wait for the cows",
    "duration": 33.75,
    "metrics": {
-    "views": 1404,
+    "views": 1405,
     "reach": 1114,
     "likes": 28,
     "comments": 0,
     "shares": 6,
     "saves": 0,
-    "avg_watch": 15.815,
-    "skip_rate": 0.192,
-    "age_h": 27.0
+    "avg_watch": 15.805,
+    "skip_rate": 0.191,
+    "age_h": 30.0
    },
-   "score": 3.445
+   "score": 3.446
   },
   {
    "id": "BeautifulModernTermiteYouWHY-nEB5VffTKnvTR2UD",
@@ -202,11 +202,11 @@
     "comments": 0,
     "shares": 0,
     "saves": 0,
-    "avg_watch": 13.8,
+    "avg_watch": 13.711,
     "skip_rate": 0.17,
-    "age_h": 14.3
+    "age_h": 17.4
    },
-   "score": 2.722
+   "score": 2.718
   },
   {
    "id": "RelievedRichRhinocerosPeteZaroll-qOXHVQ3XVK3asCkK",
@@ -230,17 +230,17 @@
    "hook": "LACY counts down GTA 6 launch",
    "duration": 30.02,
    "metrics": {
-    "views": 127,
-    "reach": 103,
+    "views": 129,
+    "reach": 104,
     "likes": 0,
     "comments": 0,
     "shares": 0,
     "saves": 0,
-    "avg_watch": 6.73,
-    "skip_rate": 0.5,
-    "age_h": 6.2
+    "avg_watch": 6.968,
+    "skip_rate": 0.495,
+    "age_h": 9.2
    },
-   "score": 2.066
+   "score": 2.081
   },
   {
    "id": "VainCourteousKaleBabyRage-06rqGkLgi3OzfREJ",
@@ -262,7 +262,19 @@
     "hour": "18"
    },
    "hook": "Wait for the bridge throw",
-   "duration": 30.02
+   "duration": 30.02,
+   "metrics": {
+    "views": 210,
+    "reach": 156,
+    "likes": 5,
+    "comments": 0,
+    "shares": 0,
+    "saves": 0,
+    "avg_watch": 16.963,
+    "skip_rate": 0.217,
+    "age_h": 6.0
+   },
+   "score": 2.686
   },
   {
    "id": "GentleBrainyTortoiseKappa-SqJmUKvZs2E33xOH",
@@ -286,7 +298,19 @@
     "hour": "18"
    },
    "hook": "LACY really thought he'd win",
-   "duration": 20.0
+   "duration": 20.0,
+   "metrics": {
+    "views": 198,
+    "reach": 137,
+    "likes": 2,
+    "comments": 0,
+    "shares": 0,
+    "saves": 0,
+    "avg_watch": 12.931,
+    "skip_rate": 0.235,
+    "age_h": 5.3
+   },
+   "score": 2.718
   },
   {
    "id": "ResoluteGrossPineapplePJSugar-foZmQUHh-1MwG1r9",
@@ -309,7 +333,19 @@
     "hour": "18"
    },
    "hook": "Bobby VanRiper could not believe this",
-   "duration": 20.0
+   "duration": 20.0,
+   "metrics": {
+    "views": 122,
+    "reach": 108,
+    "likes": 0,
+    "comments": 0,
+    "shares": 0,
+    "saves": 0,
+    "avg_watch": 6.217,
+    "skip_rate": 0.398,
+    "age_h": 5.3
+   },
+   "score": 2.17
   },
   {
    "id": "PeppyFunGaurPunchTrees-edM6JKBegYQ6zSk-",
@@ -331,7 +367,19 @@
     "hour": "18"
    },
    "hook": "Kai Cenat's jaw dropped at this",
-   "duration": 20.0
+   "duration": 20.0,
+   "metrics": {
+    "views": 160,
+    "reach": 118,
+    "likes": 4,
+    "comments": 0,
+    "shares": 0,
+    "saves": 0,
+    "avg_watch": 41.976,
+    "skip_rate": 0.398,
+    "age_h": 5.2
+   },
+   "score": 2.991
   },
   {
    "id": "DelightfulBombasticTildePMSTwin-kC_I7gcj8nNdZNjs",
@@ -354,7 +402,19 @@
     "hour": "18"
    },
    "hook": "Bobby VanRiper can't believe how real",
-   "duration": 20.0
+   "duration": 20.0,
+   "metrics": {
+    "views": 151,
+    "reach": 123,
+    "likes": 3,
+    "comments": 0,
+    "shares": 0,
+    "saves": 0,
+    "avg_watch": 9.39,
+    "skip_rate": 0.35,
+    "age_h": 5.2
+   },
+   "score": 2.407
   },
   {
    "id": "BoldPopularLegMrDestructoid-zkq_hgoilPQdO3R2",
@@ -377,7 +437,19 @@
     "hour": "21"
    },
    "hook": "LACY instantly regrets saying that",
-   "duration": 20.0
+   "duration": 20.0,
+   "metrics": {
+    "views": 170,
+    "reach": 123,
+    "likes": 1,
+    "comments": 0,
+    "shares": 0,
+    "saves": 0,
+    "avg_watch": 12.442,
+    "skip_rate": 0.331,
+    "age_h": 2.9
+   },
+   "score": 2.587
   },
   {
    "id": "DirtyHeartlessSharkEleGiggle-HaEOarVxhHEr9cqV",
@@ -400,7 +472,19 @@
     "hour": "21"
    },
    "hook": "Bobby VanRiper panics at the shark",
-   "duration": 16.0
+   "duration": 16.0,
+   "metrics": {
+    "views": 185,
+    "reach": 127,
+    "likes": 0,
+    "comments": 0,
+    "shares": 0,
+    "saves": 0,
+    "avg_watch": 12.68,
+    "skip_rate": 0.136,
+    "age_h": 2.9
+   },
+   "score": 2.856
   }
  ]
 }
