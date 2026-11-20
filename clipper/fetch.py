@@ -9,8 +9,10 @@ import render, learn
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
 GAME = os.environ.get('GAME_NAME', 'Grand Theft Auto VI')
-PER_RUN = int(os.environ.get('PER_RUN', '3'))        # clips rendered per run
-QUEUE_MAX = int(os.environ.get('QUEUE_MAX', '12'))
+PER_RUN = int(os.environ.get('PER_RUN', '3'))        # non-campaign clips rendered per run
+CAMP_PER_STREAMER = int(os.environ.get('CAMP_PER_STREAMER', '3'))   # campaign streamers get their own slots on top of PER_RUN
+CAMP_MIN_ACTION = float(os.environ.get('CAMP_MIN_ACTION', '0.2'))   # campaign clips pay for featuring the streamer, so a lower energy bar
+QUEUE_MAX = int(os.environ.get('QUEUE_MAX', '24'))
 MIN_VIEWS = int(os.environ.get('MIN_VIEWS', '25'))
 LANGS = set(os.environ.get('CLIP_LANGS', 'en').split(','))   # page language(s); a Spanish page would set es
 MIN_ACTION = float(os.environ.get('MIN_ACTION', '0.35'))   # clips scoring below this (calm, silent, dead air) are dropped
@@ -144,27 +146,44 @@ def main():
     for c in clips:
         c['_rank'] = learn.rank({'login': users[c['broadcaster_id']]['login'], 'title': c['title'],
                                  'duration': c['duration']}, score(c, now), hist)
-    clips.sort(key=lambda c: c['_rank'], reverse=True)
-    # one moment per batch, max 2 per streamer per run so the feed stays varied
+    camp = {s['login'].lower() for s in ok if isinstance(s.get('campaign'), dict)}
+    is_camp = lambda c: users[c['broadcaster_id']]['login'].lower() in camp
+    clips.sort(key=lambda c: (is_camp(c), c['_rank']), reverse=True)
+    room = QUEUE_MAX - len(queued)
+    # campaign streamers: up to CAMP_PER_STREAMER queued each, tried from a deeper candidate list (they pay per view)
+    # everyone else: one moment per batch, max 2 per streamer, PER_RUN queued
     picked, moments, per = [], set(), {}
     for c in clips:
-        if c.get('_moment') in moments or per.get(c['broadcaster_id'], 0) >= 2:
+        cap = CAMP_PER_STREAMER * 3 if is_camp(c) else 2
+        if c.get('_moment') in moments or per.get(c['broadcaster_id'], 0) >= cap:
+            continue
+        if not is_camp(c) and sum(1 for x in picked if not is_camp(x)) >= 3 * PER_RUN:
             continue
         picked.append(c)
         moments.add(c.get('_moment'))
         per[c['broadcaster_id']] = per.get(c['broadcaster_id'], 0) + 1
-        if len(picked) >= 3 * min(PER_RUN, QUEUE_MAX - len(queued)):    # extra candidates: some get dropped as too calm
-            break
-    want = min(PER_RUN, QUEUE_MAX - len(queued))
-    print('%d candidate clips, trying %d to queue %d' % (len(clips), len(picked), want))
-    made = 0
+    print('%d candidate clips (%d campaign), trying %d, room %d' % (len(clips), sum(map(is_camp, clips)), len(picked), room))
+    made, made_by, made_other = 0, {}, 0
     for c in picked:
-        if made >= want:
+        if made >= room:
             break
+        b = c['broadcaster_id']
+        if is_camp(c):
+            if made_by.get(b, 0) >= CAMP_PER_STREAMER:
+                continue
+        elif made_other >= PER_RUN:
+            continue
+        ok_ = False
         try:
-            made += 1 if make(c, users[c['broadcaster_id']], cfg, now) else 0
+            ok_ = make(c, users[b], cfg, now, CAMP_MIN_ACTION if is_camp(c) else MIN_ACTION)
         except Exception as e:
             print('failed %s: %s' % (c['id'], e))
+        if ok_:
+            made += 1
+            if is_camp(c):
+                made_by[b] = made_by.get(b, 0) + 1
+            else:
+                made_other += 1
         seen['ids'].append(c['id'])
         if c.get('_moment'):
             seen['moments'].append(c['_moment'])
@@ -173,7 +192,7 @@ def main():
     save('streamers.json', cfg)
 
 
-def make(c, user, cfg, now):
+def make(c, user, cfg, now, min_action=None):
     tmp = tempfile.mkdtemp()
     raw = os.path.join(tmp, 'raw.mp4')
     subprocess.run(['yt-dlp', '-q', '-f', 'best[height<=1080]/best', '-o', raw, c['url']], check=True, timeout=300)
@@ -183,7 +202,7 @@ def make(c, user, cfg, now):
     genes = learn.choose()
     cam, transcript, used, kept, action = render.render(
         raw, dst, cam=st.get('cam'), layout=layout, credit=user.get('credit') or 'twitch.tv/' + user['login'],
-        genes=dict(genes, _title=c['title'], _min_action=MIN_ACTION))
+        genes=dict(genes, _title=c['title'], _min_action=MIN_ACTION if min_action is None else min_action))
     if used == 'rejected':
         print('dropped %s (%s): action score %s %s' % (c['id'], user['login'], action[0], action[1]))
         return False
