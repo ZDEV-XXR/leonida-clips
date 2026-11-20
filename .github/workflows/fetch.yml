@@ -41,7 +41,7 @@ jobs:
           key: whisper-base-en
       - name: Fetch and render
         env:
-          TWITCH_CLIENT_ID: j7tp31gbxy1gt8qrit98dekl4v90j6   # public app id (leonidareplay-clipper); only the secret is private
+          TWITCH_CLIENT_ID: gg6oqbuuds8qnjmbwhfahnumuon6v9   # public app id (leonidareplay-clipper); only the secret is private
           TWITCH_CLIENT_SECRET: ${{ secrets.TWITCH_CLIENT_SECRET }}
           ONLY: ${{ github.event.inputs.only }}
           PER_RUN: ${{ github.event.inputs.per_run || '3' }}
