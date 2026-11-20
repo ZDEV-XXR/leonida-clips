@@ -508,6 +508,30 @@
    },
    "hook": "Bobby VanRiper fell for GTA 6",
    "duration": 16.87
+  },
+  {
+   "id": "AttractiveImportantChimpanzeeKappaWealth-Pn4GIVLzi_QowzCL",
+   "media_id": "18115904111607554",
+   "posted_at": "2026-11-20T08:46:58Z",
+   "genes": {
+    "max_len": 20,
+    "trim": "smart",
+    "cap_size": 84,
+    "cap_pos": "mid",
+    "hook_style": "reaction",
+    "hook_case": "upper"
+   },
+   "traits": {
+    "streamer": "ohnepixel",
+    "len": "20-35",
+    "layout": "cam",
+    "action": "mid",
+    "topic:car": 1,
+    "topic:funny": 1,
+    "hour": "00"
+   },
+   "hook": "He can't believe there's no stars",
+   "duration": 23.0
   }
  ]
 }
