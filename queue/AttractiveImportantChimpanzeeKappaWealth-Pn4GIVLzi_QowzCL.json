@@ -1,0 +1,33 @@
+{
+ "id": "AttractiveImportantChimpanzeeKappaWealth-Pn4GIVLzi_QowzCL",
+ "streamer": "ohnePixel",
+ "login": "ohnepixel",
+ "title": "No stars for full frontal crash into sherrif xD",
+ "views": 1140,
+ "created_at": "2026-11-19T15:45:36Z",
+ "duration": 43.9,
+ "clip_url": "https://www.twitch.tv/ohnepixel/clip/AttractiveImportantChimpanzeeKappaWealth-Pn4GIVLzi_QowzCL",
+ "platform": "twitch",
+ "credit": "twitch.tv/ohnepixel",
+ "layout": "cam",
+ "transcript": "Ah, oh no, that's charef off the sides of this understanding Yeah, no stands. Yeah, no stands No stars for that is crazy",
+ "score": 64.9,
+ "campaign": null,
+ "genes": {
+  "max_len": 20,
+  "trim": "smart",
+  "cap_size": 84,
+  "cap_pos": "mid",
+  "hook_style": "reaction",
+  "hook_case": "upper"
+ },
+ "kept": 23.0,
+ "action": 0.517,
+ "action_parts": {
+  "audio": 0.21,
+  "motion": 0.82,
+  "talk": 0.37,
+  "bonus": 0.1
+ },
+ "queued_at": "2026-11-20T03:12:46Z"
+}
