@@ -42,7 +42,12 @@
   {
    "login": "bobby_vanriper",
    "approved": true,
-   "cam": null,
+   "cam": [
+    0.0114,
+    0.3996,
+    0.1434,
+    0.1511
+   ],
    "campaign": {
     "id": "clippingnation-bobby-gta6",
     "name": "BOBBY VAN RIPER GTA VI Clipping (Clipping Nation) $1.50/1K",
