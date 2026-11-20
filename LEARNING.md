@@ -1,6 +1,6 @@
 # What Leonida Replay has learned
 
-Posts: 9. Scored (20h+ old): 5. Exploration: 25%.
+Posts: 10. Scored (20h+ old): 5. Exploration: 25%.
 
 Lift = how far posts with this option beat their neighbours (log-views + retention). Positive is good.
 
@@ -97,19 +97,19 @@ Lift = how far posts with this option beat their neighbours (log-views + retenti
 
 ## Trending right now (from the last fetch)
 
-Topics: funny 1.00, car 0.43, npc 0.42, money 0.35, map 0.27, police 0.10, rage 0.05
+Topics: funny 1.00, car 0.52, npc 0.41, map 0.27, money 0.15, weapon 0.10, rage 0.05
 
-Streamers: xqc 1.00, caseoh_ 0.82, ohnepixel 0.55, theburntpeanut 0.53, ishowspeed 0.33, kaicenat 0.24, sixdadon87 0.24, hasanabi 0.23
+Streamers: xqc 1.00, caseoh_ 0.84, ohnepixel 0.55, theburntpeanut 0.53, ishowspeed 0.32, kaicenat 0.24, sixdadon87 0.23, hasanabi 0.23
 
 Hook ideas from trending Shorts titles:
 
 - Grand Theft Auto VI: Out Now
-- ⁴ᴷ⁶⁰ GTA 6 PS5 Graphics!? Heist & Police Chase Action Gameplay! Ray Tracing Graphics / GTA
 - GTA 6 (Grand Theft Auto VI) - Official Trailer
 - Grand Theft Auto VI - Features Trailer | PS5 Games
 - GTA 6 - Before You Buy
 - GTA 6 PS5 Pro Gameplay - 15 Minutes of The First Mission
 - 12 THINGS You NEED To Do On DAY 1 in GTA 6
-- Grand Theft Auto 6 Review
+- GTA 6 Review - Game of the Generation
 - GTA 6 - The First Early Reviews...
 - New GTA 6 Gameplay Looks Just Like Real Life
+- STEALING A FIGHTER JET FROM GTA 6 MILITARY BASE 😱

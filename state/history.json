@@ -287,6 +287,29 @@
    },
    "hook": "LACY really thought he'd win",
    "duration": 20.0
+  },
+  {
+   "id": "ResoluteGrossPineapplePJSugar-foZmQUHh-1MwG1r9",
+   "media_id": "18116895716155200",
+   "posted_at": "2026-11-20T03:21:52Z",
+   "genes": {
+    "max_len": 20,
+    "trim": "none",
+    "cap_size": 72,
+    "cap_pos": "low",
+    "hook_style": "reaction",
+    "hook_case": "title"
+   },
+   "traits": {
+    "streamer": "bobby_vanriper",
+    "len": "20-35",
+    "layout": "cam",
+    "action": "mid",
+    "topic:map": 1,
+    "hour": "18"
+   },
+   "hook": "Bobby VanRiper could not believe this",
+   "duration": 20.0
   }
  ]
 }
