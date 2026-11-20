@@ -332,6 +332,29 @@
    },
    "hook": "Kai Cenat's jaw dropped at this",
    "duration": 20.0
+  },
+  {
+   "id": "DelightfulBombasticTildePMSTwin-kC_I7gcj8nNdZNjs",
+   "media_id": "18110212675962139",
+   "posted_at": "2026-11-20T03:29:29Z",
+   "genes": {
+    "max_len": 20,
+    "trim": "smart",
+    "cap_size": 72,
+    "cap_pos": "mid",
+    "hook_style": "reaction",
+    "hook_case": "title"
+   },
+   "traits": {
+    "streamer": "bobby_vanriper",
+    "len": "20-35",
+    "layout": "cam",
+    "action": "mid",
+    "topic:npc": 1,
+    "hour": "18"
+   },
+   "hook": "Bobby VanRiper can't believe how real",
+   "duration": 20.0
   }
  ]
 }
