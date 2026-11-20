@@ -26,7 +26,12 @@
   {
    "login": "diegoloveless",
    "approved": true,
-   "cam": null,
+   "cam": [
+    0.7957,
+    0.6095,
+    0.1576,
+    0.166
+   ],
    "campaign": {
     "id": "cliplaunch-diego-gta6",
     "name": "DiegoLoveless GTA 6 Clipping (ClipLaunch) $1/1K",
@@ -222,7 +227,12 @@
   {
    "login": "silky",
    "approved": true,
-   "cam": null,
+   "cam": [
+    0.7932,
+    0.7803,
+    0.1948,
+    0.2052
+   ],
    "pin": true,
    "campaign": {
     "id": "37f68297-664c-4820-a020-9bbb4a703bf9",
@@ -239,7 +249,12 @@
   {
    "login": "yourragegaming",
    "approved": true,
-   "cam": null,
+   "cam": [
+    0.7826,
+    0.7208,
+    0.2072,
+    0.2183
+   ],
    "pin": true,
    "campaign": {
     "id": "be9b123e-ea47-4305-b6c5-af81f503b247",
