@@ -182,5 +182,27 @@
   },
   "clip_url": "https://www.twitch.tv/bobby_vanriper/clip/DelightfulBombasticTildePMSTwin-kC_I7gcj8nNdZNjs",
   "url": "https://raw.githubusercontent.com/dibarra1524-ui/leonida-clips/main/out/DelightfulBombasticTildePMSTwin-kC_I7gcj8nNdZNjs.mp4"
+ },
+ {
+  "id": "BoldPopularLegMrDestructoid-zkq_hgoilPQdO3R2",
+  "media_id": "18104660204345209",
+  "posted_at": "2026-11-20T05:44:29Z",
+  "streamer": "lacy",
+  "hook": "LACY instantly regrets saying that",
+  "caption": "LACY hyped up motorcycles one second too early \ud83d\ude02\n\nWatch LACY live: twitch.tv/lacy\n\n#gta6 #gtavi #gta6clips #funny #twitchclips #LACY",
+  "campaign": {
+   "id": "reach-lacy-gta",
+   "name": "$12,500 LACY GTA VI Marathon Pool (Reach)",
+   "mention": "LACY",
+   "hashtag": "#LACY",
+   "rules": "Lacy must be the main focus; caption/overlay must say LACY; caption must have #LACY; no logos; never negative about Lacy; English audience; submit link within 30 min of posting",
+   "submit_at": "https://contentrewards.com/c/campaigns/a5c63fad-cd53-4b81-9305-4a2d1696872a?group=1",
+   "min_total_views": 750000,
+   "ends": "when the marathon ends",
+   "cta": "Watch LACY live: twitch.tv/lacy",
+   "pay": "pool $12.5K split by views, needs 750K total views"
+  },
+  "clip_url": "https://www.twitch.tv/lacy/clip/BoldPopularLegMrDestructoid-zkq_hgoilPQdO3R2",
+  "url": "https://raw.githubusercontent.com/dibarra1524-ui/leonida-clips/main/out/BoldPopularLegMrDestructoid-zkq_hgoilPQdO3R2.mp4"
  }
 ]

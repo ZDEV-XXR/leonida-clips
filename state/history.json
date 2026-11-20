@@ -355,6 +355,29 @@
    },
    "hook": "Bobby VanRiper can't believe how real",
    "duration": 20.0
+  },
+  {
+   "id": "BoldPopularLegMrDestructoid-zkq_hgoilPQdO3R2",
+   "media_id": "18104660204345209",
+   "posted_at": "2026-11-20T05:44:29Z",
+   "genes": {
+    "max_len": 20,
+    "trim": "none",
+    "cap_size": 72,
+    "cap_pos": "mid",
+    "hook_style": "reaction",
+    "hook_case": "title"
+   },
+   "traits": {
+    "streamer": "lacy",
+    "len": "20-35",
+    "layout": "cam",
+    "action": "low",
+    "topic:car": 1,
+    "hour": "21"
+   },
+   "hook": "LACY instantly regrets saying that",
+   "duration": 20.0
   }
  ]
 }
