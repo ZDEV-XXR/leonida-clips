@@ -310,6 +310,28 @@
    },
    "hook": "Bobby VanRiper could not believe this",
    "duration": 20.0
+  },
+  {
+   "id": "PeppyFunGaurPunchTrees-edM6JKBegYQ6zSk-",
+   "media_id": "17874780948648840",
+   "posted_at": "2026-11-20T03:25:43Z",
+   "genes": {
+    "max_len": 20,
+    "trim": "smart",
+    "cap_size": 72,
+    "cap_pos": "mid",
+    "hook_style": "reaction",
+    "hook_case": "title"
+   },
+   "traits": {
+    "streamer": "kaicenat",
+    "len": "20-35",
+    "layout": "cam",
+    "action": "low",
+    "hour": "18"
+   },
+   "hook": "Kai Cenat's jaw dropped at this",
+   "duration": 20.0
   }
  ]
 }
