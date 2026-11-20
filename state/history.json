@@ -263,6 +263,30 @@
    },
    "hook": "Wait for the bridge throw",
    "duration": 30.02
+  },
+  {
+   "id": "GentleBrainyTortoiseKappa-SqJmUKvZs2E33xOH",
+   "media_id": "17932799451181964",
+   "posted_at": "2026-11-20T03:19:38Z",
+   "genes": {
+    "max_len": 20,
+    "trim": "none",
+    "cap_size": 72,
+    "cap_pos": "low",
+    "hook_style": "reaction",
+    "hook_case": "title"
+   },
+   "traits": {
+    "streamer": "lacy",
+    "len": "20-35",
+    "layout": "cam",
+    "action": "high",
+    "topic:map": 1,
+    "topic:weapon": 1,
+    "hour": "18"
+   },
+   "hook": "LACY really thought he'd win",
+   "duration": 20.0
   }
  ]
 }
