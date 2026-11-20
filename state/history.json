@@ -378,6 +378,29 @@
    },
    "hook": "LACY instantly regrets saying that",
    "duration": 20.0
+  },
+  {
+   "id": "DirtyHeartlessSharkEleGiggle-HaEOarVxhHEr9cqV",
+   "media_id": "17955323691301645",
+   "posted_at": "2026-11-20T05:46:27Z",
+   "genes": {
+    "max_len": 20,
+    "trim": "smart",
+    "cap_size": 96,
+    "cap_pos": "mid",
+    "hook_style": "reaction",
+    "hook_case": "upper"
+   },
+   "traits": {
+    "streamer": "bobby_vanriper",
+    "len": "<20",
+    "layout": "cam",
+    "action": "low",
+    "topic:weapon": 1,
+    "hour": "21"
+   },
+   "hook": "Bobby VanRiper panics at the shark",
+   "duration": 16.0
   }
  ]
 }
