@@ -485,6 +485,29 @@
     "age_h": 2.9
    },
    "score": 2.856
+  },
+  {
+   "id": "ThoughtfulAttractiveHeronNononoCat-M3mdHEWMKvGswt5_",
+   "media_id": "18010515630006452",
+   "posted_at": "2026-11-20T08:44:44Z",
+   "genes": {
+    "max_len": 20,
+    "trim": "none",
+    "cap_size": 72,
+    "cap_pos": "mid",
+    "hook_style": "reaction",
+    "hook_case": "title"
+   },
+   "traits": {
+    "streamer": "bobby_vanriper",
+    "len": "<20",
+    "layout": "cam",
+    "action": "low",
+    "topic:funny": 1,
+    "hour": "00"
+   },
+   "hook": "Bobby VanRiper fell for GTA 6",
+   "duration": 16.87
   }
  ]
 }
