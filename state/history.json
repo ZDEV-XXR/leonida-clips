@@ -30,7 +30,7 @@
     "saves": 0,
     "avg_watch": 19.728,
     "skip_rate": 0.278,
-    "age_h": 25.3
+    "age_h": 28.6
    },
    "score": 3.28
   },
@@ -55,17 +55,17 @@
    "hook": "What is down there, Lirik?",
    "duration": 20.0,
    "metrics": {
-    "views": 1885,
+    "views": 1887,
     "reach": 1339,
     "likes": 44,
     "comments": 0,
     "shares": 12,
     "saves": 0,
-    "avg_watch": 11.244,
+    "avg_watch": 11.254,
     "skip_rate": 0.269,
-    "age_h": 24.8
+    "age_h": 28.1
    },
-   "score": 3.62
+   "score": 3.621
   },
   {
    "id": "DifferentPreciousWaffleHotPokket-wMDh_pqLv3Ve6ZOc",
@@ -98,7 +98,7 @@
     "saves": 0,
     "avg_watch": 9.125,
     "skip_rate": 0.272,
-    "age_h": 24.5
+    "age_h": 27.8
    },
    "score": 2.536
   },
@@ -135,7 +135,7 @@
     "saves": 0,
     "avg_watch": 10.854,
     "skip_rate": 0.222,
-    "age_h": 22.5
+    "age_h": 25.8
    },
    "score": 2.686
   },
@@ -162,15 +162,15 @@
    "hook": "Wait for the cows",
    "duration": 33.75,
    "metrics": {
-    "views": 1400,
+    "views": 1404,
     "reach": 1114,
     "likes": 28,
     "comments": 0,
     "shares": 6,
     "saves": 0,
-    "avg_watch": 15.846,
-    "skip_rate": 0.191,
-    "age_h": 20.7
+    "avg_watch": 15.815,
+    "skip_rate": 0.192,
+    "age_h": 23.9
    },
    "score": 3.445
   },
@@ -196,17 +196,17 @@
    "hook": "He called it perfectly",
    "duration": 21.84,
    "metrics": {
-    "views": 189,
+    "views": 190,
     "reach": 146,
     "likes": 3,
     "comments": 0,
     "shares": 0,
     "saves": 0,
-    "avg_watch": 13.846,
-    "skip_rate": 0.171,
-    "age_h": 8.1
+    "avg_watch": 13.8,
+    "skip_rate": 0.17,
+    "age_h": 11.3
    },
-   "score": 2.721
+   "score": 2.722
   },
   {
    "id": "RelievedRichRhinocerosPeteZaroll-qOXHVQ3XVK3asCkK",
@@ -228,7 +228,19 @@
     "hour": "15"
    },
    "hook": "LACY counts down GTA 6 launch",
-   "duration": 30.02
+   "duration": 30.02,
+   "metrics": {
+    "views": 127,
+    "reach": 103,
+    "likes": 0,
+    "comments": 0,
+    "shares": 0,
+    "saves": 0,
+    "avg_watch": 6.73,
+    "skip_rate": 0.5,
+    "age_h": 3.2
+   },
+   "score": 2.066
   }
  ]
 }

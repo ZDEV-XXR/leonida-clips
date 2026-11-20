@@ -97,19 +97,19 @@ Lift = how far posts with this option beat their neighbours (log-views + retenti
 
 ## Trending right now (from the last fetch)
 
-Topics: funny 1.00, car 0.18, weapon 0.10, money 0.10, map 0.06, npc 0.04, police 0.01, rage 0.01
+Topics: funny 1.00, money 0.20, car 0.18, police 0.11, weapon 0.10, npc 0.08, map 0.06, rage 0.01
 
-Streamers: xqc 1.00, caseoh_ 0.77, theburntpeanut 0.52, dinah 0.49, ohnepixel 0.47, ishowspeed 0.43, zackrawrr 0.42, hasanabi 0.26
+Streamers: xqc 1.00, caseoh_ 0.76, theburntpeanut 0.51, dinah 0.48, ohnepixel 0.47, ishowspeed 0.42, zackrawrr 0.42, joe_bartolozzi 0.26
 
 Hook ideas from trending Shorts titles:
 
 - Grand Theft Auto VI: Out Now
+- ⁴ᴷ⁶⁰ GTA 6 PS5 Graphics!? Heist & Police Chase Action Gameplay! Ray Tracing Graphics / GTA
 - GTA 6 (Grand Theft Auto VI) - Official Trailer
 - Grand Theft Auto VI - Features Trailer | PS5 Games
 - GTA 6 - Before You Buy
 - GTA 6 PS5 Pro Gameplay - 15 Minutes of The First Mission
 - 12 THINGS You NEED To Do On DAY 1 in GTA 6
-- GTA 6 Review - Game of the Generation
-- GTA 6 - The First Early Reviews...
+- Grand Theft Auto 6 Review
 - New GTA 6 Gameplay Looks Just Like Real Life
 - STEALING A FIGHTER JET FROM GTA 6 MILITARY BASE 😱
