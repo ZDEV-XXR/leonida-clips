@@ -1,17 +1,17 @@
 {
- "id": "KnottyHorribleMeatloafWoofer-qHCrPk1hx8_Kk1gQ",
+ "id": "AggressiveJazzyVampirePeanutButterJellyTime-x5Os2fBRGnW68JOW",
  "streamer": "Lacy",
  "login": "lacy",
- "title": "hahahahahahahahahahahahaha",
- "views": 595,
- "created_at": "2026-11-19T21:38:42Z",
- "duration": 22.9,
- "clip_url": "https://www.twitch.tv/lacy/clip/KnottyHorribleMeatloafWoofer-qHCrPk1hx8_Kk1gQ",
+ "title": "a",
+ "views": 3782,
+ "created_at": "2026-11-20T17:13:39Z",
+ "duration": 35.9,
+ "clip_url": "https://www.twitch.tv/lacy/clip/AggressiveJazzyVampirePeanutButterJellyTime-x5Os2fBRGnW68JOW",
  "platform": "twitch",
  "credit": "twitch.tv/lacy",
- "layout": "full",
- "transcript": "Check out a new before I don't know this diarrhea is just not good. I don't know. Let's get home your chat",
- "score": 20.1,
+ "layout": "cam",
+ "transcript": "I repeat, a furry is loose in the area. Tripping your pet self, not going to be replaced by the foster. What the? Who is fighting? We've got it surrounding. Shit! The boss! Down on the run!",
+ "score": 73.2,
  "campaign": {
   "id": "reach-lacy-gta",
   "name": "$12,500 LACY GTA VI Marathon Pool (Reach)",
@@ -25,20 +25,20 @@
   "pay": "pool $12.5K split by views, needs 750K total views"
  },
  "genes": {
-  "max_len": 45,
-  "trim": "smart",
+  "max_len": 20,
+  "trim": "none",
   "cap_size": 84,
-  "cap_pos": "low",
-  "hook_style": "question",
-  "hook_case": "upper"
+  "cap_pos": "mid",
+  "hook_style": "streamer",
+  "hook_case": "title"
  },
- "kept": 22.95,
- "action": 0.477,
+ "kept": 20.0,
+ "action": 0.553,
  "action_parts": {
-  "audio": 1.0,
-  "motion": 0.13,
-  "talk": 0.13,
+  "audio": 0.17,
+  "motion": 0.76,
+  "talk": 0.85,
   "bonus": 0
  },
- "queued_at": "2026-11-20T12:50:54Z"
+ "queued_at": "2026-11-21T21:39:40Z"
 }
