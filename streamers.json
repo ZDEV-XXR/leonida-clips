@@ -68,7 +68,12 @@
   {
    "login": "darealboeshi",
    "approved": true,
-   "cam": null,
+   "cam": [
+    0.0007,
+    0.2383,
+    0.1293,
+    0.1362
+   ],
    "campaign": {
     "id": "cliplaunch-boeshi-gta6",
     "name": "Boeshi GTA 6 Clipping (ClipLaunch) $1/1K",

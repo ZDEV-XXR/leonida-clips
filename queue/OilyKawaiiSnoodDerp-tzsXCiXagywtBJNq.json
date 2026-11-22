@@ -1,0 +1,44 @@
+{
+ "id": "OilyKawaiiSnoodDerp-tzsXCiXagywtBJNq",
+ "streamer": "Lacy",
+ "login": "lacy",
+ "title": "a",
+ "views": 225,
+ "created_at": "2026-11-21T21:29:51Z",
+ "duration": 32.7,
+ "clip_url": "https://www.twitch.tv/lacy/clip/OilyKawaiiSnoodDerp-tzsXCiXagywtBJNq",
+ "platform": "twitch",
+ "credit": "twitch.tv/lacy",
+ "layout": "cam",
+ "transcript": "Lacey, I missed your GT marathon. Can you please restart the whole game for me? I mean sure bro. Yeah, I got you Yeah, I got you bro. I got you bro. I don't want you to miss any of the content any of that so I'll restart the whole game for you I'll restart. I'll restart It's okay. She has only 90 hours. I'll if someone missed it. I gotta restart the whole game, bro",
+ "score": 25.3,
+ "campaign": {
+  "id": "reach-lacy-gta",
+  "name": "$12,500 LACY GTA VI Marathon Pool (Reach)",
+  "mention": "LACY",
+  "hashtag": "#LACY",
+  "rules": "Lacy must be the main focus; caption/overlay must say LACY; caption must have #LACY; no logos; never negative about Lacy; English audience; submit link within 30 min of posting",
+  "submit_at": "https://contentrewards.com/c/campaigns/a5c63fad-cd53-4b81-9305-4a2d1696872a?group=1",
+  "min_total_views": 750000,
+  "ends": "when the marathon ends",
+  "cta": "Watch LACY live: twitch.tv/lacy",
+  "pay": "pool $12.5K split by views, needs 750K total views"
+ },
+ "genes": {
+  "max_len": 30,
+  "trim": "smart",
+  "cap_size": 96,
+  "cap_pos": "mid",
+  "hook_style": "stakes",
+  "hook_case": "upper"
+ },
+ "kept": 30.0,
+ "action": 0.637,
+ "action_parts": {
+  "audio": 0.48,
+  "motion": 0.64,
+  "talk": 0.82,
+  "bonus": 0
+ },
+ "queued_at": "2026-11-22T02:13:47Z"
+}
