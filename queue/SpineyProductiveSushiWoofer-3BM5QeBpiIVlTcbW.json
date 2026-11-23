@@ -1,0 +1,43 @@
+{
+ "id": "SpineyProductiveSushiWoofer-3BM5QeBpiIVlTcbW",
+ "streamer": "Silky",
+ "login": "silky",
+ "title": "LMAO",
+ "views": 517,
+ "created_at": "2026-11-23T09:40:48Z",
+ "duration": 60,
+ "clip_url": "https://www.twitch.tv/silky/clip/SpineyProductiveSushiWoofer-3BM5QeBpiIVlTcbW",
+ "platform": "twitch",
+ "credit": "twitch.tv/silky",
+ "layout": "cam",
+ "transcript": "Not my child, I think it would look like me This is a personal question. Hold on. Let me call this just because I have to actually ban you This is gonna be a personal question, but if you have to choose one you eat an ass or toes toes Why do you think baby glitz got all that feces in his eyes right now? He can't even open that shit He'd be hanging around Mottie We received Mottie. We see Mottie average more You know there was a point in time. There was generally a point in time where Mottie was dead -ass average in pink eye more than streams No trouble. It didn't make any sense, bro. Come on, bro They just be I don't think it's be eating that out as well",
+ "score": 36.5,
+ "campaign": {
+  "id": "37f68297-664c-4820-a020-9bbb4a703bf9",
+  "name": "$7,500 Silky Pool Campaign (Reach)",
+  "mention": "Silky",
+  "hashtag": "#silky",
+  "rules": "Silky must be the main focus playing GTA 6; caption must include #silky; never negative about Silky; submit within 30 min of posting",
+  "submit_at": "https://contentrewards.com/c/campaigns/37f68297-664c-4820-a020-9bbb4a703bf9",
+  "pay": "pool $7.5K split by views, needs 250K total views, 500 views per clip",
+  "cta": "Watch Silky live: twitch.tv/silky",
+  "ends": "when the pool ends"
+ },
+ "genes": {
+  "max_len": 60,
+  "trim": "smart",
+  "cap_size": 72,
+  "cap_pos": "mid",
+  "hook_style": "stakes",
+  "hook_case": "title"
+ },
+ "kept": 60.0,
+ "action": 0.829,
+ "action_parts": {
+  "audio": 0.75,
+  "motion": 0.63,
+  "talk": 0.78,
+  "bonus": 0.1
+ },
+ "queued_at": "2026-11-23T20:16:24Z"
+}

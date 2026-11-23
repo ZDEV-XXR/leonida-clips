@@ -1,17 +1,17 @@
 {
- "id": "PlacidBlightedPeachVoteYea-kQnNj5vvGsdGO33S",
+ "id": "CloudyJoyousAlmondBibleThump--4P8K4-5MiTiWMjA",
  "streamer": "Lacy",
  "login": "lacy",
- "title": "Lacy got impressed",
- "views": 2222,
- "created_at": "2026-11-20T16:43:25Z",
- "duration": 19.3,
- "clip_url": "https://www.twitch.tv/lacy/clip/PlacidBlightedPeachVoteYea-kQnNj5vvGsdGO33S",
+ "title": "wwwwww",
+ "views": 4768,
+ "created_at": "2026-11-22T22:37:47Z",
+ "duration": 34.2,
+ "clip_url": "https://www.twitch.tv/lacy/clip/CloudyJoyousAlmondBibleThump--4P8K4-5MiTiWMjA",
  "platform": "twitch",
  "credit": "twitch.tv/lacy",
  "layout": "cam",
- "transcript": "Whoa, she got some she got some new jiggle physics. Hold on. Whoa",
- "score": 30.5,
+ "transcript": "61 %",
+ "score": 107.9,
  "campaign": {
   "id": "reach-lacy-gta",
   "name": "$12,500 LACY GTA VI Marathon Pool (Reach)",
@@ -27,18 +27,18 @@
  "genes": {
   "max_len": 45,
   "trim": "none",
-  "cap_size": 84,
-  "cap_pos": "mid",
-  "hook_style": "streamer",
+  "cap_size": 96,
+  "cap_pos": "low",
+  "hook_style": "stakes",
   "hook_case": "title"
  },
- "kept": 19.37,
- "action": 0.476,
+ "kept": 34.24,
+ "action": 0.422,
  "action_parts": {
-  "audio": 0.96,
-  "motion": 0.24,
-  "talk": 0.09,
+  "audio": 1.0,
+  "motion": 0.08,
+  "talk": 0.01,
   "bonus": 0
  },
- "queued_at": "2026-11-22T02:13:47Z"
+ "queued_at": "2026-11-23T20:16:24Z"
 }

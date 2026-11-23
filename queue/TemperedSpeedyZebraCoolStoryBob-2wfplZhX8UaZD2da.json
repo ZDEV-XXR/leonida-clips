@@ -1,0 +1,44 @@
+{
+ "id": "TemperedSpeedyZebraCoolStoryBob-2wfplZhX8UaZD2da",
+ "streamer": "Lacy",
+ "login": "lacy",
+ "title": "bro killed his girl",
+ "views": 338,
+ "created_at": "2026-11-22T21:42:02Z",
+ "duration": 37.4,
+ "clip_url": "https://www.twitch.tv/lacy/clip/TemperedSpeedyZebraCoolStoryBob-2wfplZhX8UaZD2da",
+ "platform": "twitch",
+ "credit": "twitch.tv/lacy",
+ "layout": "cam",
+ "transcript": "Lucia! Lucia! Lucia now! I just shot Lucia! We're sitting on their asses. Yeah, it will be long day. We're always going to save us. We've got to do it ourselves. I use the cops to sit in there. No, no, no, no. Keep on. How's your ammo? Come on!",
+ "score": 11.2,
+ "campaign": {
+  "id": "reach-lacy-gta",
+  "name": "$12,500 LACY GTA VI Marathon Pool (Reach)",
+  "mention": "LACY",
+  "hashtag": "#LACY",
+  "rules": "Lacy must be the main focus; caption/overlay must say LACY; caption must have #LACY; no logos; never negative about Lacy; English audience; submit link within 30 min of posting",
+  "submit_at": "https://contentrewards.com/c/campaigns/a5c63fad-cd53-4b81-9305-4a2d1696872a?group=1",
+  "min_total_views": 750000,
+  "ends": "when the marathon ends",
+  "cta": "Watch LACY live: twitch.tv/lacy",
+  "pay": "pool $12.5K split by views, needs 750K total views"
+ },
+ "genes": {
+  "max_len": 60,
+  "trim": "smart",
+  "cap_size": 96,
+  "cap_pos": "mid",
+  "hook_style": "streamer",
+  "hook_case": "title"
+ },
+ "kept": 25.75,
+ "action": 0.841,
+ "action_parts": {
+  "audio": 0.71,
+  "motion": 0.63,
+  "talk": 0.86,
+  "bonus": 0.1
+ },
+ "queued_at": "2026-11-23T20:16:24Z"
+}
