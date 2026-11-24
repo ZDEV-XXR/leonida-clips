@@ -1,0 +1,44 @@
+{
+ "id": "StormyAstuteIcecreamVoteNay-dKiDmUSidbz46M5n",
+ "streamer": "Lacy",
+ "login": "lacy",
+ "title": ".",
+ "views": 181,
+ "created_at": "2026-11-23T10:40:09Z",
+ "duration": 45,
+ "clip_url": "https://www.twitch.tv/lacy/clip/StormyAstuteIcecreamVoteNay-dKiDmUSidbz46M5n",
+ "platform": "twitch",
+ "credit": "twitch.tv/lacy",
+ "layout": "cam",
+ "transcript": "Oh my God, I unlocked Illusia Shower. I unlocked Illusia Shower. Yeah!",
+ "score": 2.7,
+ "campaign": {
+  "id": "reach-lacy-gta",
+  "name": "$12,500 LACY GTA VI Marathon Pool (Reach)",
+  "mention": "LACY",
+  "hashtag": "#LACY",
+  "rules": "Lacy must be the main focus; caption/overlay must say LACY; caption must have #LACY; no logos; never negative about Lacy; English audience; submit link within 30 min of posting",
+  "submit_at": "https://contentrewards.com/c/campaigns/a5c63fad-cd53-4b81-9305-4a2d1696872a?group=1",
+  "min_total_views": 750000,
+  "ends": "when the marathon ends",
+  "cta": "Watch LACY live: twitch.tv/lacy",
+  "pay": "pool $12.5K split by views, needs 750K total views"
+ },
+ "genes": {
+  "max_len": 30,
+  "trim": "none",
+  "cap_size": 84,
+  "cap_pos": "mid",
+  "hook_style": "question",
+  "hook_case": "upper"
+ },
+ "kept": 30.0,
+ "action": 0.532,
+ "action_parts": {
+  "audio": 0.97,
+  "motion": 0.17,
+  "talk": 0.29,
+  "bonus": 0
+ },
+ "queued_at": "2026-11-24T17:42:30Z"
+}
