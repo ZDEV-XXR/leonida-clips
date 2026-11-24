@@ -1,0 +1,43 @@
+{
+ "id": "TriumphantPopularHorseradishNotATK-GP7CcJVSu8PLPos8",
+ "streamer": "darealboeshi",
+ "login": "darealboeshi",
+ "title": "he tried to mog the NPC and instantly regretted it",
+ "views": 39,
+ "created_at": "2026-11-23T04:36:03Z",
+ "duration": 60,
+ "clip_url": "https://www.twitch.tv/darealboeshi/clip/TriumphantPopularHorseradishNotATK-GP7CcJVSu8PLPos8",
+ "platform": "twitch",
+ "credit": "twitch.tv/darealboeshi",
+ "layout": "full",
+ "transcript": "for you right now oh my god yeah I know it's 3 a .m. for me right now so 3 .30 a .m. for me so it's there's seven hours I had G's bro you can't say twitch on TikTok you got to say purple app are you serious are you serious I don't know I mean I haven't I haven't I haven't gotten banned or anything for that or shadowed",
+ "score": 1.0,
+ "campaign": {
+  "id": "cliplaunch-boeshi-gta6",
+  "name": "Boeshi GTA 6 Clipping (ClipLaunch) $1/1K",
+  "mention": "Boeshi",
+  "hashtag": "#Boeshi",
+  "rules": "Must show the streamer playing GTA 6 as the main focus; accurate caption, no clickbait; push viewers to the streamer's Twitch; no reuploads of other clippers' edits; never post near-identical clips more than 5 times; no botting",
+  "submit_at": "https://contentrewards.com/c/campaigns/5c01ecdb-a148-4489-ba26-5aadbbb5bf69",
+  "pay": "cpm $1.00/1K, max $300/clip",
+  "cta": "Follow Boeshi live: twitch.tv/darealboeshi",
+  "ends": "when budget runs out"
+ },
+ "genes": {
+  "max_len": 20,
+  "trim": "none",
+  "cap_size": 96,
+  "cap_pos": "low",
+  "hook_style": "reaction",
+  "hook_case": "title"
+ },
+ "kept": 20.0,
+ "action": 0.455,
+ "action_parts": {
+  "audio": 0.32,
+  "motion": 0.41,
+  "talk": 0.64,
+  "bonus": 0
+ },
+ "queued_at": "2026-11-24T04:48:19Z"
+}

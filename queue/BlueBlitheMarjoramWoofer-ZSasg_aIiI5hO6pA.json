@@ -1,0 +1,33 @@
+{
+ "id": "BlueBlitheMarjoramWoofer-ZSasg_aIiI5hO6pA",
+ "streamer": "caseoh_",
+ "login": "caseoh_",
+ "title": "nice scooter",
+ "views": 4383,
+ "created_at": "2026-11-23T13:59:35Z",
+ "duration": 30,
+ "clip_url": "https://www.twitch.tv/caseoh_/clip/BlueBlitheMarjoramWoofer-ZSasg_aIiI5hO6pA",
+ "platform": "twitch",
+ "credit": "twitch.tv/caseoh_",
+ "layout": "cam",
+ "transcript": "You can't elisa with the five, thank you. Nice go to the idiot!",
+ "score": 216.7,
+ "campaign": null,
+ "genes": {
+  "max_len": 45,
+  "trim": "none",
+  "cap_size": 84,
+  "cap_pos": "mid",
+  "hook_style": "question",
+  "hook_case": "title"
+ },
+ "kept": 30.02,
+ "action": 0.39,
+ "action_parts": {
+  "audio": 0.19,
+  "motion": 1.0,
+  "talk": 0.18,
+  "bonus": 0
+ },
+ "queued_at": "2026-11-24T04:48:19Z"
+}
