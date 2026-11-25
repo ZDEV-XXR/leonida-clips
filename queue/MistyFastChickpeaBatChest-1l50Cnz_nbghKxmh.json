@@ -1,17 +1,17 @@
 {
- "id": "BlatantSparklyAlligatorChefFrank-vvmgwW_Lffqpu5W3",
+ "id": "MistyFastChickpeaBatChest-1l50Cnz_nbghKxmh",
  "streamer": "KaiCenat",
  "login": "kaicenat",
- "title": "Kai sends family off bridge",
- "views": 161,
- "created_at": "2026-11-23T06:52:12Z",
- "duration": 30,
- "clip_url": "https://www.twitch.tv/kaicenat/clip/BlatantSparklyAlligatorChefFrank-vvmgwW_Lffqpu5W3",
+ "title": "lol",
+ "views": 11728,
+ "created_at": "2026-11-24T20:37:40Z",
+ "duration": 19.4,
+ "clip_url": "https://www.twitch.tv/kaicenat/clip/MistyFastChickpeaBatChest-1l50Cnz_nbghKxmh",
  "platform": "twitch",
  "credit": "twitch.tv/kaicenat",
  "layout": "cam",
- "transcript": "I'm trying to make it all in the spit When you're big, girl, you ain't your friend You're not my friend, you're not my friend You're not my friend, you're my friend",
- "score": 3.5,
+ "transcript": "Oh my god, yo, what the fuck?",
+ "score": 610.6,
  "campaign": {
   "id": "clippedshipped-kai-gta6",
   "name": "Kai Cenat $10,000 GTA 6 Pool (Clipped & Shipped)",
@@ -25,19 +25,19 @@
  },
  "genes": {
   "max_len": 20,
-  "trim": "smart",
-  "cap_size": 96,
-  "cap_pos": "low",
-  "hook_style": "stakes",
-  "hook_case": "title"
+  "trim": "none",
+  "cap_size": 84,
+  "cap_pos": "mid",
+  "hook_style": "reaction",
+  "hook_case": "upper"
  },
- "kept": 13.25,
- "action": 0.424,
+ "kept": 19.39,
+ "action": 0.688,
  "action_parts": {
-  "audio": 0.15,
+  "audio": 0.49,
   "motion": 1.0,
-  "talk": 0.32,
-  "bonus": 0
+  "talk": 0.41,
+  "bonus": 0.1
  },
- "queued_at": "2026-11-24T04:48:19Z"
+ "queued_at": "2026-11-25T14:20:20Z"
 }

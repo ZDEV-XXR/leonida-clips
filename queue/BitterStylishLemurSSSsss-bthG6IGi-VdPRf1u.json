@@ -1,17 +1,17 @@
 {
- "id": "YawningNimbleCheetahKAPOW-8UVSu4w5z4RZj_OF",
+ "id": "BitterStylishLemurSSSsss-bthG6IGi-VdPRf1u",
  "streamer": "KaiCenat",
  "login": "kaicenat",
- "title": "kai cenat when you up",
- "views": 374,
- "created_at": "2026-11-22T18:35:17Z",
- "duration": 22,
- "clip_url": "https://www.twitch.tv/kaicenat/clip/YawningNimbleCheetahKAPOW-8UVSu4w5z4RZj_OF",
+ "title": "ron and marlon?",
+ "views": 2320,
+ "created_at": "2026-11-24T22:27:30Z",
+ "duration": 40.4,
+ "clip_url": "https://www.twitch.tv/kaicenat/clip/BitterStylishLemurSSSsss-bthG6IGi-VdPRf1u",
  "platform": "twitch",
  "credit": "twitch.tv/kaicenat",
- "layout": "cam",
- "transcript": "Damn it! This will be alright! This will be a nigga! This is for your kids! This is for your tuition! Take my money!",
- "score": 4.9,
+ "layout": "full",
+ "transcript": "If you do a 2v2 oh my gosh, bro. Damn, bro. I can't believe. Oh, it's like my room. Yeah, that's my room Tell you I miss my room. Oh My gosh, I'm so mad like oh my gosh, bro like yo Oh my god, I cannot believe he's so dad, bro Phantom run run Run it who else But we need big wagers, bro. Yeah, we need to do big wagers, bro. I don't care, bro",
+ "score": 103.4,
  "campaign": {
   "id": "clippedshipped-kai-gta6",
   "name": "Kai Cenat $10,000 GTA 6 Pool (Clipped & Shipped)",
@@ -24,20 +24,20 @@
   "ends": "when the marathon ends"
  },
  "genes": {
-  "max_len": 30,
+  "max_len": 45,
   "trim": "none",
   "cap_size": 84,
-  "cap_pos": "mid",
-  "hook_style": "reaction",
-  "hook_case": "title"
+  "cap_pos": "low",
+  "hook_style": "streamer",
+  "hook_case": "upper"
  },
- "kept": 22.02,
- "action": 0.403,
+ "kept": 40.43,
+ "action": 0.522,
  "action_parts": {
-  "audio": 0.19,
-  "motion": 0.26,
-  "talk": 0.75,
+  "audio": 0.34,
+  "motion": 0.35,
+  "talk": 0.85,
   "bonus": 0
  },
- "queued_at": "2026-11-24T04:48:19Z"
+ "queued_at": "2026-11-25T14:20:20Z"
 }
