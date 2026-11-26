@@ -1,17 +1,17 @@
 {
- "id": "StormyAstuteIcecreamVoteNay-dKiDmUSidbz46M5n",
+ "id": "CloudyHungrySkunkDancingBanana--ctR5SIp02nBTel0",
  "streamer": "Lacy",
  "login": "lacy",
- "title": ".",
- "views": 181,
- "created_at": "2026-11-23T10:40:09Z",
- "duration": 45,
- "clip_url": "https://www.twitch.tv/lacy/clip/StormyAstuteIcecreamVoteNay-dKiDmUSidbz46M5n",
+ "title": "gta6 battle royal",
+ "views": 165,
+ "created_at": "2026-11-24T19:02:28Z",
+ "duration": 30,
+ "clip_url": "https://www.twitch.tv/lacy/clip/CloudyHungrySkunkDancingBanana--ctR5SIp02nBTel0",
  "platform": "twitch",
  "credit": "twitch.tv/lacy",
  "layout": "cam",
- "transcript": "Oh my God, I unlocked Illusia Shower. I unlocked Illusia Shower. Yeah!",
- "score": 2.7,
+ "transcript": "Fucking incredible Your aim has gotten so much better",
+ "score": 2.6,
  "campaign": {
   "id": "reach-lacy-gta",
   "name": "$12,500 LACY GTA VI Marathon Pool (Reach)",
@@ -25,20 +25,20 @@
   "pay": "pool $12.5K split by views, needs 750K total views"
  },
  "genes": {
-  "max_len": 30,
-  "trim": "none",
+  "max_len": 20,
+  "trim": "smart",
   "cap_size": 84,
-  "cap_pos": "mid",
-  "hook_style": "question",
-  "hook_case": "upper"
+  "cap_pos": "low",
+  "hook_style": "streamer",
+  "hook_case": "title"
  },
- "kept": 30.0,
- "action": 0.532,
+ "kept": 20.0,
+ "action": 0.266,
  "action_parts": {
-  "audio": 0.97,
-  "motion": 0.17,
-  "talk": 0.29,
+  "audio": 0.21,
+  "motion": 0.65,
+  "talk": 0.06,
   "bonus": 0
  },
- "queued_at": "2026-11-24T17:42:30Z"
+ "queued_at": "2026-11-26T00:20:07Z"
 }

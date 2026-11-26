@@ -1,0 +1,33 @@
+{
+ "id": "LitigiousNaiveHorseradishPeteZaroll-8_k23aP-Jtri0HQd",
+ "streamer": "caseoh_",
+ "login": "caseoh_",
+ "title": "slight scratch",
+ "views": 13756,
+ "created_at": "2026-11-24T14:30:10Z",
+ "duration": 60,
+ "clip_url": "https://www.twitch.tv/caseoh_/clip/LitigiousNaiveHorseradishPeteZaroll-8_k23aP-Jtri0HQd",
+ "platform": "twitch",
+ "credit": "twitch.tv/caseoh_",
+ "layout": "cam",
+ "transcript": "Get in the car This is perfect",
+ "score": 184.0,
+ "campaign": null,
+ "genes": {
+  "max_len": 30,
+  "trim": "smart",
+  "cap_size": 84,
+  "cap_pos": "low",
+  "hook_style": "reaction",
+  "hook_case": "title"
+ },
+ "kept": 27.5,
+ "action": 0.372,
+ "action_parts": {
+  "audio": 0.28,
+  "motion": 1.0,
+  "talk": 0.03,
+  "bonus": 0
+ },
+ "queued_at": "2026-11-26T00:20:07Z"
+}
