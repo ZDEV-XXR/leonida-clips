@@ -1,0 +1,43 @@
+{
+ "id": "PowerfulQuaintPeafowlWutFace-o3KvjQ2j5QD34--P",
+ "streamer": "KaiCenat",
+ "login": "kaicenat",
+ "title": "KAI JUST SOLD \ud83d\udc80 | Kai vs Speed GTA 6",
+ "views": 81,
+ "created_at": "2026-11-25T20:13:50Z",
+ "duration": 30,
+ "clip_url": "https://www.twitch.tv/kaicenat/clip/PowerfulQuaintPeafowlWutFace-o3KvjQ2j5QD34--P",
+ "platform": "twitch",
+ "credit": "twitch.tv/kaicenat",
+ "layout": "cam",
+ "transcript": "I think I dropped the bag though. I dropped the bag though. So it's good. I think I dropped the bag is good. It's okay. It's okay. It's okay. Oh my god Oh it gets it doesn't get impounded",
+ "score": 2.7,
+ "campaign": {
+  "id": "clippedshipped-kai-gta6",
+  "name": "Kai Cenat $10,000 GTA 6 Pool (Clipped & Shipped)",
+  "mention": "Kai Cenat",
+  "hashtag": "#KaiCenat",
+  "rules": "Kai Cenat must be the primary focus in the actual edit; caption or overlay must name Kai Cenat; #KaiCenat required; never negative or hate-farm; no logos; no reposts/collab posts; marathon footage from Nov 18 on",
+  "submit_at": "https://contentrewards.com/c/campaigns/1d2bcb00-c904-415f-aa82-f95b96baad86",
+  "pay": "pool $10K split by views; each clip needs 1K views; needs 750K total views",
+  "cta": "Watch Kai Cenat live: twitch.tv/kaicenat",
+  "ends": "when the marathon ends"
+ },
+ "genes": {
+  "max_len": 30,
+  "trim": "smart",
+  "cap_size": 96,
+  "cap_pos": "mid",
+  "hook_style": "stakes",
+  "hook_case": "title"
+ },
+ "kept": 15.25,
+ "action": 0.359,
+ "action_parts": {
+  "audio": 0.24,
+  "motion": 0.4,
+  "talk": 0.46,
+  "bonus": 0
+ },
+ "queued_at": "2026-11-26T10:53:14Z"
+}
