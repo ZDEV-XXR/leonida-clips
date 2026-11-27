@@ -1,16 +1,16 @@
 {
- "id": "SleepyIntelligentSamosaCharlietheUnicorn-NUcm-sNrr1XXpVQl",
+ "id": "ExpensiveHealthyMomFeelsBadMan-DaPrIl10qqKoqpIf",
  "streamer": "KaiCenat",
  "login": "kaicenat",
- "title": "1st million challenge Kai VS Speed end was close",
- "views": 126,
- "created_at": "2026-11-25T08:55:51Z",
+ "title": "KAICENAT WENT TO ROB THE STORE\u2026 BUT ANOTHER LADY WAS ALREADY ROBBING IT! \ud83d\ude2d\ud83d\udc80 | GTA 6",
+ "views": 41,
+ "created_at": "2026-11-27T11:52:06Z",
  "duration": 60,
- "clip_url": "https://www.twitch.tv/kaicenat/clip/SleepyIntelligentSamosaCharlietheUnicorn-NUcm-sNrr1XXpVQl",
+ "clip_url": "https://www.twitch.tv/kaicenat/clip/ExpensiveHealthyMomFeelsBadMan-DaPrIl10qqKoqpIf",
  "platform": "twitch",
  "credit": "twitch.tv/kaicenat",
  "layout": "cam",
- "transcript": "That did I win what happened Did he still wait wait?",
+ "transcript": "Hey, you really want to get into this whole event. How about I fuck you up since you want no chill nigga Hey, no chill. Hey, no chill sit that ass down Shit we my guess I don't mind if I do let's go ahead and destroy the camera footage too. What's here? Okay? Hey, don't mind if I do bro All right",
  "score": 2.3,
  "campaign": {
   "id": "clippedshipped-kai-gta6",
@@ -24,20 +24,20 @@
   "ends": "when the marathon ends"
  },
  "genes": {
-  "max_len": 20,
-  "trim": "none",
+  "max_len": 45,
+  "trim": "smart",
   "cap_size": 72,
   "cap_pos": "mid",
-  "hook_style": "reaction",
+  "hook_style": "question",
   "hook_case": "title"
  },
- "kept": 20.0,
- "action": 0.69,
+ "kept": 48.0,
+ "action": 0.76,
  "action_parts": {
-  "audio": 0.72,
+  "audio": 0.81,
   "motion": 1.0,
-  "talk": 0.43,
+  "talk": 0.54,
   "bonus": 0
  },
- "queued_at": "2026-11-26T10:53:14Z"
+ "queued_at": "2026-11-27T22:41:53Z"
 }

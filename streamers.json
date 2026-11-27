@@ -157,7 +157,12 @@
   {
    "login": "hasanabi",
    "approved": true,
-   "cam": null
+   "cam": [
+    0.8091,
+    0.4508,
+    0.1293,
+    0.1362
+   ]
   },
   {
    "login": "stableronaldo",
@@ -276,7 +281,12 @@
   {
    "login": "shroud",
    "approved": true,
-   "cam": null
+   "cam": [
+    0.0616,
+    0.5814,
+    0.131,
+    0.1381
+   ]
   },
   {
    "login": "timthetatman",

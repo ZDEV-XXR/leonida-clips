@@ -1,0 +1,33 @@
+{
+ "id": "StormyDeliciousSalamanderFUNgineer-MI30MH2fhrhqE_TS",
+ "streamer": "ohnePixel",
+ "login": "ohnepixel",
+ "title": "addicted",
+ "views": 6087,
+ "created_at": "2026-11-26T14:12:40Z",
+ "duration": 41.8,
+ "clip_url": "https://www.twitch.tv/ohnepixel/clip/StormyDeliciousSalamanderFUNgineer-MI30MH2fhrhqE_TS",
+ "platform": "twitch",
+ "credit": "twitch.tv/ohnepixel",
+ "layout": "cam",
+ "transcript": "I was about to take a readjust today, bro. I'm gonna be straight up but Then I was sitting down It was like 14 o 'clock right and I was like okay like you I go live today Do I have a knuckle live today? Doggity doggity doggity do and then I was like I was like thinking if I don't go live today What the fuck do I even do bro?",
+ "score": 79.1,
+ "campaign": null,
+ "genes": {
+  "max_len": 20,
+  "trim": "none",
+  "cap_size": 96,
+  "cap_pos": "mid",
+  "hook_style": "stakes",
+  "hook_case": "upper"
+ },
+ "kept": 20.0,
+ "action": 0.424,
+ "action_parts": {
+  "audio": 0.25,
+  "motion": 0.23,
+  "talk": 0.76,
+  "bonus": 0
+ },
+ "queued_at": "2026-11-27T22:41:53Z"
+}

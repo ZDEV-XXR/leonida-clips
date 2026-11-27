@@ -1,0 +1,33 @@
+{
+ "id": "EnchantingTastyAirGuitarKlappa-1vq8lCSj1M6bb8BX",
+ "streamer": "HasanAbi",
+ "login": "hasanabi",
+ "title": "h\"ass\"an piker",
+ "views": 274,
+ "created_at": "2026-11-26T20:47:27Z",
+ "duration": 36.1,
+ "clip_url": "https://www.twitch.tv/hasanabi/clip/EnchantingTastyAirGuitarKlappa-1vq8lCSj1M6bb8BX",
+ "platform": "twitch",
+ "credit": "twitch.tv/hasanabi",
+ "layout": "cam",
+ "transcript": "Can I take you up? Yes, please. Let's go. I don't want to spend the whole night. I'm locked in. I'm locked in I'm just dead center mass dead center mass nothing else I can't pay attention 24 floor whatever this business hang thing is I want him down at the party for the speeches, okay understood understood I didn't register a single damn thing there Dude, this isn't this a violation of my privacy This is a violation of my privacy",
+ "score": 6.3,
+ "campaign": null,
+ "genes": {
+  "max_len": 45,
+  "trim": "smart",
+  "cap_size": 96,
+  "cap_pos": "mid",
+  "hook_style": "question",
+  "hook_case": "upper"
+ },
+ "kept": 36.14,
+ "action": 0.711,
+ "action_parts": {
+  "audio": 0.63,
+  "motion": 0.74,
+  "talk": 0.78,
+  "bonus": 0
+ },
+ "queued_at": "2026-11-27T22:41:53Z"
+}

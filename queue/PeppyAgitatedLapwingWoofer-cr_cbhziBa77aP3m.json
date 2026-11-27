@@ -1,0 +1,43 @@
+{
+ "id": "PeppyAgitatedLapwingWoofer-cr_cbhziBa77aP3m",
+ "streamer": "darealboeshi",
+ "login": "darealboeshi",
+ "title": "bro got in a shootout and failed the mission",
+ "views": 32,
+ "created_at": "2026-11-27T08:51:06Z",
+ "duration": 60,
+ "clip_url": "https://www.twitch.tv/darealboeshi/clip/PeppyAgitatedLapwingWoofer-cr_cbhziBa77aP3m",
+ "platform": "twitch",
+ "credit": "twitch.tv/darealboeshi",
+ "layout": "cam",
+ "transcript": "Why is it letting me open the trunk let me open the trunk Why can't open the trunk We're strong to my open it maybe Why can't I hope it wasn't gonna be open the trunk wait so maybe it's in the car yeah I am it's not letting me open How is this setup it's not friggin sped up you liar You're freaking you're lying to me All right, oh, it's on the side",
+ "score": 1.5,
+ "campaign": {
+  "id": "cliplaunch-boeshi-gta6",
+  "name": "Boeshi GTA 6 Clipping (ClipLaunch) $1/1K",
+  "mention": "Boeshi",
+  "hashtag": "#Boeshi",
+  "rules": "Must show the streamer playing GTA 6 as the main focus; accurate caption, no clickbait; push viewers to the streamer's Twitch; no reuploads of other clippers' edits; never post near-identical clips more than 5 times; no botting",
+  "submit_at": "https://contentrewards.com/c/campaigns/5c01ecdb-a148-4489-ba26-5aadbbb5bf69",
+  "pay": "cpm $1.00/1K, max $300/clip",
+  "cta": "Follow Boeshi live: twitch.tv/darealboeshi",
+  "ends": "when budget runs out"
+ },
+ "genes": {
+  "max_len": 45,
+  "trim": "smart",
+  "cap_size": 84,
+  "cap_pos": "low",
+  "hook_style": "question",
+  "hook_case": "upper"
+ },
+ "kept": 48.0,
+ "action": 0.96,
+ "action_parts": {
+  "audio": 1.0,
+  "motion": 0.88,
+  "talk": 0.69,
+  "bonus": 0.1
+ },
+ "queued_at": "2026-11-27T22:41:53Z"
+}

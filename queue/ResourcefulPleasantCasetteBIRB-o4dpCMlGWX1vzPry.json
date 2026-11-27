@@ -1,17 +1,17 @@
 {
- "id": "PowerfulQuaintPeafowlWutFace-o3KvjQ2j5QD34--P",
+ "id": "ResourcefulPleasantCasetteBIRB-o4dpCMlGWX1vzPry",
  "streamer": "KaiCenat",
  "login": "kaicenat",
- "title": "KAI JUST SOLD \ud83d\udc80 | Kai vs Speed GTA 6",
- "views": 81,
- "created_at": "2026-11-25T20:13:50Z",
+ "title": "Kai Cenat Watches a Witness Get a Flying Kick for Calling the Cops \ud83d\ude02",
+ "views": 134,
+ "created_at": "2026-11-26T18:51:54Z",
  "duration": 30,
- "clip_url": "https://www.twitch.tv/kaicenat/clip/PowerfulQuaintPeafowlWutFace-o3KvjQ2j5QD34--P",
+ "clip_url": "https://www.twitch.tv/kaicenat/clip/ResourcefulPleasantCasetteBIRB-o4dpCMlGWX1vzPry",
  "platform": "twitch",
  "credit": "twitch.tv/kaicenat",
- "layout": "cam",
- "transcript": "I think I dropped the bag though. I dropped the bag though. So it's good. I think I dropped the bag is good. It's okay. It's okay. It's okay. Oh my god Oh it gets it doesn't get impounded",
- "score": 2.7,
+ "layout": "full",
+ "transcript": "Let's fucking go. Yo, bro. Why are you touch my touching me? I'm leaving okay. Let me go. You're gonna cops",
+ "score": 2.1,
  "campaign": {
   "id": "clippedshipped-kai-gta6",
   "name": "Kai Cenat $10,000 GTA 6 Pool (Clipped & Shipped)",
@@ -24,20 +24,20 @@
   "ends": "when the marathon ends"
  },
  "genes": {
-  "max_len": 30,
-  "trim": "smart",
-  "cap_size": 96,
+  "max_len": 60,
+  "trim": "none",
+  "cap_size": 84,
   "cap_pos": "mid",
   "hook_style": "stakes",
   "hook_case": "title"
  },
- "kept": 15.25,
- "action": 0.359,
+ "kept": 30.02,
+ "action": 0.706,
  "action_parts": {
-  "audio": 0.24,
-  "motion": 0.4,
-  "talk": 0.46,
-  "bonus": 0
+  "audio": 0.49,
+  "motion": 1.0,
+  "talk": 0.45,
+  "bonus": 0.1
  },
- "queued_at": "2026-11-26T10:53:14Z"
+ "queued_at": "2026-11-27T22:41:53Z"
 }
