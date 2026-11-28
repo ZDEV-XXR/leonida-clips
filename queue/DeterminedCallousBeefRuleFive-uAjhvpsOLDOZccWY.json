@@ -1,0 +1,33 @@
+{
+ "id": "DeterminedCallousBeefRuleFive-uAjhvpsOLDOZccWY",
+ "streamer": "ohnePixel",
+ "login": "ohnepixel",
+ "title": "almost almost",
+ "views": 1443,
+ "created_at": "2026-11-27T09:58:26Z",
+ "duration": 20.8,
+ "clip_url": "https://www.twitch.tv/ohnepixel/clip/DeterminedCallousBeefRuleFive-uAjhvpsOLDOZccWY",
+ "platform": "twitch",
+ "credit": "twitch.tv/ohnepixel",
+ "layout": "cam",
+ "transcript": "Oh my god and Almost almost they all were so close. That was actually the closest one so far. Oh",
+ "score": 28.3,
+ "campaign": null,
+ "genes": {
+  "max_len": 30,
+  "trim": "none",
+  "cap_size": 84,
+  "cap_pos": "low",
+  "hook_style": "reaction",
+  "hook_case": "title"
+ },
+ "kept": 20.89,
+ "action": 0.716,
+ "action_parts": {
+  "audio": 1.0,
+  "motion": 0.92,
+  "talk": 0.25,
+  "bonus": 0
+ },
+ "queued_at": "2026-11-28T07:45:49Z"
+}

@@ -1,0 +1,33 @@
+{
+ "id": "SpunkyPlayfulSandwichDerp-jm59fy00oJ0LBAf6",
+ "streamer": "ohnePixel",
+ "login": "ohnepixel",
+ "title": "step ohne i'm stuck",
+ "views": 2651,
+ "created_at": "2026-11-26T20:16:29Z",
+ "duration": 14.9,
+ "clip_url": "https://www.twitch.tv/ohnepixel/clip/SpunkyPlayfulSandwichDerp-jm59fy00oJ0LBAf6",
+ "platform": "twitch",
+ "credit": "twitch.tv/ohnepixel",
+ "layout": "cam",
+ "transcript": "Fucking DuPont! I don't hear me! Q Samantha! Stop! It's my turn! What?! Mr. Hands! You're on me! I thought we were recording something for YouTube! What the f -",
+ "score": 27.1,
+ "campaign": null,
+ "genes": {
+  "max_len": 45,
+  "trim": "none",
+  "cap_size": 84,
+  "cap_pos": "mid",
+  "hook_style": "stakes",
+  "hook_case": "title"
+ },
+ "kept": 14.93,
+ "action": 0.68,
+ "action_parts": {
+  "audio": 0.32,
+  "motion": 1.0,
+  "talk": 0.87,
+  "bonus": 0
+ },
+ "queued_at": "2026-11-28T07:45:49Z"
+}
